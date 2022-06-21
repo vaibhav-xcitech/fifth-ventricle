@@ -164,7 +164,7 @@
     margin-bottom: 20px;
     width: 100%;
 
-    .teamHeaderContainer {}
+    // .teamHeaderContainer {}
 
     .teamCardsContainer {
         display: flex;
@@ -181,14 +181,63 @@
             margin: 20px;
         }
 
-        .teamCardRow2 {
-            width: 60%;
+    }
+}
+
+.teamCardRow2 {
+    width: 60%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+@media (max-width: 950px) {
+    .teamCardRow2 {
+        width: 90%;
+    }
+}
+
+.teamResponsiveCard {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.ExtraTeamContainer {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 100%;
+
+    .teamCardsContainer {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        .ExtraTeamRow {
+            width: 65%;
             display: flex;
             flex-direction: row;
             justify-content: space-between;
             align-items: center;
-            margin-top: 20px;
-            margin-bottom: 20px;
+            margin: 20px;
+        }
+
+        @media (max-width: 1200px) {
+            .ExtraTeamRow {
+                width: 85%;
+            }
+        }
+
+        @media (max-width: 700px) {
+            .ExtraTeamRow {
+                flex-direction: column;
+            }
         }
     }
 }
