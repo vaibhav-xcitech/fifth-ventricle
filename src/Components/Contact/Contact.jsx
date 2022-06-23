@@ -79,7 +79,7 @@ const Contact = () => {
                     <h4>Coz Why Not.</h4>
                 </div>
                 <div className={classes.locateUsContant}>
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3690.6707148385976!2d73.13146521487394!3d22.328289847520878!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395fc94f22570a01%3A0xf36639f2fc6d950b!2sXcitech%20Technologies!5e0!3m2!1sen!2sin!4v1655794426027!5m2!1sen!2sin" allowfullscreen="true" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title='locateUs'></iframe>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3690.6707148385976!2d73.13146521487394!3d22.328289847520878!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395fc94f22570a01%3A0xf36639f2fc6d950b!2sXcitech%20Technologies!5e0!3m2!1sen!2sin!4v1655794426027!5m2!1sen!2sin" allowFullScreen={true} loading="lazy" title='locateUs'></iframe>
                 </div>
             </div>
         </>

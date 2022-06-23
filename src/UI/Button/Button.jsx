@@ -12,7 +12,7 @@ const Button = ({ children, type, onClick }) => {
 
 const MainButton = styled(MUIButton)({
     marginTop: '40px',
-    padding: '20px 80px',
+    padding: '20px 55px',
     borderRadius: '25px',
     backgroundColor: '#ffe500',
     color: 'black',
