@@ -47,6 +47,20 @@
     }
 }
 
+@media (max-width: 600px) {
+    .Card {
+        width: 310px;
+        min-height: 210px;
+    }
+}
+
+@media (max-width: 350px) {
+    .Card {
+        width: 250px;
+        min-height: 210px;
+    }
+}
+
 .footer {
     display: flex;
 }

@@ -1,57 +1,72 @@
-import React, { useState } from 'react'
+import React, { useState, useRef } from 'react'
 import StartUpIndia from '../../assets/svgviewer-output (3).svg'
 import HealthcareImg from '../../assets/svgviewer-output (28).svg'
 import AIimg from '../../assets/svgviewer-output (29).svg'
 import TelemedicineImg from '../../assets/svgviewer-output (30).svg'
-import heroImage from '../../assets/Chesto.gif'
+import heroImage from '../../assets/Comp 1.mp4'
 import MakeInIndia from '../../assets/svgviewer-output (4).svg'
 import GreenRight from '../../assets/svgviewer-output (5).svg'
 import OfficeImage1 from '../../assets/svgviewer-output (7).svg'
 import OfficeImage2 from '../../assets/svgviewer-output (8).svg'
 import chestoImage from '../../assets/svgviewer-output (12).svg'
-// import BulbLightupImg from '../../assets/svgview er-output.svg'
-import MainImg from '../../assets/01.png'
-import BulbLightupImg from '../../assets/02.png'
-// import BulbLightupShad1 from '../../assets/svgviewer-output (1).svg'
-// import BulbLightupShad2 from '../../assets/svgviewer-output (2).svg'
+import NormalBulb from '../../assets/normalbulb.png'
+import lightUpBulb from '../../assets/lightbulb.svg'
+import lightupshade1 from '../../assets/lightbulbshade1.svg'
+import lightupshade2 from '../../assets/lightbulbshade2.svg'
 import Typewriter from "typewriter-effect";
 import classes from './Home.module.scss'
 import { MainButton } from '../../UI/Button/Button';
 import Card from '../../UI/Card/Card'
 import useWindowDimensions from './WindowDimensions';
+import { useEffect } from 'react'
 
 const Home = () => {
 
+    const vidref = useRef();
+
+    useEffect(() => {
+        vidref.current.play();
+    }, []);
+
     const [mainBulb, setMainBulb] = useState(true);
     const [lightUpbulb, setLightUpbulb] = useState(false);
-    // const [lightUpShad1, setLightUpShad1] = useState(false);
-    // const [lightUpShad2, setLightUpShad2] = useState(false);
+    const [lightUpShad1, setLightUpShad1] = useState(false);
+    const [lightUpShad2, setLightUpShad2] = useState(false);
 
     const { width } = useWindowDimensions();
 
     const bulbLightUp = () => {
-        if (window.scrollY >= 2300) {
+        if (window.scrollY >= 1200) {
             setMainBulb(false)
             setLightUpbulb(true)
-            // if (window.scrollY >= 2100) {
-            //     setLightUpShad1(true)
-            //     if (window.scrollY >= 2250) {
-            //         setLightUpShad2(true)
-            //     }
-            //     else {
-            //         setLightUpShad2(false)
-            //     }
-            // } else {
-            //     setLightUpShad1(false);
-            // }
+            if (window.scrollY >= 1400) {
+                setMainBulb(false)
+                setLightUpbulb(false)
+                setLightUpShad1(true)
+                if (window.scrollY >= 1700) {
+                    setMainBulb(false)
+                    setLightUpbulb(false)
+                    setLightUpShad1(false)
+                    setLightUpShad2(true)
+                } else {
+                    setLightUpShad2(false)
+                    setMainBulb(false)
+                    setLightUpbulb(false)
+                    setLightUpShad1(true)
+                }
+            }
+            else {
+                setLightUpShad1(false)
+                setMainBulb(false)
+                setLightUpbulb(true)
+            }
         }
         else {
-            setMainBulb(true);
-            setLightUpbulb(false);
-            // setLightUpShad1(false);
-            // setLightUpShad2(false);
+            setLightUpbulb(false)
+            setMainBulb(true)
         }
-        // console.log(window.scrollY);
+
+        console.log(window.scrollY);
     }
 
     window.addEventListener('scroll', bulbLightUp)
@@ -60,7 +75,9 @@ const Home = () => {
         <div className={classes.homeMainContainer}>
             <div className={classes.homeHeroContainer}>
                 <div className={classes.heroTextImgContainer}>
-                    <img src={heroImage} alt="heroimage" width={"100%"} />
+                    <video width={"100%"} ref={vidref} muted autoPlay loop>
+                        <source src={heroImage} type="video/mp4" />
+                    </video>
                     <div className={classes.homeTypewriterContainer}>
                         India's first Truly&nbsp;
                         <Typewriter
@@ -92,7 +109,71 @@ const Home = () => {
                 </div>
             </div>
 
+            {/* <div className={classes.homeStoryContainer}>
+                <div className={classes.storyMainContainer}>
 
+                    <div className={classes.MidleContainer}>
+                        <div className={classes.storyMidleContainer}>
+                            <h4>THE BRAIN BEHIND</h4>
+                            <h1 style={{ color: '#5fdad5' }}>THE FOUNDER</h1>
+                        </div>
+
+                        {width >= 700 ? "" :
+                            <div className={classes.homeRightContainer}>
+                                <div className={classes.imgWrapper}>
+                                    <img src={OfficeImage1} alt="homeImage1" className={classes.image} />
+                                </div>
+                            </div>}
+
+                        <div className={classes.storyMidleContainer}>
+                            <div className={classes.storyUpperCards}>
+                                <div className={classes.storyCards}>
+                                    <h2>OUR STORY</h2>
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia veniam repudiandae impedit odio placeat repellat, velit eaque quae illum ab!</p>
+                                </div>
+                                <div className={classes.storyCards}>
+                                    <h2>OUR VISION</h2>
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia veniam repudiandae impedit odio placeat repellat, velit eaque quae illum ab!</p>
+                                </div>
+                            </div>
+                            <div className={classes.storyLowerCards}>
+                                <div className={classes.storyCards}>
+                                    <h2>OUR MISSION</h2>
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia veniam repudiandae impedit odio placeat repellat, velit eaque quae illum ab!</p>
+                                </div>
+                                <div className={classes.storyCards}>
+                                    <h2>OUR GOALS</h2>
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia veniam repudiandae impedit odio placeat repellat, velit eaque quae illum ab!</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div className={classes.homeBottomContainer}>
+                            <MainButton type='button'><b>Know More</b></MainButton>
+                        </div>
+                    </div>
+
+                    {width <= 700 ? "" :
+                        <div className={classes.homeRightContainer}>
+                            <div className={classes.imgWrapper}>
+                                <img src={OfficeImage1} alt="homeImage1" className={classes.image} />
+                            </div>
+                        </div>}
+                </div>
+            </div> */}
+
+
+
+
+
+
+
+
+
+
+
+
+
+            {/* 
             <div className={classes.homeStoryContainer}>
                 <div className={classes.storyMainContainer}>
 
@@ -145,57 +226,6 @@ const Home = () => {
                         </div>
                     }
                 </div>
-            </div>
-
-            {/* <div className={classes.homeStoryContainer}>
-                <div className={classes.MidleContainer}>
-                    <div className={classes.LeftMidleContainer}>
-                        <div className={classes.LeftTopHeader}>
-                            <h4>THE STORY</h4>
-                            <h1 style={{ color: '#5fdad5' }}>WHO WE ARE ?</h1>
-                        </div>
-                        {width >= 700 ? "" :
-                            <>
-                                <div className={classes.chestoImg}>
-                                    <img src={OfficeImage1} alt="OfficeImage1" width="350px" height="250px" />
-                                </div>
-                                <br />
-                            </>
-                        }
-                        <div className={classes.HomeCardsContainer}>
-                            <div className={classes.homeUpperCards}>
-                                <div className={classes.homeCards}>
-                                    <h2>OUR STORY</h2>
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia veniam repudiandae impedit odio placeat repellat, velit eaque quae illum ab!</p>
-                                </div>
-                                <div className={classes.homeCards}>
-                                    <h2>OUR VISION</h2>
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia veniam repudiandae impedit odio placeat repellat, velit eaque quae illum ab!</p>
-                                </div>
-                            </div>
-                            <div className={classes.homeLowerCards}>
-                                <div className={classes.homeCards}>
-                                    <h2>OUR MISSION</h2>
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia veniam repudiandae impedit odio placeat repellat, velit eaque quae illum ab!</p>
-                                </div>
-                                <div className={classes.homeCards}>
-                                    <h2>OUR GOALS</h2>
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia veniam repudiandae impedit odio placeat repellat, velit eaque quae illum ab!</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div className={classes.homeBottomContainer}>
-                            <MainButton type='button'><b>Know More</b></MainButton>
-                        </div>
-                    </div>
-                    {width <= 700 ? "" :
-                        <div className={classes.homeRightContainer}>
-                            <div className={classes.imgWrapper}>
-                                <img src={OfficeImage1} alt="homeImage1" className={classes.image} />
-                            </div>
-                        </div>
-                    }
-                </div>
             </div> */}
 
             <div className={classes.homeJourneyContainer}>
@@ -212,7 +242,8 @@ const Home = () => {
                         <div className={classes.journeyHeaderContainer}>
                             <h4>THE JOURNEY</h4>
                             <h1 style={{ color: '#5fdad5', marginTop: 0 }}>PROJECT RESEARCH</h1>
-                            <h3>MAKING SURE THAT NOTHING GOES PAST YOUR EAR. THE FUTURE OF</h3>
+                            <h4
+                            >MAKING SURE THAT NOTHING GOES PAST YOUR EAR. THE FUTURE OF</h4>
                             <h2>STETHOSCOPE.</h2>
                         </div>
 
@@ -244,10 +275,12 @@ const Home = () => {
                 <div className={classes.QuestionTextImgContainer}>
                     <h4>THE QUESTION</h4>
                     <h1 style={{ color: '#5fdad5', marginTop: 0 }}>WHY FIFTHVENTRICLE</h1>
-                    {mainBulb && (<img src={MainImg} alt="BulbLightupImg" width="250px" height="250px" />)}
-                    {lightUpbulb && (<img src={BulbLightupImg} alt="BulbLightupImg" width="250px" height="250px" />)}
-                    {/* {lightUpShad1 && (<img src={BulbLightupShad1} alt="BulbLightupImg" className={classes.lightUpshad1} width="350px" height="350px" />)}
-                    {lightUpShad2 && (<img src={BulbLightupShad2} alt="BulbLightupImg" className={classes.lightUpshad2} width="576px" height="576px" />)} */}
+                </div>
+                <div className={classes.bulbImgContainer}>
+                    {mainBulb && (<img src={NormalBulb} alt="BulbLightupImg" className={classes.mainBulb} width="250px" height="450px" />)}
+                    {lightUpbulb && (<img src={lightUpBulb} alt="BulbLightupImg" className={classes.BulbLightupImg} width="250px" height="450px" />)}
+                    {lightUpShad1 && (<img src={lightupshade1} alt="BulbLightupImg" className={classes.lightUpshad1} width="250px" height="650px" />)}
+                    {lightUpShad2 && (<img src={lightupshade2} alt="BulbLightupImg" className={classes.lightUpshad2} width="250px" height="450px" />)}
                 </div>
                 {width < 1150 ? "" :
                     <div className={classes.infoCards}>
@@ -317,11 +350,11 @@ const Home = () => {
                 <div className={classes.chestoDesc}>
                     <div className={classes.descHeader}>
                         <h4>THE RESULT</h4>
-                        <h1 style={{ color: '#5fdad5', marginTop: 0 }}>OUR PRODUCT LINE</h1>
+                        <h2 style={{ color: '#5fdad5', marginTop: 0 }}>OUR PRODUCT LINE</h2>
                     </div>
                     {width >= 950 ? "" :
                         <div className={classes.chestoImg}>
-                            <img src={chestoImage} alt="Chesto" width="350px" height="250px" />
+                            <img src={chestoImage} alt="Chesto" width="300px" height="250px" />
                         </div>
                     }
                     <div className={classes.ChestoContent}>
@@ -367,11 +400,11 @@ const Home = () => {
                 </div>
                 {width <= 950 ? "" :
                     <div className={classes.chestoImg}>
-                        <img src={chestoImage} alt="Chesto" width="350px" height="250px" />
+                        <img src={chestoImage} alt="Chesto" width="300px" height="250px" />
                     </div>
                 }
             </div>
-        </div>
+        </div >
     )
 }
 

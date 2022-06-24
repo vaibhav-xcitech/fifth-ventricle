@@ -51,7 +51,7 @@ const AboutUs = () => {
                         {width >= 700 ? "" :
                             <div className={classes.homeRightContainer}>
                                 <div className={classes.imgWrapper}>
-                                    <img src={OfficeImage} alt="homeImage1" className={classes.image} style={{ maxHeight: "450px" }} />
+                                    <img src={OfficeImage} alt="homeImage1" className={classes.image} />
                                 </div>
                             </div>}
 
@@ -84,7 +84,7 @@ const AboutUs = () => {
                         {width >= 700 ? "" :
                             <div className={classes.homeRightContainer}>
                                 <div className={classes.imgWrapper}>
-                                    <img src={FounderImage} alt="homeImage1" className={classes.image} style={{ maxHeight: "450px" }} />
+                                    <img src={FounderImage} alt="homeImage1" className={classes.image} />
                                 </div>
                             </div>}
 
