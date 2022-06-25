@@ -1,5 +1,5 @@
 .homeHeroContainer {
-    margin: 20px;
+    margin-bottom: 20px;
 
     .heroTextImgContainer {
         display: flex;
@@ -19,7 +19,7 @@
 
 .qualityAssuredContainer {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
     margin-top: 20px;
     margin-bottom: 20px;
@@ -212,16 +212,10 @@
     }
 
     .bulbImgContainer {
-        position: relative;
         max-width: 100%;
+        height: 500px;
         left: 0;
         top: 0;
-
-        .lightUpshad1 {
-            position: absolute;
-            top: 0;
-            left: 34%;
-        }
     }
 
     .infoCards {

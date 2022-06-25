@@ -25,10 +25,12 @@ const Home = () => {
     const vidref = useRef();
 
     useEffect(() => {
-        vidref.current.play();
+        vidref.current.play(
+            console.log("hello")
+        );
     }, []);
 
-    const [mainBulb, setMainBulb] = useState(true);
+    const [mainBulb, setMainBulb] = useState(false);
     const [lightUpbulb, setLightUpbulb] = useState(false);
     const [lightUpShad1, setLightUpShad1] = useState(false);
     const [lightUpShad2, setLightUpShad2] = useState(false);
@@ -43,7 +45,7 @@ const Home = () => {
                 setMainBulb(false)
                 setLightUpbulb(false)
                 setLightUpShad1(true)
-                if (window.scrollY >= 1700) {
+                if (window.scrollY >= 1500) {
                     setMainBulb(false)
                     setLightUpbulb(false)
                     setLightUpShad1(false)
@@ -66,7 +68,7 @@ const Home = () => {
             setMainBulb(true)
         }
 
-        console.log(window.scrollY);
+        // console.log(window.scrollY);
     }
 
     window.addEventListener('scroll', bulbLightUp)
@@ -277,10 +279,10 @@ const Home = () => {
                     <h1 style={{ color: '#5fdad5', marginTop: 0 }}>WHY FIFTHVENTRICLE</h1>
                 </div>
                 <div className={classes.bulbImgContainer}>
-                    {mainBulb && (<img src={NormalBulb} alt="BulbLightupImg" className={classes.mainBulb} width="250px" height="450px" />)}
-                    {lightUpbulb && (<img src={lightUpBulb} alt="BulbLightupImg" className={classes.BulbLightupImg} width="250px" height="450px" />)}
-                    {lightUpShad1 && (<img src={lightupshade1} alt="BulbLightupImg" className={classes.lightUpshad1} width="250px" height="650px" />)}
-                    {lightUpShad2 && (<img src={lightupshade2} alt="BulbLightupImg" className={classes.lightUpshad2} width="250px" height="450px" />)}
+                    {mainBulb && (<img src={NormalBulb} alt="BulbLightupImg" className={classes.mainBulb} width="110px" height="200px" />)}
+                    {lightUpbulb && (<img src={lightUpBulb} alt="BulbLightupImg" className={classes.BulbLightupImg} width="383px" height="200px" />)}
+                    {lightUpShad1 && (<img src={lightupshade1} alt="BulbLightupImg" className={classes.lightUpshad1} width="350px" height="230px" />)}
+                    {lightUpShad2 && (<img src={lightupshade2} alt="BulbLightupImg" className={classes.lightUpshad2} width="300px" height="270px" />)}
                 </div>
                 {width < 1150 ? "" :
                     <div className={classes.infoCards}>
