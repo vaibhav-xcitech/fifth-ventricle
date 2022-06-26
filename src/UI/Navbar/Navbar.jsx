@@ -42,6 +42,7 @@ const Navbar = () => {
                             <NavbarLink to="/aboutus"> About Us</NavbarLink>
                             <NavbarLink to="/contact"> Contact</NavbarLink>
                             <NavbarLink to="/buy"> Buy</NavbarLink>
+                            <NavbarLink to="/story"> Story</NavbarLink>
                             <Fab style={{ margin: 5 }} dark color='var(--primary)'>
                                 <span style={{ color: "#fff" }}><FaFacebookF /></span>
                             </Fab>
