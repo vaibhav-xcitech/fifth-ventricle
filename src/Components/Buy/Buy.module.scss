@@ -1,91 +1,95 @@
-.aboutUsContainer {
-    min-height: 1000px;
-}
+.buyContainer {
+    margin-top: 60px;
 
-.heroContainer {
-    position: relative;
-    min-height: 500px;
-}
-
-.heroTextContainer {
-    display: flex;
-    flex-direction: column;
-
-    .neomorphismText {
-        max-width: 100%;
-        font-size: 175px;
-        font-weight: 600;
-        color: #2F3538;
-        text-shadow: 5px 5px 8px #191c1e,
-            -5px -5px 8px #454e52;
-    }
-
-    @media (max-width: 700px) {
-        .neomorphismText {
-            font-size: 80px;
-        }
-    }
-}
-
-
-.heroImageContainer {
-    position: absolute;
-    left: 43%;
-    top: 45%;
-    transform: translate(-40%, -33%);
-    max-width: 500px;
-
-    img {
-        height: 100%;
-        width: 100%;
-    }
-}
-
-
-@media (max-width: 700px) {
-    .heroImageContainer {
-        top: 55%;
+    .aboutUsContainer {
+        min-height: 1000px;
     }
 
     .heroContainer {
-        min-height: 250px;
+        position: relative;
+        min-height: 500px;
     }
-}
 
-.buyChestoContainer {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    width: 100%;
-
-    .chestoDesc {
+    .heroTextContainer {
         display: flex;
         flex-direction: column;
-        flex: 80%;
 
-        .descHeader {
-            text-align: start;
-            text-align: left;
-            padding-left: 70px;
-            padding-right: 40px;
+        .neomorphismText {
+            max-width: 100%;
+            font-size: 175px;
+            font-weight: 600;
+            color: #2F3538;
+            text-shadow: 5px 5px 8px #191c1e,
+                -5px -5px 8px #454e52;
         }
-    }
 
-    @media (max-width: 950px) {
-        .chestoDesc {
-
-            .descHeader {
-                text-align: left;
-                padding-left: 90px;
-                padding-right: 60px;
-                justify-content: flex-start;
+        @media (max-width: 700px) {
+            .neomorphismText {
+                font-size: 80px;
             }
         }
     }
 
-    .chestoImg {
-        flex: 40%;
+
+    .heroImageContainer {
+        position: absolute;
+        left: 43%;
+        top: 45%;
+        transform: translate(-40%, -33%);
+        max-width: 500px;
+
+        img {
+            height: 100%;
+            width: 100%;
+        }
+    }
+
+
+    @media (max-width: 700px) {
+        .heroImageContainer {
+            top: 55%;
+        }
+
+        .heroContainer {
+            min-height: 250px;
+        }
+    }
+
+    .buyChestoContainer {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        width: 100%;
+
+        .chestoDesc {
+            display: flex;
+            flex-direction: column;
+            flex: 80%;
+
+            .descHeader {
+                text-align: start;
+                text-align: left;
+                padding-left: 70px;
+                padding-right: 40px;
+            }
+        }
+
+        @media (max-width: 950px) {
+            .chestoDesc {
+
+                .descHeader {
+                    text-align: left;
+                    padding-left: 90px;
+                    padding-right: 60px;
+                    justify-content: flex-start;
+                }
+            }
+        }
+
+        .chestoImg {
+            flex: 40%;
+        }
     }
 }

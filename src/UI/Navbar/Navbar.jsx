@@ -12,10 +12,11 @@ import {
     NavbarLinkExtended,
     CenterDiv
 } from './Navbar.style';
-import { Fab } from 'ui-neumorphism';
 import { FaFacebookF } from 'react-icons/fa';
 import { FaTwitter } from 'react-icons/fa';
 import { FaLinkedinIn } from 'react-icons/fa';
+import { FaInstagram } from 'react-icons/fa';
+import { Fab } from 'ui-neumorphism';
 
 const Navbar = () => {
 
@@ -41,8 +42,7 @@ const Navbar = () => {
                             <NavbarLink to="/"> Home</NavbarLink>
                             <NavbarLink to="/aboutus"> About Us</NavbarLink>
                             <NavbarLink to="/contact"> Contact</NavbarLink>
-                            <NavbarLink to="/buy"> Buy</NavbarLink>
-                            <NavbarLink to="/story"> Story</NavbarLink>
+                            <NavbarLink to="/chestoBuy"> Buy</NavbarLink>
                             <Fab style={{ margin: 5 }} dark color='var(--primary)'>
                                 <span style={{ color: "#fff" }}><FaFacebookF /></span>
                             </Fab>
@@ -51,6 +51,9 @@ const Navbar = () => {
                             </Fab>
                             <Fab style={{ margin: 5 }} dark color='var(--primary)'>
                                 <span style={{ color: "#fff" }}><FaLinkedinIn /></span>
+                            </Fab>
+                            <Fab style={{ margin: 5 }} dark color='var(--primary)'>
+                                <span style={{ color: "#fff" }}><FaInstagram /></span>
                             </Fab>
                         </NavbarLinkContainer>
                     </RightContainer>
@@ -73,6 +76,9 @@ const Navbar = () => {
                             </Fab>
                             <Fab style={{ margin: 5 }} dark color='var(--primary)'>
                                 <span style={{ color: "#fff" }}><FaLinkedinIn /></span>
+                            </Fab>
+                            <Fab style={{ margin: 5 }} dark color='var(--primary)'>
+                                <span style={{ color: "#fff" }}><FaInstagram /></span>
                             </Fab>
                         </div>
                     </NavbarExtendedContainer>

@@ -48,6 +48,14 @@
     }
 }
 
+// .Card:hover {
+//     -ms-transform: scale(0.5);
+//     /* IE 9 */
+//     -webkit-transform: scale(0.5);
+//     /* Safari 3-8 */
+//     transform: scale(0.5);
+// }
+
 @media (max-width: 600px) {
     .Card {
         width: 310px;

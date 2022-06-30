@@ -1,8 +1,9 @@
 import React from "react";
-import classes from "./StoryContainer.module.scss";
-import useWindowDimensions from "../Home/WindowDimensions";
-import OfficeImage1 from "../../assets/svgviewer-output (7).svg";
-import { MainButton } from "../../UI/Button/Button";
+import classes from "../StoryContainer/StoryContainer.module.scss";
+import { MainButton } from "../../../UI/Button/Button";
+import useWindowDimensions from "../WindowDimensions";
+
+import OfficeImage1 from "../../../assets/Chesto_Who We Are.png";
 
 const StoryContainer = () => {
   const { width } = useWindowDimensions();
@@ -13,8 +14,8 @@ const StoryContainer = () => {
       <div className={classes.storyMainContainer}>
         <div className={classes.storyMidleContainer}>
           <div className={classes.midleHeaderContainer}>
-            <h4>THE BRAIN BEHIND</h4>
-            <h1 style={{ color: "#5fdad5" }}>THE FOUNDER</h1>
+            <h4>THE STORY</h4>
+            <h1 style={{ color: "#5fdad5" }}>WHO WE ARE</h1>
           </div>
 
           {width >= 700 ? (

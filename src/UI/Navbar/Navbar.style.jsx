@@ -3,13 +3,21 @@ import { NavLink } from "react-router-dom";
 
 export const NavbarContainer = styled.nav`
   width: 100%;
-  height: ${(props) => (props.extendNavbar ? "100vh" : "80px")};
-  background-color: black;
+  height: ${(props) => (props.extendNavbar ? "100vh" : "65px")};
+  background-color: #2f3538;
   display: flex;
   flex-direction: column;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 2000;
+  transition: all 0.5s ease-in;
+  width: 100%;
+  box-shadow: 0px 0px 30px -7px rgb(0 0 0 / 50%);
 
   @media (min-width: 700px) {
-    height: 80px;
+    height: 65px;
   }
 `;
 
@@ -40,7 +48,7 @@ export const RightContainer = styled.div`
 
 export const NavbarInnerContainer = styled.div`
   width: 100%;
-  height: 80px;
+  height: 65px;
   display: flex;
 `;
 
@@ -57,7 +65,8 @@ export const NavbarLink = styled(NavLink)`
   padding-top: 10px;
 
   &:hover {
-    color: #FAE403;
+    color: #fae403;
+    text-decoration: none;
   }
 
   @media (max-width: 700px) {
@@ -73,24 +82,23 @@ export const NavbarLinkExtended = styled(NavLink)`
   margin: 10px;
 
   &:hover {
-    color: #FAE403;
+    color: #fae403;
   }
 `;
 
 export const Logo = styled.img`
-  margin: 10px;
   max-width: 180px;
   height: auto;
 `;
 
 export const OpenLinksButton = styled.button`
   width: 70px;
-  height: 60px;
+  height: 80px;
   background: none;
   border: none;
   color: white;
   text-decoration: none;
-  font-size: 45px;
+  font-size: 40px;
   cursor: pointer;
 
   @media (min-width: 700px) {
