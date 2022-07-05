@@ -66,7 +66,7 @@ const Navbar = () => {
                         <NavbarLinkExtended to="/"> Home</NavbarLinkExtended>
                         <NavbarLinkExtended to="/aboutus"> About Us</NavbarLinkExtended>
                         <NavbarLinkExtended to="/contact"> Contact</NavbarLinkExtended>
-                        <NavbarLinkExtended to="/buy"> Buy</NavbarLinkExtended>
+                        <NavbarLinkExtended to="/chestoBuy"> Buy</NavbarLinkExtended>
                         <div>
                             <Fab style={{ margin: 5 }} dark color='var(--primary)'>
                                 <span style={{ color: "#fff" }}><FaFacebookF /></span>

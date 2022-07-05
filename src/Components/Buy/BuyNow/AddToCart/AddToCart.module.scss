@@ -1,0 +1,91 @@
+.AddToCartContainer {
+    margin-top: 65px;
+
+    .mainContainer {
+        padding: 10px;
+        display: flex;
+        justify-content: center;
+
+        .MyCartContainer {
+            width: 65%;
+            margin-left: 10px;
+            margin-right: 10px;
+            border-radius: 15px;
+            box-shadow: -3px -3px 3px #ffffff14,
+                5px 5px 3px #0000003d;
+
+            .cartHeaderContainer {
+                width: 100%;
+                display: flex;
+
+                .shoppingButton{
+
+                    button{
+                        padding: 5px 10px;
+                    }
+                }
+            }
+
+            .shoppingTableContainer {
+                width: 100%;
+                padding: 20px;
+
+                .shoppingTabel {
+                    width: 100%;
+
+                    tbody {
+
+                        tr {
+                            td {
+                                text-align: left;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .paymentContainer {
+            width: 35%;
+            margin-left: 10px;
+            margin-right: 10px;
+            border-radius: 15px;
+            box-shadow: -3px -3px 3px #ffffff14,
+                5px 5px 3px #0000003d;
+
+            .paymentHeaderContainer {
+                width: 100%;
+
+            }
+
+
+            .paymentDetailTable {
+                padding: 20px;
+
+                table {
+                    width: 100%;
+                }
+
+                tr {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                }
+            }
+        }
+    }
+
+    .shippingContainer {
+        width: 96%;
+        padding: 10px;
+        margin-left: 18px;
+        margin-right: 10px;
+        border-radius: 15px;
+        box-shadow: -3px -3px 3px #ffffff14,
+            5px 5px 3px #0000003d;
+
+        .shippingHeaderContainer{
+            width: 100%;
+        }
+    }
+}

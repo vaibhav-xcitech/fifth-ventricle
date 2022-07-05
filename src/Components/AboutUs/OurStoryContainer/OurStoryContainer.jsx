@@ -3,7 +3,7 @@ import classes from "../OurStoryContainer/OurStoryContainer.module.scss"
 import useWindowDimensions from "../../Home/WindowDimensions";
 import { MainButton } from "../../../UI/Button/Button";
 
-import OfficeImage from "../../../assets/svgviewer-output (18).svg"
+import OfficeImage from "../../../assets/Our Story.png"
 
 const OurStoryContainer = () => {
 

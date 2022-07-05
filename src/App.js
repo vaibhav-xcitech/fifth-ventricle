@@ -7,6 +7,7 @@ import Contact from './Components/Contact/Contact';
 import Buy from './Components/Buy/Buy';
 import Footer from './UI/Footer/Footer';
 import BuyNow from './Components/Buy/BuyNow/BuyNow';
+import AddToCart from "./Components/Buy/BuyNow/AddToCart/AddToCart"
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/chestoBuy" element={<Buy />} />
         <Route path="/chestoBuy/buyNow" element={<BuyNow />} />
+        <Route path="/chestoBuy/buyNow/addtocart" element={<AddToCart />} />
       </Routes>
       <Footer />
     </div>
