@@ -1,91 +1,211 @@
+input {
+    padding: 5px 10px;
+    margin: 8px 0px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    display: inline-block;
+    box-sizing: border-box;
+}
+
 .AddToCartContainer {
     margin-top: 65px;
 
     .mainContainer {
         padding: 10px;
-        display: flex;
-        justify-content: center;
 
-        .MyCartContainer {
-            width: 65%;
-            margin-left: 10px;
-            margin-right: 10px;
-            border-radius: 15px;
-            box-shadow: -3px -3px 3px #ffffff14,
-                5px 5px 3px #0000003d;
+        .cartFirstRow {
+            display: flex;
+            justify-content: center;
 
-            .cartHeaderContainer {
-                width: 100%;
-                display: flex;
 
-                .shoppingButton{
+            .MyCartContainer {
+                width: 65%;
+                margin-left: 10px;
+                margin-right: 10px;
+                border-radius: 15px;
+                box-shadow: -3px -3px 3px #ffffff14,
+                    5px 5px 3px #0000003d;
 
-                    button{
-                        padding: 5px 10px;
+                .cartHeaderContainer {
+                    width: 100%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                }
+
+                .shoppingTableContainer {
+                    width: 100%;
+                    padding: 20px;
+
+                    .shoppingTabel {
+                        width: 100%;
+
+                        tbody {
+
+                            tr {
+                                td {
+                                    text-align: left;
+                                }
+                            }
+                        }
                     }
+
+                    .updateCartButton {
+                        display: flex;
+                    }
+                }
+
+                .checkOutContainer {
+                    padding: 10px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: flex-end;
                 }
             }
 
-            .shoppingTableContainer {
-                width: 100%;
-                padding: 20px;
+            .paymentContainer {
+                width: 35%;
+                margin-left: 10px;
+                margin-right: 10px;
+                border-radius: 15px;
+                box-shadow: -3px -3px 3px #ffffff14,
+                    5px 5px 3px #0000003d;
 
-                .shoppingTabel {
+                .paymentHeaderContainer {
                     width: 100%;
 
-                    tbody {
+                }
 
-                        tr {
-                            td {
-                                text-align: left;
-                            }
+
+                .paymentDetailTable {
+                    padding: 20px;
+
+                    .Details {
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        margin: 10px;
+
+                        .label {
+                            font-weight: 700;
+                        }
+
+                        .totalLabel {
+                            font-size: larger;
+                            font-weight: 800;
                         }
                     }
                 }
             }
         }
 
-        .paymentContainer {
-            width: 35%;
-            margin-left: 10px;
-            margin-right: 10px;
-            border-radius: 15px;
-            box-shadow: -3px -3px 3px #ffffff14,
-                5px 5px 3px #0000003d;
+        .cartSecondrow {
+            display: flex;
+            margin-top: 20px;
 
-            .paymentHeaderContainer {
-                width: 100%;
+            .ShippingContainer {
+                width: 50%;
+                margin-left: 10px;
+                margin-right: 10px;
+                border-radius: 15px;
+                box-shadow: -3px -3px 3px #ffffff14,
+                    5px 5px 3px #0000003d;
 
+                .shippingContent {
+                    padding: 30px;
+
+                    div{
+                        display: flex;
+                        flex-direction: column;
+                        align-items: flex-start;
+                        margin-top: 5px;
+                        width: 100%;
+
+                        input{
+                            width: 100% ;
+                        }
+                    }
+
+                    .nameContainer{
+                        flex-direction: row;
+                        justify-content: space-between;
+
+                        div{
+                            width: 49%;
+                        }
+                    }
+
+                    .addressDetail{
+                        flex-direction: row;
+
+                        input{
+                            width: 95%;
+                        }
+                    }
+
+                    .ContactContainer{
+                        flex-direction: row;
+                        justify-content: space-between;
+
+                        div{
+                            width: 49%;
+                        }
+                    }
+                }
             }
 
+            .billingContainer {
+                width: 50%;
+                margin-left: 10px;
+                margin-right: 10px;
+                border-radius: 15px;
+                box-shadow: -3px -3px 3px #ffffff14,
+                    5px 5px 3px #0000003d;
 
-            .paymentDetailTable {
-                padding: 20px;
+                .billingContent {
+                    padding: 30px;
 
-                table {
-                    width: 100%;
-                }
+                    div{
+                        display: flex;
+                        flex-direction: column;
+                        align-items: flex-start;
+                        margin-top: 5px;
 
-                tr {
-                    display: flex;
-                    justify-content: space-between;
-                    align-items: center;
+                        input{
+                            width: 100% ;
+                        }
+                    }
+
+                    .nameContainer{
+                        flex-direction: row;
+                        justify-content: space-between;
+
+                        div{
+                            width: 49%;
+                        }
+                    }
+
+                    .addressDetail{
+                        flex-direction: row;
+
+                        input{
+                            width: 95%;
+                        }
+                    }
+
+                    .ContactContainer{
+                        flex-direction: row;
+                        justify-content: space-between;
+
+                        div{
+                            width: 49%;
+                        }
+                    }
                 }
             }
         }
     }
 
-    .shippingContainer {
-        width: 96%;
-        padding: 10px;
-        margin-left: 18px;
-        margin-right: 10px;
-        border-radius: 15px;
-        box-shadow: -3px -3px 3px #ffffff14,
-            5px 5px 3px #0000003d;
 
-        .shippingHeaderContainer{
-            width: 100%;
-        }
-    }
+
 }

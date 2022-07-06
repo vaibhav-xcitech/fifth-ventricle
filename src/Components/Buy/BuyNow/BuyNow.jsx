@@ -25,7 +25,7 @@ const BuyNow = () => {
   const navigate = useNavigate();
   const { width } = useWindowDimensions();
 
-  // const [thumbsSwiper, setThumbsSwiper] = useState(null);
+  const [thumbsSwiper, setThumbsSwiper] = useState();
 
   const [selectedOption, setSelectedOption] = useState();
 
@@ -94,7 +94,7 @@ const BuyNow = () => {
               modules={[Navigation, Thumbs]}
               grabCursor={true}
               className={classes.myswiper}
-              // thumbs={{ swiper: thumbsSwiper }}
+              thumbs={{ swiper: thumbsSwiper }}
             >
               {!selectedObject ? (
                 <SwiperSlide>
@@ -123,10 +123,7 @@ const BuyNow = () => {
               slidesPerView={3}
               modules={[Navigation, Thumbs]}
               className={classes.myswiperThumbs}
-              // thumbs={{
-              //   swiper:
-              //     thumbsSwiper && !thumbsSwiper.destroyed ? thumbsSwiper : null,
-              // }}
+              onSwiper={setThumbsSwiper}
             >
               {menu.map((item, index) => (
                 <SwiperSlide>
