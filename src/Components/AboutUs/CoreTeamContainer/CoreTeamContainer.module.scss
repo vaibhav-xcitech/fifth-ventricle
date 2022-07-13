@@ -1,0 +1,51 @@
+.teamContainer {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 100%;
+
+    p {
+        margin-top: 10px;
+        padding-left: 15px;
+        text-align: left;
+    }
+
+    .teamCardsContainer {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        .teamCardRow1 {
+            width: 90%;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            margin: 20px;
+        }
+
+    }
+}
+
+.teamCardRow2 {
+    width: 60%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+@media (max-width: 950px) {
+    .teamCardRow2 {
+        width: 90%;
+    }
+}
+
+.teamResponsiveCard {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

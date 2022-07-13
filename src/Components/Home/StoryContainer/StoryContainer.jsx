@@ -9,13 +9,12 @@ const StoryContainer = () => {
   const { width } = useWindowDimensions();
 
   return (
-
     <div className={classes.homeStoryContainer}>
       <div className={classes.storyMainContainer}>
         <div className={classes.storyMidleContainer}>
           <div className={classes.midleHeaderContainer}>
-            <h4>THE STORY</h4>
-            <h1 style={{ color: "#5fdad5" }}>WHO WE ARE</h1>
+            <h4 style={{ marginBottom: 0 }}>THE STORY</h4>
+            <h1 style={{ color: "#5fdad5", marginTop: 0 }}>WHO WE ARE</h1>
           </div>
 
           {width >= 700 ? (

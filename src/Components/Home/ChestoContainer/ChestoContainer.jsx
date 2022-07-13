@@ -7,30 +7,26 @@ import { MainButton } from "../../../UI/Button/Button";
 import chestoImage from "../../../assets/Our Product Line.png";
 
 const ChestoContainer = () => {
-
-    const { width } = useWindowDimensions();
+  const { width } = useWindowDimensions();
 
   return (
     <>
       <div className={classes.homeChestoContainer}>
         <div className={classes.chestoDesc}>
           <div className={classes.descHeader}>
-            <h4>THE RESULT</h4>
+            <h4 style={{ marginBottom: 0 }}>THE RESULT</h4>
             <h2 style={{ color: "#5fdad5", marginTop: 0 }}>OUR PRODUCT LINE</h2>
           </div>
           {width > 800 ? (
             ""
           ) : (
             <div className={classes.chestoImg}>
-              <img
-                src={chestoImage}
-                alt="Chesto"
-              />
+              <img src={chestoImage} alt="Chesto" />
             </div>
           )}
           <div className={classes.ChestoContent}>
             <h3>INTRODUCING THE REVOLUTIONARY</h3>
-            <h3>DIGITAL STETHOSCOPE</h3>
+            <h3 style={{ marginTop: 0 }}>DIGITAL STETHOSCOPE</h3>
             <h2 style={{ color: "#5fdad5", marginTop: 0 }}>CHESTO</h2>
             <br />
             <p style={{ textAlign: "left" }}>

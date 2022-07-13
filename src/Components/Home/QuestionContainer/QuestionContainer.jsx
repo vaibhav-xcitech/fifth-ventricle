@@ -35,14 +35,13 @@ const QuestionContainer = () => {
 
   window.addEventListener("scroll", bulbLightUp);
 
-
   const { width } = useWindowDimensions();
 
   return (
     <>
       <div className={classes.homeQuestionContainer}>
         <div className={classes.QuestionTextImgContainer}>
-          <h4>THE QUESTION</h4>
+          <h4 style={{ marginBottom: 0 }}>THE QUESTION</h4>
           <h1 style={{ color: "#5fdad5", marginTop: 0 }}>WHY FIFTHVENTRICLE</h1>
         </div>
 

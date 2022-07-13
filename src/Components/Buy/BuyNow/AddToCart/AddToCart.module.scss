@@ -1,10 +1,45 @@
 input {
     padding: 5px 10px;
-    margin: 8px 0px;
+    margin-top: 3px;
+    margin-bottom: 12px;
     border: 1px solid #ccc;
     border-radius: 4px;
+    color: black;
     display: inline-block;
     box-sizing: border-box;
+}
+
+label{
+    margin-bottom: 0;
+}
+
+.checkbox{
+    display: flex;
+    align-items: start;
+    margin-bottom: 10px;
+}
+
+.errorLabelDiv{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+
+    p{
+        margin: 0;
+        color: red;
+        display: none;
+    }
+}
+
+input:invalid label ~ p{
+    display: block;
+}
+
+input:invalid[focused="true"] {
+    background-color: ivory;
+    border: none;
+    outline: 2px solid red;
+    border-radius: 5px;
 }
 
 .AddToCartContainer {
@@ -114,41 +149,49 @@ input {
                 .shippingContent {
                     padding: 30px;
 
-                    div{
+                    span {
                         display: flex;
                         flex-direction: column;
                         align-items: flex-start;
-                        margin-top: 5px;
                         width: 100%;
 
-                        input{
-                            width: 100% ;
+                        input {
+                            width: 100%;
                         }
                     }
 
-                    .nameContainer{
+                    .nameContainer {
                         flex-direction: row;
                         justify-content: space-between;
 
-                        div{
+                        span {
                             width: 49%;
                         }
                     }
 
-                    .addressDetail{
-                        flex-direction: row;
-
-                        input{
-                            width: 95%;
-                        }
-                    }
-
-                    .ContactContainer{
+                    .addressDetail {
                         flex-direction: row;
                         justify-content: space-between;
 
-                        div{
+                        span {
                             width: 49%;
+                        }
+                    }
+
+                    .stateContainer{
+                        div:nth-child(1){
+                            width: 100%;
+                            text-align: left;
+                        }
+                    }
+
+                    .ContactContainer {
+                        flex-direction: row;
+                        justify-content: space-between;
+
+                        span {
+                            width: 49%;
+                            margin-top: 10px;
                         }
                     }
                 }
@@ -163,41 +206,50 @@ input {
                     5px 5px 3px #0000003d;
 
                 .billingContent {
-                    padding: 30px;
+                    padding: 0 30px;
+                    padding-bottom: 30px;
 
-                    div{
+                    span {
                         display: flex;
                         flex-direction: column;
                         align-items: flex-start;
-                        margin-top: 5px;
 
-                        input{
-                            width: 100% ;
+                        input {
+                            width: 100%;
                         }
                     }
 
-                    .nameContainer{
+                    .nameContainer {
                         flex-direction: row;
                         justify-content: space-between;
 
-                        div{
+                        span {
                             width: 49%;
                         }
                     }
 
-                    .addressDetail{
-                        flex-direction: row;
-
-                        input{
-                            width: 95%;
-                        }
-                    }
-
-                    .ContactContainer{
+                    .addressDetail {
                         flex-direction: row;
                         justify-content: space-between;
 
-                        div{
+                        span {
+                            width: 49%;
+                        }
+                    }
+
+                    .stateContainer{
+                        div:nth-child(1){
+                            width: 100%;
+                            text-align: left;
+                        }
+                    }
+
+                    .ContactContainer {
+                        flex-direction: row;
+                        justify-content: space-between;
+
+                        span {
+                            margin-top: 10px;
                             width: 49%;
                         }
                     }

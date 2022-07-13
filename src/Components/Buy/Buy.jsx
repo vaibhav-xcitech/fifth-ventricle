@@ -37,7 +37,7 @@ const Buy = () => {
                   <img
                     src={heroImage}
                     alt="Chesto"
-                    width="350px"
+                    width="250px"
                     height="250px"
                   />
                 </div>

@@ -1,13 +1,12 @@
 import React from "react";
-import classes from "../OurStoryContainer/OurStoryContainer.module.scss"
+import classes from "../OurStoryContainer/OurStoryContainer.module.scss";
 import useWindowDimensions from "../../Home/WindowDimensions";
 import { MainButton } from "../../../UI/Button/Button";
 
-import OfficeImage from "../../../assets/Our Story.png"
+import OfficeImage from "../../../assets/Our Story.png";
 
 const OurStoryContainer = () => {
-
-    const { width } = useWindowDimensions();
+  const { width } = useWindowDimensions();
 
   return (
     <>
@@ -29,8 +28,8 @@ const OurStoryContainer = () => {
 
           <div className={classes.LeftMidleContainer}>
             <div className={classes.LeftTopHeader}>
-              <h4>THE BRIEF</h4>
-              <h1 style={{ color: "#5fdad5" }}>OUR STORY</h1>
+              <h4 style={{ marginBottom: 0, marginTop: 15 }}>THE BRIEF</h4>
+              <h1 style={{ color: "#5fdad5", marginTop: 0 }}>OUR STORY</h1>
             </div>
 
             {width >= 700 ? (
