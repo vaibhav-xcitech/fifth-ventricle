@@ -15,7 +15,8 @@ import "swiper/css/navigation";
 import "swiper/css/thumbs";
 
 // import required modules
-import { Navigation, Thumbs } from "swiper";
+import { Navigation, Pagination, Mousewheel, Keyboard } from "swiper";
+// import { Thumbs } from "swiper";
 
 import chestoBlue from "../../../assets/Chesto_Blue.png";
 import chestoGrey from "../../../assets/Chesto_Gray.png";
@@ -47,7 +48,7 @@ const BuyNow = () => {
         ...styles,
         borderBottom: "1px solid gray",
         color: state.isSelected ? "black" : "blue",
-        backgroundColor: state.data.color
+        backgroundColor: state.data.color,
       };
     },
   };
@@ -58,20 +59,20 @@ const BuyNow = () => {
       label: "Azure Blue",
       image: chestoBlue,
       slug: "azure-blue",
-      color: "#fff"
+      color: "#fff",
     },
     {
       id: 2,
       label: "Deep Spay Gray",
       image: chestoGrey,
-      color: "#fff"
+      color: "#fff",
     },
     {
       id: 3,
       label: "Elegent White",
       image: chestoWhite,
       slug: "elegent-white",
-      color: "#fff"
+      color: "#fff",
     },
   ];
 
@@ -89,11 +90,21 @@ const BuyNow = () => {
           <div className={classes.chestoImgSwiper}>
             <Swiper
               loop={true}
+              cssMode={true}
+              pagination={{
+                clickable: true,
+              }}
               spaceBetween={10}
               navigation={true}
-              modules={[Navigation, Thumbs]}
+              keyboard={true}
+              modules={[Navigation, Pagination, Mousewheel, Keyboard]}
               grabCursor={true}
               className={classes.myswiper}
+              style={{
+                "--swiper-navigation-color": "#4D4E51",
+                "--swiper-navigation-size": "25px",
+                "--swiper-pagination-color": "#5FDAD5",
+              }}
               // thumbs={{ swiper: thumbsSwiper }}
             >
               {!selectedObject ? (
@@ -155,7 +166,7 @@ const BuyNow = () => {
                   loop={true}
                   spaceBetween={10}
                   navigation={true}
-                  modules={[Navigation, Thumbs]}
+                  modules={[Navigation]}
                   grabCursor={true}
                   className={classes.myswiper}
                   // thumbs={{ swiper: thumbsSwiper }}
@@ -172,7 +183,7 @@ const BuyNow = () => {
                   ))}
                 </Swiper>
 
-                <Swiper
+                {/* <Swiper
                   loop={true}
                   spaceBetween={10}
                   slidesPerView={3}
@@ -195,7 +206,7 @@ const BuyNow = () => {
                       </div>
                     </SwiperSlide>
                   ))}
-                </Swiper>
+                </Swiper> */}
               </div>
             )}
             <p>

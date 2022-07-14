@@ -3,7 +3,8 @@ import { useNavigate } from "react-router-dom";
 import classes from "./Buy.module.scss";
 import { MainButton } from "../../UI/Button/Button";
 import useWindowDimensions from "../Home/WindowDimensions";
-import heroImage from "../../assets/svgviewer-output (12).svg";
+import heroImage from "../../assets/Chesto_Buy_2.png";
+import discriptionImg from "../../assets/Chesto_Buy_1.png";
 
 const Buy = () => {
   const { width } = useWindowDimensions();
@@ -16,12 +17,7 @@ const Buy = () => {
   return (
     <div className={classes.buyContainer}>
       <div className={classes.heroContainer}>
-        <div className={classes.heroTextContainer}>
-          <span className={classes.neomorphismText}>CHESTO</span>
-        </div>
-        <div className={classes.heroImageContainer}>
-          <img src={heroImage} alt="HeroImage" />
-        </div>
+        <img src={heroImage} alt="HeroImage" width={"100%"} />
       </div>
 
       <div className={classes.buyChestoContainer}>
@@ -35,7 +31,7 @@ const Buy = () => {
               <>
                 <div className={classes.chestoImg}>
                   <img
-                    src={heroImage}
+                    src={discriptionImg}
                     alt="Chesto"
                     width="250px"
                     height="250px"
@@ -68,7 +64,12 @@ const Buy = () => {
           ""
         ) : (
           <div className={classes.chestoImg}>
-            <img src={heroImage} alt="Chesto" width="350px" height="250px" />
+            <img
+              src={discriptionImg}
+              alt="Chesto"
+              width="350px"
+              height="250px"
+            />
           </div>
         )}
       </div>

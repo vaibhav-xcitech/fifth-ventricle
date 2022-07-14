@@ -64,8 +64,29 @@ const AddToCart = () => {
   const shippingHandleSubmit = (e) => {
     e.preventDefault();
     console.log(shippingData);
+    setShippingData({
+      fname: "",
+      lname: "",
+      companyname: "",
+      address1: "",
+      address2: "",
+      pincode: "",
+      city: "",
+      state: {},
+      phone: "",
+      email: "",
+    });
 
-    // setshippingFocused({ [name]: true });
+    setShippingFocused({
+      fname: false,
+      lname: false,
+      companyname: false,
+      address1: false,
+      pincode: false,
+      city: false,
+      phone: false,
+      email: false,
+    });
   };
 
   const [billingData, setBillingData] = useState({
@@ -107,6 +128,29 @@ const AddToCart = () => {
   const billingHandleSubmit = (e) => {
     e.preventDefault();
     console.log(billingData);
+    setBillingData({
+      fname: "",
+      lname: "",
+      companyname: "",
+      address1: "",
+      address2: "",
+      pincode: "",
+      city: "",
+      state: {},
+      phone: "",
+      email: "",
+    });
+
+    setBillingFocused({
+      fname: false,
+      lname: false,
+      companyname: false,
+      address1: false,
+      pincode: false,
+      city: false,
+      phone: false,
+      email: false,
+    });
   };
 
   const handleCheckBox = () => {
@@ -223,7 +267,10 @@ const AddToCart = () => {
             </div>
             <Divider />
             <div className={classes.shippingContent}>
-              <form className={classes.billingContent}>
+              <form
+                className={classes.billingContent}
+                onSubmit={shippingHandleSubmit}
+              >
                 <span className={classes.nameContainer}>
                   <span>
                     <div className={classes.errorLabelDiv}>
@@ -241,6 +288,7 @@ const AddToCart = () => {
                       name="fname"
                       autoComplete="off"
                       id="fname"
+                      value={shippingData.fname}
                       onChange={shippingHandleInput}
                       pattern="^[A-Za-z0-9]{3,16}$"
                       onBlur={shippingHandleFocus}
@@ -264,6 +312,7 @@ const AddToCart = () => {
                       name="lname"
                       autoComplete="off"
                       id="lname"
+                      value={shippingData.lname}
                       onChange={shippingHandleInput}
                       pattern="^[A-Za-z0-9]{3,16}$"
                       onBlur={shippingHandleFocus}
@@ -288,8 +337,9 @@ const AddToCart = () => {
                     name="companyname"
                     autoComplete="off"
                     id="companyname"
+                    value={shippingData.companyname}
                     onChange={shippingHandleInput}
-                    pattern="^[A-Za-z0-9]{3,26}$"
+                    pattern="^[A-Za-z0-9}_ ]{3,26}$"
                     onBlur={shippingHandleFocus}
                     focused={shippingFocused.companyname.toString()}
                     required
@@ -311,6 +361,7 @@ const AddToCart = () => {
                     name="address1"
                     autoComplete="off"
                     id="address1"
+                    value={shippingData.address1}
                     onChange={shippingHandleInput}
                     pattern="^[#.0-9a-zA-Z\s,-]+$"
                     onBlur={shippingHandleFocus}
@@ -323,6 +374,7 @@ const AddToCart = () => {
                     name="address2"
                     autoComplete="off"
                     id="address2"
+                    value={shippingData.address2}
                     onChange={shippingHandleInput}
                   />
                 </span>
@@ -343,6 +395,7 @@ const AddToCart = () => {
                       name="pincode"
                       autoComplete="off"
                       id="pincode"
+                      value={shippingData.pincode}
                       maxLength="6"
                       onChange={shippingHandleInput}
                       pattern="^[1-9][0-9]{5}$"
@@ -367,6 +420,7 @@ const AddToCart = () => {
                       name="city"
                       autoComplete="off"
                       id="city"
+                      value={shippingData.city}
                       onChange={shippingHandleInput}
                       pattern="^[a-zA-Z]+(?:[\s-][a-zA-Z]+)*$"
                       onBlur={shippingHandleFocus}
@@ -381,7 +435,7 @@ const AddToCart = () => {
                     styles={colorStyles}
                     placeholder="Select States..."
                     name="state"
-                    // value={shippingData.state}
+                    value={shippingData.state}
                     onChange={(e) =>
                       setShippingData({ ...shippingData, state: e })
                     }
@@ -404,6 +458,7 @@ const AddToCart = () => {
                       name="phone"
                       autoComplete="off"
                       id="phone"
+                      value={shippingData.phone}
                       onChange={shippingHandleInput}
                       pattern="^(?:(?:\+|0{0,2})91(\s*|[\-])?|[0]?)?([6789]\d{2}([ -]?)\d{3}([ -]?)\d{4})$"
                       onBlur={shippingHandleFocus}
@@ -427,6 +482,7 @@ const AddToCart = () => {
                       name="email"
                       autoComplete="off"
                       id="email"
+                      value={shippingData.email}
                       onBlur={shippingHandleFocus}
                       focused={shippingFocused.email.toString()}
                       onChange={shippingHandleInput}
@@ -441,8 +497,7 @@ const AddToCart = () => {
                     borderRadius: 10,
                     padding: "0px  10px",
                   }}
-                  type={"button"}
-                  onClick={shippingHandleSubmit}
+                  type={"submit"}
                 >
                   Submit
                 </MainButton>
@@ -456,7 +511,10 @@ const AddToCart = () => {
               </h4>
             </div>
             <Divider />
-            <form className={classes.billingContent}>
+            <form
+              className={classes.billingContent}
+              onSubmit={billingHandleSubmit}
+            >
               <div className={classes.checkbox}>
                 <input
                   type="checkbox"
@@ -623,8 +681,7 @@ const AddToCart = () => {
                   borderRadius: 10,
                   padding: "0px  10px",
                 }}
-                type={"button"}
-                onClick={billingHandleSubmit}
+                type={"submit"}
               >
                 Continue For CheckOut
               </MainButton>
