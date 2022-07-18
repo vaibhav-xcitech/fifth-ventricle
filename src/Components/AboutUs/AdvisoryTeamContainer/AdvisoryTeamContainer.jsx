@@ -1,6 +1,9 @@
-import React from "react";
+import React, { useEffect } from "react";
 import classes from "../AdvisoryTeamContainer/AdvisoryTeamContainer.module.scss";
 import TeamCard from "../../../UI/TeamCard/TeamCard";
+import Aos from "aos";
+import "aos/dist/aos.css";
+
 
 import GeneralSurgeonImg from "../../../assets/svgviewer-output (17).svg";
 import MBBS1Img from "../../../assets/svgviewer-output (16).svg";
@@ -8,6 +11,10 @@ import MBBS2Img from "../../../assets/svgviewer-output (15).svg";
 import ToddlerImg from "../../../assets/svgviewer-output (21).svg";
 
 const AdvisoryTeamContainer = () => {
+  useEffect(() => {
+    Aos.init({ duration: 1500 });
+  }, []);
+
   return (
     <div className={classes.ExtraTeamContainer}>
       <div className={classes.teamHeaderContainer}>

@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import classes from './Contact.module.scss';
-// import { TextField } from 'ui-neumorphism'   
-// import { TextArea } from 'ui-neumorphism'
+import Aos from "aos";
+import "aos/dist/aos.css";
 import fonderimg from '../../assets/svgviewer-output (22).svg'
 import quats from '../../assets/svgviewer-output (27).svg'
 import whatsappImg from '../../assets/svgviewer-output (26).svg'
@@ -11,15 +11,19 @@ import copyImg from '../../assets/svgviewer-output (23).svg'
 
 const Contact = () => {
 
+    useEffect(() => {
+        Aos.init({ duration: 1200 });
+      }, []);
+
     return (
         <>
             <div className={classes.contactContainer}>
-                <div className={classes.contactUsHeader}>
+                <div data-aos="fade-down" className={classes.contactUsHeader}>
                     <h1>Contact Us</h1>
                     <h4>We always love to hear from you.</h4>
                 </div>
                 <div className={classes.contactBodyContainer}>
-                    <div className={classes.contactUsContainer}>
+                    <div data-aos="fade-right" className={classes.contactUsContainer}>
                         <div>
                             <img src={fonderimg} alt="fonder" width="60px" height="60px" />
                         </div>
@@ -60,7 +64,7 @@ const Contact = () => {
                             </div>
                         </div>
                     </div>
-                    <div className={classes.msgtUsContainer}>
+                    <div data-aos="fade-left" className={classes.msgtUsContainer}>
                         <div className={classes.msgtUsHeader}>
                             <h1>Send Us a Message!</h1>
                         </div>

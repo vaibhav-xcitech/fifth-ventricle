@@ -1,10 +1,12 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import classes from "../QuestionContainer/QuestionContainer.module.scss";
 import useWindowDimensions from "../WindowDimensions";
-import Card from "../../../UI/Card/Card";
+import QuestionCart from "../../../UI/QuestionCart/QuestionCart";
+import Aos from "aos";
+import "aos/dist/aos.css";
 
 import HealthcareImg from "../../../assets/Health.png";
-import AIimg from "../../../assets/svgviewer-output (30).svg";
+import AIimg from "../../../assets/Artificial Intelligence.png";
 import TelemedicineImg from "../../../assets/telemedicine.png";
 import NormalBulb from "../../../assets/01.png";
 import lightUpBulb from "../../../assets/02.png";
@@ -12,25 +14,81 @@ import lightupshade1 from "../../../assets/03.png";
 import lightupshade2 from "../../../assets/04.png";
 
 const QuestionContainer = () => {
+  useEffect(() => {
+    Aos.init({ duration: 1500 });
+  }, []);
+
   const [image, setImage] = useState(NormalBulb);
 
   const bulbLightUp = () => {
-    if (window.scrollY > 2250) {
-      setImage(lightUpBulb);
-      if (window.scrollY > 2400) {
-        setImage(lightupshade1);
-        if (window.scrollY > 2500) {
-          setImage(lightupshade2);
-        } else {
+    if (window.screen.width > 1250) {
+      if (window.scrollY > 2000) {
+        setImage(lightUpBulb);
+        if (window.scrollY > 2190) {
           setImage(lightupshade1);
+          if (window.scrollY > 2300) {
+            setImage(lightupshade2);
+          } else {
+            setImage(lightupshade1);
+          }
+        } else {
+          setImage(lightUpBulb);
         }
       } else {
-        setImage(lightUpBulb);
+        setImage(NormalBulb);
       }
-    } else {
-      setImage(NormalBulb);
     }
-    // console.log(window.scrollY);
+    if (window.screen.width < 1300) {
+      if (window.scrollY > 2000) {
+        setImage(lightUpBulb);
+        if (window.scrollY > 2100) {
+          setImage(lightupshade1);
+          if (window.scrollY > 2300) {
+            setImage(lightupshade2);
+          } else {
+            setImage(lightupshade1);
+          }
+        } else {
+          setImage(lightUpBulb);
+        }
+      } else {
+        setImage(NormalBulb);
+      }
+    }
+    if (window.screen.width > 800) {
+      if (window.scrollY > 1950) {
+        setImage(lightUpBulb);
+        if (window.scrollY > 2150) {
+          setImage(lightupshade1);
+          if (window.scrollY > 2300) {
+            setImage(lightupshade2);
+          } else {
+            setImage(lightupshade1);
+          }
+        } else {
+          setImage(lightUpBulb);
+        }
+      } else {
+        setImage(NormalBulb);
+      }
+    }
+    if (window.screen.width < 550) {
+      if (window.scrollY > 2800) {
+        setImage(lightUpBulb);
+        if (window.scrollY > 2900) {
+          setImage(lightupshade1);
+          if (window.scrollY > 3000) {
+            setImage(lightupshade2);
+          } else {
+            setImage(lightupshade1);
+          }
+        } else {
+          setImage(lightUpBulb);
+        }
+      } else {
+        setImage(NormalBulb);
+      }
+    }
   };
 
   window.addEventListener("scroll", bulbLightUp);
@@ -46,20 +104,6 @@ const QuestionContainer = () => {
         </div>
 
         <div className={classes.bulbImgContainer}>
-          {/* {transition(
-            (style, item) =>
-              item && (
-                <animated.img
-                  style={style}
-                  src={image}
-                  alt="BulbLightupImg"
-                  className={classes.BulbLightupImg}
-                  width="300px"
-                  height="300px"
-                />
-              )
-          )} */}
-
           <img
             src={image}
             alt="BulbLightupImg"
@@ -74,7 +118,7 @@ const QuestionContainer = () => {
         ) : (
           <div className={classes.infoCards}>
             <div className={classes.cardsRow1}>
-              <Card
+              <QuestionCart
                 image={HealthcareImg}
                 description={
                   <>
@@ -91,7 +135,7 @@ const QuestionContainer = () => {
               />
             </div>
             <div className={classes.cardsRow2}>
-              <Card
+              <QuestionCart
                 image={AIimg}
                 description={
                   <>
@@ -108,7 +152,7 @@ const QuestionContainer = () => {
               />
             </div>
             <div className={classes.cardsRow3}>
-              <Card
+              <QuestionCart
                 image={TelemedicineImg}
                 description={
                   <>
@@ -132,7 +176,7 @@ const QuestionContainer = () => {
         ) : (
           <div className={classes.responsiveInfoCards}>
             <div className={classes.cardsRow1}>
-              <Card
+              <QuestionCart
                 image={HealthcareImg}
                 description={
                   <>
@@ -147,7 +191,7 @@ const QuestionContainer = () => {
                   </>
                 }
               />
-              <Card
+              <QuestionCart
                 image={AIimg}
                 description={
                   <>
@@ -164,7 +208,7 @@ const QuestionContainer = () => {
               />
             </div>
             <div className={classes.cardsRow2}>
-              <Card
+              <QuestionCart
                 image={TelemedicineImg}
                 description={
                   <>

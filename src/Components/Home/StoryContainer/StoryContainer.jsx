@@ -1,11 +1,18 @@
-import React from "react";
+import React, { useEffect } from "react";
 import classes from "../StoryContainer/StoryContainer.module.scss";
 import { MainButton } from "../../../UI/Button/Button";
 import useWindowDimensions from "../WindowDimensions";
+import Aos from "aos";
+import "aos/dist/aos.css";
 
 import OfficeImage1 from "../../../assets/Chesto_Who We Are.png";
 
 const StoryContainer = () => {
+
+  useEffect(() => {
+    Aos.init({ duration: 1500 });
+  }, []);
+
   const { width } = useWindowDimensions();
 
   return (
@@ -32,7 +39,7 @@ const StoryContainer = () => {
           )}
 
           <div className={classes.storyCardsContainer}>
-            <div className={classes.storyUpperCards}>
+            <div data-aos="flip-left" className={classes.storyUpperCards}>
               <div className={classes.storyCards}>
                 <h2>OUR STORY</h2>
                 <p>
@@ -50,7 +57,7 @@ const StoryContainer = () => {
                 </p>
               </div>
             </div>
-            <div className={classes.storyLowerCards}>
+            <div data-aos="flip-right" className={classes.storyLowerCards}>
               <div className={classes.storyCards}>
                 <h2>OUR MISSION</h2>
                 <p>

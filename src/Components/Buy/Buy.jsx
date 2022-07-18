@@ -1,12 +1,19 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import classes from "./Buy.module.scss";
 import { MainButton } from "../../UI/Button/Button";
 import useWindowDimensions from "../Home/WindowDimensions";
+import Aos from "aos";
+import "aos/dist/aos.css";
+
 import heroImage from "../../assets/Chesto_Buy_2.png";
 import discriptionImg from "../../assets/Chesto_Buy_1.png";
 
 const Buy = () => {
+  useEffect(() => {
+    Aos.init({ duration: 1500 });
+  }, []);
+
   const { width } = useWindowDimensions();
   const navigate = useNavigate();
 
@@ -16,7 +23,7 @@ const Buy = () => {
 
   return (
     <div className={classes.buyContainer}>
-      <div className={classes.heroContainer}>
+      <div data-aos="fade-up" className={classes.heroContainer}>
         <img src={heroImage} alt="HeroImage" width={"100%"} />
       </div>
 

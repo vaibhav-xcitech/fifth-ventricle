@@ -1,16 +1,18 @@
 import React, { useEffect } from "react";
-import Classes from "./TeamCard.module.scss";
+import Classes from "./Question.module.scss";
 import Aos from "aos";
 import "aos/dist/aos.css";
 
-const TeamCard = (props) => {
+const QuestionCart = (props) => {
+
   useEffect(() => {
     Aos.init({ duration: 1500 });
   }, []);
 
   const { image, alter, description } = props;
+  
   return (
-    <div data-aos="flip-up" data-aos-offset="300" className={Classes.Card}>
+    <div data-aos="fade-up" className={Classes.Card}>
       <div className={Classes.header}>
         <div className={Classes.circle}>
           <div className={Classes.img}>
@@ -23,4 +25,4 @@ const TeamCard = (props) => {
   );
 };
 
-export default TeamCard;
+export default QuestionCart;
