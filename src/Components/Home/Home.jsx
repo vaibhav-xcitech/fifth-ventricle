@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 
 import HeroContainer from "./HeroContainer/HeroContainer";
 import JourneyContainer from "./JourneyContainer/JourneyContainer";
@@ -8,6 +9,11 @@ import ChestoContainer from "./ChestoContainer/ChestoContainer";
 import FuturePlanContainer from "./FuturePlanContainer/FuturePlanContainer";
 
 const Home = () => {
+
+  const location = useLocation();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location])
   return (
     <div>
       <HeroContainer />

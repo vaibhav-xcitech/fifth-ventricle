@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import classes from "../HeroContainer/HeroContainer.module.scss";
 import { MainButton } from "../../../UI/Button/Button";
+import { useNavigate } from "react-router-dom";
 
 import Typewriter from "typewriter-effect";
 import heroImage from "../../../assets/Comp 1.mp4";
@@ -10,6 +11,7 @@ import IsoAssured from "../../../assets/ISO13485.png";
 
 const HeroContainer = () => {
   const vidref = useRef();
+  const navigate = useNavigate();
 
   useEffect(() => {
     vidref.current.play(console.log("hello"));
@@ -38,7 +40,7 @@ const HeroContainer = () => {
           <h4 style={{ margin: 15 }}>
             Smart Digital Stethoscope Making Company
           </h4>
-          <MainButton type="button">
+          <MainButton type="button" onClick={() => navigate("/inqurie")}>
             <b>Enquire now</b>
           </MainButton>
         </div>

@@ -13,7 +13,6 @@ import {
     CenterDiv
 } from './Navbar.style';
 import { FaFacebookF } from 'react-icons/fa';
-import { FaTwitter } from 'react-icons/fa';
 import { FaLinkedinIn } from 'react-icons/fa';
 import { FaInstagram } from 'react-icons/fa';
 import { Fab } from 'ui-neumorphism';
@@ -47,9 +46,6 @@ const Navbar = () => {
                                 <span style={{ color: "#fff" }}><FaFacebookF /></span>
                             </Fab>
                             <Fab style={{ margin: 5 }} dark color='var(--primary)'>
-                                <span style={{ color: "#fff" }}><FaTwitter /></span>
-                            </Fab>
-                            <Fab style={{ margin: 5 }} dark color='var(--primary)'>
                                 <span style={{ color: "#fff" }}><FaLinkedinIn /></span>
                             </Fab>
                             <Fab style={{ margin: 5 }} dark color='var(--primary)'>
@@ -72,14 +68,12 @@ const Navbar = () => {
                                 <span style={{ color: "#fff" }}><FaFacebookF /></span>
                             </Fab>
                             <Fab style={{ margin: 5 }} dark color='var(--primary)'>
-                                <span style={{ color: "#fff" }}><FaTwitter /></span>
-                            </Fab>
-                            <Fab style={{ margin: 5 }} dark color='var(--primary)'>
                                 <span style={{ color: "#fff" }}><FaLinkedinIn /></span>
                             </Fab>
                             <Fab style={{ margin: 5 }} dark color='var(--primary)'>
                                 <span style={{ color: "#fff" }}><FaInstagram /></span>
                             </Fab>
+                            
                         </div>
                     </NavbarExtendedContainer>
                 )

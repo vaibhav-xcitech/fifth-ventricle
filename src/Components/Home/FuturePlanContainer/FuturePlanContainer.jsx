@@ -12,9 +12,9 @@ import "swiper/css/pagination";
 // import required modules
 import { Navigation, Pagination, Mousewheel, Keyboard } from "swiper";
 
-import chestoBlue from "../../../assets/Chesto_Blue.png";
-import chestoGrey from "../../../assets/Chesto_Gray.png";
-import chestoWhite from "../../../assets/Chesto_White.png";
+import chestoBlue from "../../../assets/Blue.png";
+import chestoGrey from "../../../assets/Gray.png";
+import chestoWhite from "../../../assets/White.png";
 
 const FuturePlanContainer = () => {
   return (

@@ -29,17 +29,18 @@ const BuyNow = () => {
   // const [thumbsSwiper, setThumbsSwiper] = useState(null);
 
   const [selectedOption, setSelectedOption] = useState();
+  const [addToCart, setAddToCart] = useState(false);
 
   const [counter, setCounter] = useState(1);
-
-  const selectedObject = selectedOption;
 
   const handleIncrement = () => {
     setCounter(counter + 1);
   };
 
   const handleDecrement = () => {
-    setCounter(counter - 1);
+    if (counter > 1) {
+      setCounter((counte) => counte - 1);
+    }
   };
 
   const colorStyles = {
@@ -53,6 +54,18 @@ const BuyNow = () => {
     },
   };
 
+  console.log(selectedOption);  
+
+  const handleAddToCart = () => {
+    if (!selectedOption === false) {
+      navigate("/chestoBuy/BuyNow/addtocart");
+      const cartData = {selectedOption, counter}
+      console.log(cartData);
+    } else {
+      setAddToCart(true);
+    }
+  };
+
   const menu = [
     {
       id: 1,
@@ -60,12 +73,16 @@ const BuyNow = () => {
       image: chestoBlue,
       slug: "azure-blue",
       color: "#fff",
+      actualPrice: 14999,
+      discountPrice: 9999,
     },
     {
       id: 2,
       label: "Deep Spay Gray",
       image: chestoGrey,
       color: "#fff",
+      actualPrice: 14999,
+      discountPrice: 10499,
     },
     {
       id: 3,
@@ -73,13 +90,10 @@ const BuyNow = () => {
       image: chestoWhite,
       slug: "elegent-white",
       color: "#fff",
+      actualPrice: 14999,
+      discountPrice: 11499,
     },
   ];
-
-  // const selectedOptionTemp = [...selectedOption];
-  // console.log(selectedOption);
-  // console.log(!Array.isArray(selectedOption));
-  // console.log(selectedOptionTemp);
 
   return (
     <div className={classes.BuyNowContainer}>
@@ -107,7 +121,7 @@ const BuyNow = () => {
               }}
               // thumbs={{ swiper: thumbsSwiper }}
             >
-              {!selectedObject ? (
+              {!selectedOption ? (
                 <SwiperSlide>
                   <img
                     src="https://www.fifthventricle.in/wp-content/uploads/2022/06/Chesto-Colors.png"
@@ -119,9 +133,9 @@ const BuyNow = () => {
               ) : (
                 <SwiperSlide>
                   <img
-                    src={selectedObject.image}
+                    src={selectedOption.image}
                     alt="chestoImage"
-                    width="300px"
+                    width="500px"
                     height="300px"
                   />
                 </SwiperSlide>
@@ -225,20 +239,38 @@ const BuyNow = () => {
               </MainButton>
             </div>
 
-            <div className={classes.colorCartContainer}>
+            <form className={classes.colorCartContainer}>
               <h4>Colors :</h4>
               <Select
                 options={menu}
                 styles={colorStyles}
                 onChange={setSelectedOption}
+                name="select"
+                id="select"
+                required
               />
+              {addToCart === true && !selectedOption === true && (
+                <span style={{ color: "red", marginTop: "10px" }}>
+                  Please Select Chesto Color
+                </span>
+              )}
+
+              {selectedOption && (
+                <h4 style={{ margin: "25px 0px" }}>
+                  <del style={{ marginRight: "10px", opacity: 0.5 }}>
+                    &#x20b9; 14,999
+                  </del>
+                  &#x20b9; {selectedOption.discountPrice}
+                </h4>
+              )}
               <MainButton
                 style={{ padding: "5px 15px", borderRadius: "15px" }}
-                onClick={() => navigate("/chestoBuy/BuyNow/addtocart")}
+                onClick={handleAddToCart}
+                type={"button"}
               >
                 Add To Cart
               </MainButton>
-            </div>
+            </form>
           </div>
         </div>
       </div>

@@ -3,9 +3,9 @@ import { useNavigate } from "react-router-dom";
 import classes from "../AddToCart/AddToCart.module.scss";
 import { Divider } from "@mui/material";
 import Select from "react-select";
+import { BiErrorAlt } from "react-icons/bi";
 import { MainButton } from "../../../../UI/Button/Button";
 import { Statelabel } from "../../../../assets/StateName";
-import { BiErrorAlt } from "react-icons/bi";
 
 const AddToCart = () => {
   const navigate = useNavigate();

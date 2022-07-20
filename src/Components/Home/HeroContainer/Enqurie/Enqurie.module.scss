@@ -1,0 +1,95 @@
+.EnqurieContainer {
+    margin-top: 65px;
+    padding: 10px;
+
+    .enqurieMain {
+        width: 100%;
+        border-radius: 15px;
+        box-shadow: -3px -3px 3px #ffffff14,
+            5px 5px 3px #0000003d;
+
+        .liveDemoHeader {
+            padding: 7px 0;
+        }
+
+        .liveDemoContainer {
+            padding: 20px;
+
+            .liveDemoForm {
+
+                .nameContainer {
+                    display: flex;
+                    width: 100%;
+                    justify-content: space-between;
+
+                    span {
+                        display: flex;
+                        flex-direction: column;
+                        width: 49%;
+
+                        .errorLabelDiv {
+                            display: flex;
+                            justify-content: space-between;
+                            width: 100%;
+                        }
+                    }
+                }
+
+                .phoneCityContainer {
+                    display: flex;
+                    width: 100%;
+                    justify-content: space-between;
+
+                    span {
+                        display: flex;
+                        flex-direction: column;
+                        width: 49%;
+
+                        .errorLabelDiv {
+                            display: flex;
+                            justify-content: space-between;
+                            width: 100%;
+                        }
+                    }
+                }
+
+                .emailContainer {
+
+                    span {
+                        width: 100%;
+                        display: flex;
+                        flex-direction: column;
+
+                        .errorLabelDiv {
+                            display: flex;
+                            justify-content: space-between;
+                            width: 100%;
+                        }
+                    }
+                }
+
+                .TimingContainer {
+                    width: 100%;
+
+                    span {
+                        width: 100%;
+                        display: flex;
+                        flex-direction: column;
+
+                        .errorLabelDiv {
+                            display: flex;
+                            justify-content: space-between;
+                            width: 100%;
+                        }
+
+                        textarea {
+                            color: black;
+                            padding: 8px;
+                            border-radius: 5px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

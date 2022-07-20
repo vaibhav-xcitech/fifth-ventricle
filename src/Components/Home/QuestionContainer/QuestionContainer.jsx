@@ -124,11 +124,10 @@ const QuestionContainer = () => {
                   <>
                     <h3>Accessible Healthcare</h3>
                     <br />
-                    <p>
-                      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                      Quos cum unde maxime sapiente officia debitis officiis
-                      voluptate modi temporibus molestiae. Quae incidunt culpa
-                      accusamus enim id voluptate perferendis sed voluptatem.
+                    <p style={{ fontSize: 16 }}>
+                      Our smart digital stethoscope can ease the diagnosis, and
+                      hence treatment, reducing apprehension on both the Doctor
+                      and the Patient.
                     </p>
                   </>
                 }
@@ -141,11 +140,10 @@ const QuestionContainer = () => {
                   <>
                     <h3>Artificial interlligence</h3>
                     <br />
-                    <p>
-                      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                      Quos cum unde maxime sapiente officia debitis officiis
-                      voluptate modi temporibus molestiae. Quae incidunt culpa
-                      accusamus enim id voluptate perferendis sed voluptatem.
+                    <p style={{ fontSize: 16 }}>
+                      Introducing long due upgrades in healthcare with our
+                      artificial intelligence capabilities. We are continuously
+                      improving and enhancing our AI algorithms.
                     </p>
                   </>
                 }
@@ -158,11 +156,10 @@ const QuestionContainer = () => {
                   <>
                     <h3>Telemedicine</h3>
                     <br />
-                    <p>
-                      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                      Quos cum unde maxime sapiente officia debitis officiis
-                      voluptate modi temporibus molestiae. Quae incidunt culpa
-                      accusamus enim id voluptate perferendis sed voluptatem.
+                    <p style={{ fontSize: 16 }}>
+                      Virtual Care and Virtual Doctor visits help the Patients
+                      to stay connected to their Doctors; not matter at what
+                      part of the world they are.
                     </p>
                   </>
                 }
@@ -182,11 +179,10 @@ const QuestionContainer = () => {
                   <>
                     <h3>Accessible Healthcare</h3>
                     <br />
-                    <p>
-                      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                      Quos cum unde maxime sapiente officia debitis officiis
-                      voluptate modi temporibus molestiae. Quae incidunt culpa
-                      accusamus enim id voluptate perferendis sed voluptatem.
+                    <p style={{ fontSize: 16 }}>
+                      Our smart digital stethoscope can ease the diagnosis, and
+                      hence treatment, reducing apprehension on both the Doctor
+                      and the Patient.
                     </p>
                   </>
                 }
@@ -197,11 +193,10 @@ const QuestionContainer = () => {
                   <>
                     <h3>Artificial interlligence</h3>
                     <br />
-                    <p>
-                      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                      Quos cum unde maxime sapiente officia debitis officiis
-                      voluptate modi temporibus molestiae. Quae incidunt culpa
-                      accusamus enim id voluptate perferendis sed voluptatem.
+                    <p style={{ fontSize: 16 }}>
+                      Introducing long due upgrades in healthcare with our
+                      artificial intelligence capabilities. We are continuously
+                      improving and enhancing our AI algorithms.
                     </p>
                   </>
                 }
@@ -214,11 +209,10 @@ const QuestionContainer = () => {
                   <>
                     <h3>Telemedicine</h3>
                     <br />
-                    <p>
-                      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                      Quos cum unde maxime sapiente officia debitis officiis
-                      voluptate modi temporibus molestiae. Quae incidunt culpa
-                      accusamus enim id voluptate perferendis sed voluptatem.
+                    <p style={{ fontSize: 16 }}>
+                      Virtual Care and Virtual Doctor visits help the Patients
+                      to stay connected to their Doctors; not matter at what
+                      part of the world they are.
                     </p>
                   </>
                 }

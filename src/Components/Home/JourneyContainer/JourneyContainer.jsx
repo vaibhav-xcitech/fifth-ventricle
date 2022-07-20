@@ -1,7 +1,7 @@
 import React from "react";
 import classes from "../JourneyContainer/JourneyContainer.module.scss";
 import useWindowDimensions from "../WindowDimensions";
-import { MainButton } from "../../../UI/Button/Button";
+// import { MainButton } from "../../../UI/Button/Button";
 
 import OfficeImage2 from "../../../assets/Chesto_Project Research.png";
 
@@ -55,27 +55,20 @@ const JourneyContainer = () => {
             <div className={classes.journeyCardsContainer}>
               <div className={classes.journeyUpperContainer}>
                 <p>
-                  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nam
-                  reprehenderit necessitatibus rerum labore animi quas iure a
-                  natus voluptatibus voluptate rem aliquid, nesciunt qui,
-                  dolores consectetur, soluta odio ad doloremque et quia.
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero optio officia mollitia quibusdam possimus neque provident. Animi temporibus sequi accusantium, pariatur omnis provident quisquam deleniti eos dolorum nesciunt tenetur architecto excepturi illum incidunt quibusdam fugit, ullam ad aut rerum sunt libero praesentium eum odio? Consequuntur, tempora quidem reprehenderit facilis eum praesentium nemo eius, cum quae perferendis laudantium. Sint, sapiente praesentium.
                 </p>
               </div>
               <div className={classes.journeyLowerContainer}>
                 <p>
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                  Nobis incidunt magni praesentium ullam ipsum ratione maiores
-                  quos, eos error quod soluta cupiditate autem suscipit et
-                  veniam possimus pariatur voluptatum atque ut rerum molestiae
-                  vel.asperiores!
+                  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Beatae dicta deleniti quidem, perspiciatis dolore similique. Consequatur, consequuntur at exercitationem voluptatum perspiciatis eaque sed, odit saepe nemo alias ullam corporis tempore dignissimos voluptate nostrum cumque autem hic. Sed tempore aliquid a. Temporibus autem fugit distinctio id magnam perspiciatis. Atque odio vero facilis deserunt nam. Labore obcaecati voluptatum illo atque voluptates in.
                 </p>
               </div>
             </div>
-            <div className={classes.journeyBottomContainer}>
+            {/* <div className={classes.journeyBottomContainer}>
               <MainButton type="button">
                 <b>Know More</b>
               </MainButton>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

@@ -1,3 +1,11 @@
+textarea:invalid[focused="true"] {
+    background-color: ivory;
+    border: none;
+    outline: 2px solid red;
+    border-radius: 5px;
+}
+
+
 .contactContainer {
     width: 100%;
     margin-top: 65px;
@@ -46,6 +54,7 @@
 
                 .alignLeftDiv {
                     display: flex;
+                    align-items: center;
 
                     p {
                         margin-left: 25px;

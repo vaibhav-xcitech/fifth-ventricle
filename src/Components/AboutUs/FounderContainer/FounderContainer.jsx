@@ -1,12 +1,18 @@
-import React from "react";
+import React, { useEffect } from "react";
 import classes from "../FounderContainer/FounderContainer.module.scss";
 import useWindowDimensions from "../../Home/WindowDimensions";
-import { MainButton } from "../../../UI/Button/Button";
+import Aos from "aos";
+import "aos/dist/aos.css";
+// import { MainButton } from "../../../UI/Button/Button";
 
 import FounderImage from "../../../assets/Hirak Bhai.png";
 
 const FounderContainer = () => {
   const { width } = useWindowDimensions();
+
+  useEffect(() => {
+    Aos.init({ duration: 1200 });
+  }, []);
   return (
     <div className={classes.homeThirdContainer}>
       <div className={classes.MidleContainer}>
@@ -54,17 +60,17 @@ const FounderContainer = () => {
               </p>
             </div>
           </div>
-          <div className={classes.homeBottomContainer}>
+          {/* <div className={classes.homeBottomContainer}>
             <MainButton type="button">
               <b>Know More</b>
             </MainButton>
-          </div>
+          </div> */}
         </div>
 
         {width <= 700 ? (
           ""
         ) : (
-          <div className={classes.homeRightContainer}>
+          <div  data-aos="fade-right" className={classes.homeRightContainer}>
             <div className={classes.imgWrapper}>
               <img
                 src={FounderImage}

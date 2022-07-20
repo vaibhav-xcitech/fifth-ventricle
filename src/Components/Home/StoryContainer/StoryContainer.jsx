@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import classes from "../StoryContainer/StoryContainer.module.scss";
-import { MainButton } from "../../../UI/Button/Button";
+// import { MainButton } from "../../../UI/Button/Button";
 import useWindowDimensions from "../WindowDimensions";
 import Aos from "aos";
 import "aos/dist/aos.css";
@@ -8,7 +8,6 @@ import "aos/dist/aos.css";
 import OfficeImage1 from "../../../assets/Chesto_Who We Are.png";
 
 const StoryContainer = () => {
-
   useEffect(() => {
     Aos.init({ duration: 1500 });
   }, []);
@@ -76,11 +75,11 @@ const StoryContainer = () => {
               </div>
             </div>
           </div>
-          <div className={classes.journeyBottomContainer}>
-            <MainButton type="button">
+          {/* <div className={classes.journeyBottomContainer}>
+            <MainButton type="button" onClick={() => navigate("./aboutus")}>
               <b>Know More</b>
             </MainButton>
-          </div>
+          </div> */}
         </div>
 
         {width <= 700 ? (

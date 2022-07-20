@@ -3,10 +3,24 @@ import CountUp from "react-countup";
 import classes from "../ChestoContainer/ChestoContainer.module.scss";
 import useWindowDimensions from "../WindowDimensions";
 import { MainButton } from "../../../UI/Button/Button";
+import { useNavigate } from "react-router-dom";
+import { saveAs } from "file-saver";
 
 import chestoImage from "../../../assets/Our Product Line.png";
 
+import img from "../../../assets/Chesto_brochure_catalogue.pdf";
+
 const ChestoContainer = () => {
+  const navigate = useNavigate();
+
+  const handleRedirect = () => {
+    navigate("/chestoBuy/buyNow");
+  };
+
+  const handleDownload = () => {
+    saveAs(img);
+  }
+
   const { width } = useWindowDimensions();
 
   return (
@@ -73,10 +87,8 @@ const ChestoContainer = () => {
             </div>
           </div>
           <div className={classes.chestoboxbutton}>
-            <MainButton style={{ padding: "10px 20px" }}>BUY NOW</MainButton>
-            <MainButton style={{ padding: "10px 20px" }}>
-              FULL CATALOGUE
-            </MainButton>
+            <MainButton onClick={handleRedirect}>BUY NOW</MainButton>
+            <MainButton onClick={handleDownload}>FULL CATALOGUE</MainButton>
           </div>
         </div>
         {width <= 800 ? (

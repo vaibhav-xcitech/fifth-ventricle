@@ -7,4 +7,21 @@ a.active{
   color: #ffe500;
   text-decoration: none;
 }
+/* 
+p{
+  position: relative;
+  animation: animate 4s;
+  transition: all ease-out;
+}
 
+@keyframes animate {
+  from{
+    opacity: 0;
+    bottom: -40px;
+  }
+
+  to{
+    opacity: 1;
+    bottom: 0px;
+  }
+} */

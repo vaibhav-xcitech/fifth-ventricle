@@ -1,7 +1,7 @@
 import React from "react";
 import classes from "../OurStoryContainer/OurStoryContainer.module.scss";
 import useWindowDimensions from "../../Home/WindowDimensions";
-import { MainButton } from "../../../UI/Button/Button";
+// import { MainButton } from "../../../UI/Button/Button";
 
 import OfficeImage from "../../../assets/Our Story.png";
 
@@ -70,11 +70,11 @@ const OurStoryContainer = () => {
                 </p>
               </div>
             </div>
-            <div className={classes.homeBottomContainer}>
+            {/* <div className={classes.homeBottomContainer}>
               <MainButton type="button">
                 <b>Know More</b>
               </MainButton>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

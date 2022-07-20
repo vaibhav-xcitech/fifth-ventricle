@@ -2,8 +2,8 @@ import React from 'react'
 import { NavbarInnerContainer, CenterDiv, RightContainer, LeftContainer, Logo, RightDivOne, RightDivTwo, RightDivThree } from './Footer.style';
 import { Fab } from 'ui-neumorphism';
 import { FaFacebookF } from 'react-icons/fa';
-import { FaTwitter } from 'react-icons/fa';
 import { FaLinkedinIn } from 'react-icons/fa';
+import { FaInstagram } from 'react-icons/fa';
 
 const Footer = () => {
     return (
@@ -26,10 +26,10 @@ const Footer = () => {
                             <span style={{ color: "#fff" }}><FaFacebookF /></span>
                         </Fab>
                         <Fab style={{ margin: 10 }} dark color='var(--primary)'>
-                            <span style={{ color: "#fff" }}><FaTwitter /></span>
+                            <span style={{ color: "#fff" }}><FaLinkedinIn /></span>
                         </Fab>
                         <Fab style={{ margin: 10 }} dark color='var(--primary)'>
-                            <span style={{ color: "#fff" }}><FaLinkedinIn /></span>
+                            <span style={{ color: "#fff" }}><FaInstagram /></span>
                         </Fab>
                     </RightDivThree>
                 </RightContainer>
