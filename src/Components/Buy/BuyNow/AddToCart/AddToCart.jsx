@@ -1,13 +1,37 @@
-import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import React, { useState, useEffect, useContext } from "react";
+import { useNavigate, useLocation } from "react-router-dom";
 import classes from "../AddToCart/AddToCart.module.scss";
 import { Divider } from "@mui/material";
 import Select from "react-select";
+import { AiOutlineDelete } from "react-icons/ai"
+
 import { BiErrorAlt } from "react-icons/bi";
 import { MainButton } from "../../../../UI/Button/Button";
 import { Statelabel } from "../../../../assets/StateName";
+import CartContext from "../../../../Context/Context";
 
 const AddToCart = () => {
+  const location = useLocation();
+  const cart = useContext(CartContext);
+
+  console.log(">>>>>>>>>>>>>", cart);
+
+  let total = 0;
+  cart.cart.map((item) => {
+    total = total + item.selectedOption.discountPrice;
+  });
+
+  let subTotal = 0;
+  cart.cart.map((item) => {
+
+    subTotal = subTotal + (item.selectedOption.discountPrice * item.counter);
+  });
+
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location]);
+
   const navigate = useNavigate();
 
   const handleRedirect = () => {
@@ -23,6 +47,17 @@ const AddToCart = () => {
         backgroundColor: state.data.color,
       };
     },
+  };
+
+  const qunatityChange = (e, index) => {
+    if (e.target.value > 0 && e.target.value < 100) {
+      cart.cart[index].counter = parseInt(e.target.value);
+      cart.updateCart(cart.cart[index]);
+    }
+  };
+
+  const removeItem = (e, index) => {
+    cart.removeCart(index);
   };
 
   const [shippingData, setShippingData] = useState({
@@ -183,19 +218,46 @@ const AddToCart = () => {
               <table className={classes.shoppingTabel}>
                 <thead style={{ color: "#6EC1E4" }}>
                   <tr>
-                    <th>Product</th>
-                    <th>Price</th>
+                    <th>image</th>
+                    <th>Product Name</th>
+                    <th>Discounted Price</th>
                     <th>Quantity</th>
-                    <th>Subtotal</th>
+                    <th>SubTotal</th>
+                    {/* <th>Action</th> */}
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <td>Product</td>
-                    <td>Price</td>
-                    <td>Quantity</td>
-                    <td>Subtotal</td>
-                  </tr>
+                  {cart.cart.map((item, index) => (
+                    <tr key={index}>
+                      <td>
+                        <img
+                          src={item.selectedOption.image}
+                          alt=""
+                          width="70px"
+                          height="50px"
+                        />
+                      </td>
+                      <td>{item.selectedOption.slug}</td>
+                      <td>&#x20b9; {item.selectedOption.discountPrice}</td>
+                      <td className={classes.qunatity}>
+                        <input
+                          type="number"
+                          value={item.counter}
+                          onChange={(e) => qunatityChange(e, index)}
+                        />
+                      </td>
+                      <td>
+                        &#x20b9;
+                        {item.selectedOption.discountPrice * item.counter}
+                      </td>
+                      <td>
+                        <AiOutlineDelete
+                          style={{ width: 25, height: 25 }}
+                          onClick={(e) => removeItem(e, index)}
+                        />
+                      </td>
+                    </tr>
+                  ))}
                 </tbody>
               </table>
               <div className={classes.updateCartButton}>
@@ -238,8 +300,8 @@ const AddToCart = () => {
             <Divider />
             <div className={classes.paymentDetailTable}>
               <div className={classes.Details}>
-                <div className={classes.label}>Price Of Item</div>
-                <div>&#x20b9; 8000/-</div>
+                <div className={classes.label}>Product Price</div>
+                <div>&#x20b9; {subTotal}</div>
               </div>
               <div className={classes.Details}>
                 <div className={classes.label}>Discount</div>

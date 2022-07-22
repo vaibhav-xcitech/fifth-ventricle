@@ -75,8 +75,11 @@
 
                 .colorCartContainer {
                     text-align: left;
-                    width: 60%;
                     margin-top: 20px;
+
+                    .selectDiv{
+                        display: flex;
+                    }
                 }
             }
         }

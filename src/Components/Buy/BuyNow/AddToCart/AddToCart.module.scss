@@ -4,7 +4,8 @@ input {
     margin-bottom: 12px;
     border: 1px solid #ccc;
     border-radius: 4px;
-    color: black;
+    color: white;
+    background-color: #2F3538;
     display: inline-block;
     box-sizing: border-box;
 }
@@ -36,7 +37,7 @@ input:invalid label ~ p{
 }
 
 input:invalid[focused="true"] {
-    background-color: ivory;
+    background-color: #3B4144;
     border: none;
     outline: 2px solid red;
     border-radius: 5px;
@@ -80,6 +81,26 @@ input:invalid[focused="true"] {
                             tr {
                                 td {
                                     text-align: left;
+                                }
+
+                                .qunatity{
+                                    width: 100%;
+                                    display: flex;
+                                    align-items: center;
+                                    margin-top: 13px;
+
+                                    input{
+                                        width: 55px;
+                                        height: 24px;
+                                        margin: 0;
+                                        text-align: left;
+                                    }
+
+                                    button{
+                                        background-color: #2F3538;
+                                        border: none;
+                                        margin: 2px;
+                                    }
                                 }
                             }
                         }

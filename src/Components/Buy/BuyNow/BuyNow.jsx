@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import classes from "../BuyNow/BuyNow.module.scss";
 import { MainButton } from "../../../UI/Button/Button";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import useWindowDimensions from "../../Home/WindowDimensions";
+import CartContext from "../../../Context/Context";
 
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -23,8 +24,15 @@ import chestoGrey from "../../../assets/Chesto_Gray.png";
 import chestoWhite from "../../../assets/Chesto_White.png";
 
 const BuyNow = () => {
+  const location = useLocation();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location]);
+
   const navigate = useNavigate();
   const { width } = useWindowDimensions();
+
+  const cart = useContext(CartContext);
 
   // const [thumbsSwiper, setThumbsSwiper] = useState(null);
 
@@ -34,7 +42,9 @@ const BuyNow = () => {
   const [counter, setCounter] = useState(1);
 
   const handleIncrement = () => {
-    setCounter(counter + 1);
+    if (counter < 100) {
+      setCounter((counte) => counte + 1);
+    }
   };
 
   const handleDecrement = () => {
@@ -54,12 +64,15 @@ const BuyNow = () => {
     },
   };
 
-  console.log(selectedOption);  
+  console.log(selectedOption);
+  console.log(cart);
 
   const handleAddToCart = () => {
     if (!selectedOption === false) {
+      const cartData = { selectedOption, counter };
+      cart.AddToCart(cartData);
+      // console.log(cart);
       navigate("/chestoBuy/BuyNow/addtocart");
-      const cartData = {selectedOption, counter}
       console.log(cartData);
     } else {
       setAddToCart(true);
@@ -71,7 +84,7 @@ const BuyNow = () => {
       id: 1,
       label: "Azure Blue",
       image: chestoBlue,
-      slug: "azure-blue",
+      slug: "Chesto (Azure-Blue)",
       color: "#fff",
       actualPrice: 14999,
       discountPrice: 9999,
@@ -80,6 +93,7 @@ const BuyNow = () => {
       id: 2,
       label: "Deep Spay Gray",
       image: chestoGrey,
+      slug: "Chesto (Deep-Spay-Gray)",
       color: "#fff",
       actualPrice: 14999,
       discountPrice: 10499,
@@ -88,7 +102,7 @@ const BuyNow = () => {
       id: 3,
       label: "Elegent White",
       image: chestoWhite,
-      slug: "elegent-white",
+      slug: "Chesto (Elegent-White)",
       color: "#fff",
       actualPrice: 14999,
       discountPrice: 11499,
@@ -171,7 +185,7 @@ const BuyNow = () => {
         <div className={classes.contentContainer}>
           <div className={classes.buyHeaderContainer}>
             <h1 style={{ color: "#ffe500" }}>Chesto</h1>
-            <h4>Price : &#x20b9; 9,999 - &#x20b9; 11,490</h4>
+            <h4>Price : &#x20b9; 9,999 - &#x20b9; 14,999</h4>
             {width > 700 ? (
               ""
             ) : (
@@ -229,6 +243,7 @@ const BuyNow = () => {
               features.
             </p>
 
+            <h4 style={{ margin: "10px 0px" }}>Quntity :</h4>
             <div className={classes.counterContainer}>
               <MainButton style={{ marginTop: 0 }} onClick={handleDecrement}>
                 -
@@ -241,22 +256,40 @@ const BuyNow = () => {
 
             <form className={classes.colorCartContainer}>
               <h4>Colors :</h4>
-              <Select
-                options={menu}
-                styles={colorStyles}
-                onChange={setSelectedOption}
-                name="select"
-                id="select"
-                required
-              />
+              <div className={classes.selectDiv}>
+                <div style={{ width: "50%" }}>
+                  <Select
+                    placeholder="Select Colors...."
+                    options={menu}
+                    styles={colorStyles}
+                    onChange={setSelectedOption}
+                    name="select"
+                    id="select"
+                    required
+                  />
+                </div>
+                {/* <MainButton
+                  style={{
+                    margin: 0,
+                    padding: "2px 15px",
+                    borderRadius: "15px",
+                    fontSize: "17px",
+                  }}
+                >
+                  Add Cart
+                </MainButton> */}
+              </div>
               {addToCart === true && !selectedOption === true && (
-                <span style={{ color: "red", marginTop: "10px" }}>
-                  Please Select Chesto Color
-                </span>
+                <div>
+                  <span style={{ color: "red", marginTop: "10px" }}>
+                    Please Select Chesto Color
+                  </span>
+                </div>
               )}
 
               {selectedOption && (
                 <h4 style={{ margin: "25px 0px" }}>
+                  Discount Price:- &nbsp;
                   <del style={{ marginRight: "10px", opacity: 0.5 }}>
                     &#x20b9; 14,999
                   </del>
@@ -264,7 +297,11 @@ const BuyNow = () => {
                 </h4>
               )}
               <MainButton
-                style={{ padding: "5px 15px", borderRadius: "15px" }}
+                style={{
+                  padding: "5px 15px",
+                  borderRadius: "15px",
+                  fontSize: "17px",
+                }}
                 onClick={handleAddToCart}
                 type={"button"}
               >
