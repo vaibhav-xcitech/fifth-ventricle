@@ -3,7 +3,7 @@ import { useNavigate, useLocation } from "react-router-dom";
 import classes from "../AddToCart/AddToCart.module.scss";
 import { Divider } from "@mui/material";
 import Select from "react-select";
-import { AiOutlineDelete } from "react-icons/ai"
+import { AiTwotoneDelete } from "react-icons/ai";
 
 import { BiErrorAlt } from "react-icons/bi";
 import { MainButton } from "../../../../UI/Button/Button";
@@ -23,10 +23,23 @@ const AddToCart = () => {
 
   let subTotal = 0;
   cart.cart.map((item) => {
-
-    subTotal = subTotal + (item.selectedOption.discountPrice * item.counter);
+    subTotal = subTotal + item.selectedOption.discountPrice * item.counter;
   });
 
+  let totalQuantity = 0;
+  cart.cart.map((item) => {
+    totalQuantity = totalQuantity + item.counter;
+  });
+
+  let discount = 0;
+  let actualAmount = totalQuantity * 14999;
+  discount = actualAmount - subTotal;
+
+  let Charges = 0;
+  if (cart.cart.length > 0) {
+    Charges = 200;
+  }
+  let payableAmount = subTotal + Charges;
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -39,12 +52,22 @@ const AddToCart = () => {
   };
 
   const colorStyles = {
+    control: (base, state) => ({
+      ...base,
+      background: "#2F3538",
+    }),
+  
     option: (styles, state) => {
       return {
         ...styles,
         borderBottom: "1px solid gray",
         color: state.isSelected ? "black" : "blue",
         backgroundColor: state.data.color,
+        colors: {
+          ...styles.colors,
+          text: "orangered",
+          backgroundColor: "red",
+        },
       };
     },
   };
@@ -199,7 +222,7 @@ const AddToCart = () => {
           <div className={classes.MyCartContainer}>
             <div className={classes.cartHeaderContainer}>
               <h4 style={{ margin: "15px", textAlign: "left" }}>My Cart</h4>
-              <div className={classes.shoppingButton}>
+              {/* <div className={classes.shoppingButton}>
                 <MainButton
                   style={{
                     margin: "10px",
@@ -211,56 +234,66 @@ const AddToCart = () => {
                 >
                   CONTINUE SHOPPING
                 </MainButton>
-              </div>
+              </div> */}
             </div>
             <Divider />
             <div className={classes.shoppingTableContainer}>
-              <table className={classes.shoppingTabel}>
-                <thead style={{ color: "#6EC1E4" }}>
-                  <tr>
-                    <th>image</th>
-                    <th>Product Name</th>
-                    <th>Discounted Price</th>
-                    <th>Quantity</th>
-                    <th>SubTotal</th>
-                    {/* <th>Action</th> */}
-                  </tr>
-                </thead>
-                <tbody>
-                  {cart.cart.map((item, index) => (
-                    <tr key={index}>
-                      <td>
-                        <img
-                          src={item.selectedOption.image}
-                          alt=""
-                          width="70px"
-                          height="50px"
-                        />
-                      </td>
-                      <td>{item.selectedOption.slug}</td>
-                      <td>&#x20b9; {item.selectedOption.discountPrice}</td>
-                      <td className={classes.qunatity}>
-                        <input
-                          type="number"
-                          value={item.counter}
-                          onChange={(e) => qunatityChange(e, index)}
-                        />
-                      </td>
-                      <td>
-                        &#x20b9;
-                        {item.selectedOption.discountPrice * item.counter}
-                      </td>
-                      <td>
-                        <AiOutlineDelete
-                          style={{ width: 25, height: 25 }}
-                          onClick={(e) => removeItem(e, index)}
-                        />
-                      </td>
+              {cart.cart.length > 0 ? (
+                <table className={classes.shoppingTabel}>
+                  <thead style={{ color: "#6EC1E4" }}>
+                    <tr>
+                      <th>image</th>
+                      <th>Product Name</th>
+                      <th>Discounted Price</th>
+                      <th>Quantity</th>
+                      <th>SubTotal</th>
                     </tr>
-                  ))}
-                </tbody>
-              </table>
-              <div className={classes.updateCartButton}>
+                  </thead>
+                  <tbody>
+                    {cart.cart.map((item, index) => (
+                      <tr key={index}>
+                        <td>
+                          <img
+                            src={item.selectedOption.image}
+                            alt=""
+                            width="70px"
+                            height="50px"
+                          />
+                        </td>
+                        <td>{item.selectedOption.slug}</td>
+                        <td>&#x20b9; {item.selectedOption.discountPrice}</td>
+                        <td className={classes.qunatity}>
+                          <input
+                            type="number"
+                            value={item.counter}
+                            onChange={(e) => qunatityChange(e, index)}
+                          />
+                        </td>
+                        <td>
+                          &#x20b9;
+                          {item.selectedOption.discountPrice * item.counter}
+                        </td>
+                        <td>
+                          <AiTwotoneDelete
+                            style={{
+                              width: 25,
+                              height: 25,
+                              color: "red",
+                              cursor: "pointer",
+                            }}
+                            onClick={(e) => removeItem(e, index)}
+                          />
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              ) : (
+                <h3 style={{ color: "#6EC1E4" }}>
+                  Your Cart Is Empty Right Now Feel Free to continue Shopping
+                </h3>
+              )}
+              {/* <div className={classes.updateCartButton}>
                 <MainButton
                   style={{
                     marginTop: "20px",
@@ -274,19 +307,20 @@ const AddToCart = () => {
                 >
                   Update Cart
                 </MainButton>
-              </div>
+              </div> */}
             </div>
             <Divider />
             <div className={classes.checkOutContainer}>
               <MainButton
                 style={{
-                  marginTop: 0,
+                  margin: "10px",
                   borderRadius: "15px",
                   padding: "5px 10px",
-                  fontSize: "17px",
+                  fontSize: "14px",
                 }}
+                onClick={handleRedirect}
               >
-                PROCEED TO CHECKOUT
+                CONTINUE SHOPPING
               </MainButton>
             </div>
           </div>
@@ -300,21 +334,29 @@ const AddToCart = () => {
             <Divider />
             <div className={classes.paymentDetailTable}>
               <div className={classes.Details}>
-                <div className={classes.label}>Product Price</div>
-                <div>&#x20b9; {subTotal}</div>
+                <div className={classes.label}>Actual Price</div>
+                <div>&#x20b9; {actualAmount}/-</div>
               </div>
               <div className={classes.Details}>
-                <div className={classes.label}>Discount</div>
-                <div>&#x20b9; 10/-</div>
+                <div className={classes.label}>Quantity</div>
+                <div>{totalQuantity}</div>
+              </div>
+              <div className={classes.Details}>
+                <div className={classes.label}>Discounts</div>
+                <div>&#x20b9; -{discount}/-</div>
+              </div>
+              <div className={classes.Details}>
+                <div className={classes.label}>SubTotal</div>
+                <div>&#x20b9; {subTotal}/-</div>
               </div>
               <div className={classes.Details}>
                 <div className={classes.label}>Delivery Charges</div>
-                <div>&#x20b9; 100/-</div>
+                <div>&#x20b9; {Charges}/-</div>
               </div>
               <Divider />
               <div className={classes.Details}>
                 <div className={classes.totalLabel}>Total Amount</div>
-                <div>&#x20b9; 8000/-</div>
+                <div>&#x20b9; {payableAmount}/-</div>
               </div>
             </div>
           </div>
@@ -497,7 +539,7 @@ const AddToCart = () => {
                     styles={colorStyles}
                     placeholder="Select States..."
                     name="state"
-                    value={shippingData.state}
+                    // value={shippingData.state}
                     onChange={(e) =>
                       setShippingData({ ...shippingData, state: e })
                     }
@@ -745,7 +787,7 @@ const AddToCart = () => {
                 }}
                 type={"submit"}
               >
-                Continue For CheckOut
+                Make Payment
               </MainButton>
             </form>
           </div>

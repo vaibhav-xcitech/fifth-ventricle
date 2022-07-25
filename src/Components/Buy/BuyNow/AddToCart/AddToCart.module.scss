@@ -18,6 +18,10 @@ label{
     display: flex;
     align-items: start;
     margin-bottom: 10px;
+
+    label{
+        margin-left: 5px;
+    }
 }
 
 .errorLabelDiv{
@@ -75,10 +79,13 @@ input:invalid[focused="true"] {
 
                     .shoppingTabel {
                         width: 100%;
+                        border-collapse: separate;
+                        border-spacing: 0 1em;
 
                         tbody {
 
                             tr {
+                                
                                 td {
                                     text-align: left;
                                 }
@@ -122,6 +129,7 @@ input:invalid[focused="true"] {
             .paymentContainer {
                 width: 35%;
                 margin-left: 10px;
+                max-height: 300px;
                 margin-right: 10px;
                 border-radius: 15px;
                 box-shadow: -3px -3px 3px #ffffff14,
@@ -134,7 +142,7 @@ input:invalid[focused="true"] {
 
 
                 .paymentDetailTable {
-                    padding: 20px;
+                    padding: 6px 20px;
 
                     .Details {
                         display: flex;
