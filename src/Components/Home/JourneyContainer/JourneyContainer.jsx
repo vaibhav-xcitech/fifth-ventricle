@@ -32,10 +32,10 @@ const JourneyContainer = () => {
               <h1 style={{ color: "#5fdad5", marginTop: 0 }}>
                 PROJECT RESEARCH
               </h1>
-              <h4 style={{ marginTop: "15px", marginBottom: 0 }}>
+              {/* <h4 style={{ marginTop: "15px", marginBottom: 0 }}>
                 MAKING SURE THAT NOTHING GOES PAST YOUR EAR. THE FUTURE OF
               </h4>
-              <h2 style={{ marginTop: 0 }}>STETHOSCOPE.</h2>
+              <h2 style={{ marginTop: 0 }}>STETHOSCOPE.</h2> */}
             </div>
 
             {width >= 700 ? (

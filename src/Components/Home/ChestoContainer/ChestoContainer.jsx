@@ -39,11 +39,11 @@ const ChestoContainer = () => {
             </div>
           )}
           <div className={classes.ChestoContent}>
-            <h3>INTRODUCING THE REVOLUTIONARY</h3>
+            {/* <h3>INTRODUCING THE REVOLUTIONARY</h3>
             <h3 style={{ marginTop: 0 }}>DIGITAL STETHOSCOPE</h3>
             <h2 style={{ color: "#5fdad5", marginTop: 0 }}>CHESTO</h2>
-            <br />
-            <p style={{ textAlign: "left" }}>
+            <br /> */}
+            <p style={{ textAlign: "center", marginTop: 10 }}>
               Lorem ipsum dolor sit amet consectetur adipisicing elit.
               Consequuntur voluptate eligendi necessitatibus doloremque minima
               incidunt voluptatibus id nesciunt cumque iste minus dolores

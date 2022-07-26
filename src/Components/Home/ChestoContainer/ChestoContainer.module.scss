@@ -31,15 +31,20 @@
 
 
     .chestobottom {
-        width: 350px;
+        width: 370px;
 
         .chestoCountTop {
             display: flex;
             justify-content: space-between;
 
             .chestoBox {
-                height: 150px;
-                width: 150px;
+                height: 160px;
+                width: 160px;
+                margin: 10px 0;
+                padding: 0 15px;
+                border: 3px solid #2f3538;
+                border-radius: 25px;
+                box-shadow: -3px -3px 3px #ffffff14, 5px 5px 3px #0000003d;
             }
         }
 
@@ -48,8 +53,13 @@
             justify-content: space-between;
 
             .chestoBox {
-                height: 150px;
-                width: 150px;
+                height: 160px;
+                width: 160px;
+                margin: 10px 0;
+                padding: 0 15px;
+                border: 3px solid #2f3538;
+                border-radius: 25px;
+                box-shadow: -3px -3px 3px #ffffff14, 5px 5px 3px #0000003d;
             }
         }
     }

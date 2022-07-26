@@ -3,7 +3,7 @@ import classes from "../BuyNow/BuyNow.module.scss";
 import { MainButton } from "../../../UI/Button/Button";
 import { useLocation, useNavigate } from "react-router-dom";
 import useWindowDimensions from "../../Home/WindowDimensions";
-import CartContext from "../../../Context/Context";
+import CartContext from "../../../ContextAPI/Context";
 
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";

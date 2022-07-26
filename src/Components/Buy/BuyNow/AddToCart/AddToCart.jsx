@@ -8,7 +8,7 @@ import { AiTwotoneDelete } from "react-icons/ai";
 import { BiErrorAlt } from "react-icons/bi";
 import { MainButton } from "../../../../UI/Button/Button";
 import { Statelabel } from "../../../../assets/StateName";
-import CartContext from "../../../../Context/Context";
+import CartContext from "../../../../ContextAPI/Context";
 
 const AddToCart = () => {
   const location = useLocation();
@@ -56,7 +56,7 @@ const AddToCart = () => {
       ...base,
       background: "#2F3538",
     }),
-  
+
     option: (styles, state) => {
       return {
         ...styles,
@@ -119,33 +119,33 @@ const AddToCart = () => {
     setShippingData({ ...shippingData, [name]: value });
   };
 
-  const shippingHandleSubmit = (e) => {
-    e.preventDefault();
-    console.log(shippingData);
-    setShippingData({
-      fname: "",
-      lname: "",
-      companyname: "",
-      address1: "",
-      address2: "",
-      pincode: "",
-      city: "",
-      state: {},
-      phone: "",
-      email: "",
-    });
+  // const shippingHandleSubmit = (e) => {
+  //   e.preventDefault();
+  //   console.log(shippingData);
+  //   setShippingData({
+  //     fname: "",
+  //     lname: "",
+  //     companyname: "",
+  //     address1: "",
+  //     address2: "",
+  //     pincode: "",
+  //     city: "",
+  //     state: {},
+  //     phone: "",
+  //     email: "",
+  //   });
 
-    setShippingFocused({
-      fname: false,
-      lname: false,
-      companyname: false,
-      address1: false,
-      pincode: false,
-      city: false,
-      phone: false,
-      email: false,
-    });
-  };
+  //   setShippingFocused({
+  //     fname: false,
+  //     lname: false,
+  //     companyname: false,
+  //     address1: false,
+  //     pincode: false,
+  //     city: false,
+  //     phone: false,
+  //     email: false,
+  //   });
+  // };
 
   const [billingData, setBillingData] = useState({
     fname: "",
@@ -183,36 +183,59 @@ const AddToCart = () => {
     setBillingData({ ...billingData, [name]: value });
   };
 
-  const billingHandleSubmit = (e) => {
-    e.preventDefault();
-    console.log(billingData);
-    setBillingData({
-      fname: "",
-      lname: "",
-      companyname: "",
-      address1: "",
-      address2: "",
-      pincode: "",
-      city: "",
-      state: {},
-      phone: "",
-      email: "",
-    });
+  // const billingHandleSubmit = (e) => {
+  //   e.preventDefault();
+  //   console.log(billingData);
+  //   setBillingData({
+  //     fname: "",
+  //     lname: "",
+  //     companyname: "",
+  //     address1: "",
+  //     address2: "",
+  //     pincode: "",
+  //     city: "",
+  //     state: {},
+  //     phone: "",
+  //     email: "",
+  //   });
 
-    setBillingFocused({
-      fname: false,
-      lname: false,
-      companyname: false,
-      address1: false,
-      pincode: false,
-      city: false,
-      phone: false,
-      email: false,
-    });
+  //   setBillingFocused({
+  //     fname: false,
+  //     lname: false,
+  //     companyname: false,
+  //     address1: false,
+  //     pincode: false,
+  //     city: false,
+  //     phone: false,
+  //     email: false,
+  //   });
+  // };
+
+  const handleSubmitForm = (e) => {
+    e.preventDefault();
+    console.log(shippingData);
+    console.log(billingData);
   };
 
-  const handleCheckBox = () => {
-    setBillingData({ ...shippingData });
+  const handleCheckBox = (e) => {
+    if(e.target.checked){
+      setBillingData({ ...shippingData });
+    }
+    else{
+      setBillingData({
+            fname: "",
+            lname: "",
+            companyname: "",
+            address1: "",
+            address2: "",
+            pincode: "",
+            city: "",
+            state: {},
+            phone: "",
+            email: "",
+          });
+    }
+    // setBillingData({ ...shippingData });
   };
 
   return (
@@ -362,26 +385,31 @@ const AddToCart = () => {
           </div>
         </div>
 
-        <div className={classes.cartSecondrow}>
-          <div className={classes.ShippingContainer}>
-            <div className={classes.shippingHeader}>
-              <h4 style={{ margin: 0, padding: "15px", textAlign: "left" }}>
-                Shipping Details
-              </h4>
-            </div>
-            <Divider />
-            <div className={classes.shippingContent}>
-              <form
-                className={classes.billingContent}
-                onSubmit={shippingHandleSubmit}
-              >
+        <form onSubmit={handleSubmitForm}>
+          <div className={classes.cartSecondrow}>
+            <div className={classes.ShippingContainer}>
+              <div className={classes.shippingHeader}>
+                <h4 style={{ margin: 0, padding: "15px", textAlign: "left" }}>
+                  Shipping Details
+                </h4>
+              </div>
+              <Divider />
+              <div className={classes.shippingContent}>
+                {/* <form
+                  className={classes.billingContent}
+                  onSubmit={shippingHandleSubmit}
+                > */}
                 <span className={classes.nameContainer}>
                   <span>
                     <div className={classes.errorLabelDiv}>
                       <label>First Name :-</label>
                       <p
                         id="error"
-                        style={{ margin: 0, color: "red", fontSize: "initial" }}
+                        style={{
+                          margin: 0,
+                          color: "red",
+                          fontSize: "initial",
+                        }}
                       >
                         <BiErrorAlt />
                       </p>
@@ -405,7 +433,11 @@ const AddToCart = () => {
                       <label>Last Name :-</label>
                       <p
                         id="error"
-                        style={{ margin: 0, color: "red", fontSize: "initial" }}
+                        style={{
+                          margin: 0,
+                          color: "red",
+                          fontSize: "initial",
+                        }}
                       >
                         <BiErrorAlt />
                       </p>
@@ -488,7 +520,11 @@ const AddToCart = () => {
                       <label>Pin Code :-</label>
                       <p
                         id="error"
-                        style={{ margin: 0, color: "red", fontSize: "initial" }}
+                        style={{
+                          margin: 0,
+                          color: "red",
+                          fontSize: "initial",
+                        }}
                       >
                         <BiErrorAlt />
                       </p>
@@ -513,7 +549,11 @@ const AddToCart = () => {
                       <label>City/Town :-</label>
                       <p
                         id="error"
-                        style={{ margin: 0, color: "red", fontSize: "initial" }}
+                        style={{
+                          margin: 0,
+                          color: "red",
+                          fontSize: "initial",
+                        }}
                       >
                         <BiErrorAlt />
                       </p>
@@ -551,7 +591,11 @@ const AddToCart = () => {
                       <label>Phone Number :-</label>
                       <p
                         id="error"
-                        style={{ margin: 0, color: "red", fontSize: "initial" }}
+                        style={{
+                          margin: 0,
+                          color: "red",
+                          fontSize: "initial",
+                        }}
                       >
                         <BiErrorAlt />
                       </p>
@@ -575,7 +619,11 @@ const AddToCart = () => {
                       <label>Email :-</label>
                       <p
                         id="error"
-                        style={{ margin: 0, color: "red", fontSize: "initial" }}
+                        style={{
+                          margin: 0,
+                          color: "red",
+                          fontSize: "initial",
+                        }}
                       >
                         <BiErrorAlt />
                       </p>
@@ -594,7 +642,192 @@ const AddToCart = () => {
                     />
                   </span>
                 </span>
-                <MainButton
+                {/* <MainButton
+                    style={{
+                      margin: 5,
+                      fontSize: 15,
+                      borderRadius: 10,
+                      padding: "0px  10px",
+                    }}
+                    type={"submit"}
+                  >
+                    Submit
+                  </MainButton> */}
+                {/* </form> */}
+              </div>
+            </div>
+            <div className={classes.billingContainer}>
+              <div className={classes.billingHeader}>
+                <h4 style={{ margin: 0, padding: "15px", textAlign: "left" }}>
+                  Billings Details
+                </h4>
+              </div>
+              <Divider />
+              <div className={classes.billingContent}>
+                <div className={classes.checkbox}>
+                  <input
+                    type="checkbox"
+                    id="shippingDetail"
+                    onClick={handleCheckBox}
+                  />
+                  <label htmlFor="shippingDetail">
+                    Same As Shipping Details
+                  </label>
+                </div>
+                <span className={classes.nameContainer}>
+                  <span>
+                    <label>First Name :-</label>
+                    <input
+                      type="text"
+                      placeholder="First Name"
+                      name="fname"
+                      autoComplete="off"
+                      value={billingData.fname}
+                      id="fname"
+                      required
+                      onChange={billingHandleInput}
+                      pattern="^[A-Za-z0-9]{3,16}$"
+                      // onBlur={billingHandleFocus}
+                      // focused={billingFocused.fname.toString()}
+                    />
+                  </span>
+                  <span>
+                    <label>Last Name :-</label>
+                    <input
+                      type="text"
+                      placeholder="Last Name"
+                      name="lname"
+                      autoComplete="off"
+                      id="lname"
+                      value={billingData.lname}
+                      required
+                      onChange={billingHandleInput}
+                      pattern="^[A-Za-z0-9]{3,16}$"
+                      onBlur={billingHandleFocus}
+                      focused={billingFocused.lname.toString()}
+                    />
+                  </span>
+                </span>
+                <span>
+                  <label>Company Name :-</label>
+                  <input
+                    type="text"
+                    placeholder="Company Name"
+                    name="companyname"
+                    autoComplete="off"
+                    id="companyname"
+                    value={billingData.companyname}
+                    required
+                    onChange={billingHandleInput}
+                    pattern="^[A-Za-z0-9]{3,26}$"
+                    onBlur={billingHandleFocus}
+                    focused={billingFocused.companyname.toString()}
+                  />
+                </span>
+                <span>
+                  <label>Street Address :-</label>
+                  <input
+                    type="text"
+                    placeholder="House number and street name"
+                    name="address1"
+                    autoComplete="off"
+                    id="address1"
+                    required
+                    value={billingData.address1}
+                    onChange={billingHandleInput}
+                    pattern="^[#.0-9a-zA-Z\s,-]+$"
+                    onBlur={billingHandleFocus}
+                    focused={billingFocused.address1.toString()}
+                  />
+                  <input
+                    type="text"
+                    placeholder="Apartment, suits, unit, etc.(Optional)"
+                    autoComplete="off"
+                    name="address2"
+                    id="address2"
+                    value={billingData.address2}
+                    onChange={billingHandleInput}
+                  />
+                </span>
+                <span className={classes.addressDetail}>
+                  <span>
+                    <label>Pin Code :-</label>
+                    <input
+                      type="text"
+                      placeholder="Pin Code"
+                      name="pincode"
+                      autoComplete="off"
+                      id="pincode"
+                      required
+                      value={billingData.pincode}
+                      onChange={billingHandleInput}
+                      pattern="^[1-9][0-9]{5}$"
+                      onBlur={billingHandleFocus}
+                      focused={billingFocused.pincode.toString()}
+                    />
+                  </span>
+                  <span>
+                    <label>City/Town :-</label>
+                    <input
+                      type="text"
+                      placeholder="City/Town"
+                      name="city"
+                      autoComplete="off"
+                      id="city"
+                      required
+                      value={billingData.city}
+                      onChange={billingHandleInput}
+                      pattern="^[a-zA-Z]+(?:[\s-][a-zA-Z]+)*$"
+                      onBlur={billingHandleFocus}
+                      focused={billingFocused.city.toString()}
+                    />
+                  </span>
+                </span>
+                <span className={classes.stateContainer}>
+                  <Select
+                    options={Statelabel}
+                    styles={colorStyles}
+                    placeholder="Select States..."
+                    value={billingData.state}
+                    onChange={(e) =>
+                      setBillingData({ ...billingData, state: e })
+                    }
+                  />
+                </span>
+                <span className={classes.ContactContainer}>
+                  <span>
+                    <label>Phone Number :-</label>
+                    <input
+                      type="text"
+                      placeholder="Mobile Number"
+                      name="phone"
+                      autoComplete="off"
+                      id="phone"
+                      required
+                      value={billingData.phone}
+                      onChange={billingHandleInput}
+                      pattern="^(?:(?:\+|0{0,2})91(\s*|[\-])?|[0]?)?([6789]\d{2}([ -]?)\d{3}([ -]?)\d{4})$"
+                      onBlur={billingHandleFocus}
+                      focused={billingFocused.phone.toString()}
+                    />
+                  </span>
+                  <span>
+                    <label>E-Mail :-</label>
+                    <input
+                      type="email"
+                      placeholder="Email Address"
+                      name="email"
+                      autoComplete="off"
+                      id="email"
+                      required
+                      value={billingData.email}
+                      onChange={billingHandleInput}
+                      onBlur={billingHandleFocus}
+                      focused={billingFocused.email.toString()}
+                    />
+                  </span>
+                </span>
+                {/* <MainButton
                   style={{
                     margin: 5,
                     fontSize: 15,
@@ -603,195 +836,23 @@ const AddToCart = () => {
                   }}
                   type={"submit"}
                 >
-                  Submit
-                </MainButton>
-              </form>
-            </div>
-          </div>
-          <div className={classes.billingContainer}>
-            <div className={classes.billingHeader}>
-              <h4 style={{ margin: 0, padding: "15px", textAlign: "left" }}>
-                Billings Details
-              </h4>
-            </div>
-            <Divider />
-            <form
-              className={classes.billingContent}
-              onSubmit={billingHandleSubmit}
-            >
-              <div className={classes.checkbox}>
-                <input
-                  type="checkbox"
-                  id="shippingDetail"
-                  onClick={handleCheckBox}
-                />
-                <label htmlFor="shippingDetail">Same As Shipping Details</label>
+                  Make Payment
+                </MainButton> */}
               </div>
-              <span className={classes.nameContainer}>
-                <span>
-                  <label>First Name :-</label>
-                  <input
-                    type="text"
-                    placeholder="First Name"
-                    name="fname"
-                    autoComplete="off"
-                    value={billingData.fname}
-                    id="fname"
-                    required
-                    onChange={billingHandleInput}
-                    pattern="^[A-Za-z0-9]{3,16}$"
-                    // onBlur={billingHandleFocus}
-                    // focused={billingFocused.fname.toString()}
-                  />
-                </span>
-                <span>
-                  <label>Last Name :-</label>
-                  <input
-                    type="text"
-                    placeholder="Last Name"
-                    name="lname"
-                    autoComplete="off"
-                    id="lname"
-                    value={billingData.lname}
-                    required
-                    onChange={billingHandleInput}
-                    pattern="^[A-Za-z0-9]{3,16}$"
-                    onBlur={billingHandleFocus}
-                    focused={billingFocused.lname.toString()}
-                  />
-                </span>
-              </span>
-              <span>
-                <label>Company Name :-</label>
-                <input
-                  type="text"
-                  placeholder="Company Name"
-                  name="companyname"
-                  autoComplete="off"
-                  id="companyname"
-                  value={billingData.companyname}
-                  required
-                  onChange={billingHandleInput}
-                  pattern="^[A-Za-z0-9]{3,26}$"
-                  onBlur={billingHandleFocus}
-                  focused={billingFocused.companyname.toString()}
-                />
-              </span>
-              <span>
-                <label>Street Address :-</label>
-                <input
-                  type="text"
-                  placeholder="House number and street name"
-                  name="address1"
-                  autoComplete="off"
-                  id="address1"
-                  required
-                  value={billingData.address1}
-                  onChange={billingHandleInput}
-                  pattern="^[#.0-9a-zA-Z\s,-]+$"
-                  onBlur={billingHandleFocus}
-                  focused={billingFocused.address1.toString()}
-                />
-                <input
-                  type="text"
-                  placeholder="Apartment, suits, unit, etc.(Optional)"
-                  autoComplete="off"
-                  name="address2"
-                  id="address2"
-                  value={billingData.address2}
-                  onChange={billingHandleInput}
-                />
-              </span>
-              <span className={classes.addressDetail}>
-                <span>
-                  <label>Pin Code :-</label>
-                  <input
-                    type="text"
-                    placeholder="Pin Code"
-                    name="pincode"
-                    autoComplete="off"
-                    id="pincode"
-                    required
-                    value={billingData.pincode}
-                    onChange={billingHandleInput}
-                    pattern="^[1-9][0-9]{5}$"
-                    onBlur={billingHandleFocus}
-                    focused={billingFocused.pincode.toString()}
-                  />
-                </span>
-                <span>
-                  <label>City/Town :-</label>
-                  <input
-                    type="text"
-                    placeholder="City/Town"
-                    name="city"
-                    autoComplete="off"
-                    id="city"
-                    required
-                    value={billingData.city}
-                    onChange={billingHandleInput}
-                    pattern="^[a-zA-Z]+(?:[\s-][a-zA-Z]+)*$"
-                    onBlur={billingHandleFocus}
-                    focused={billingFocused.city.toString()}
-                  />
-                </span>
-              </span>
-              <span className={classes.stateContainer}>
-                <Select
-                  options={Statelabel}
-                  styles={colorStyles}
-                  placeholder="Select States..."
-                  value={billingData.state}
-                  onChange={(e) => setBillingData({ ...billingData, state: e })}
-                />
-              </span>
-              <span className={classes.ContactContainer}>
-                <span>
-                  <label>Phone Number :-</label>
-                  <input
-                    type="text"
-                    placeholder="Mobile Number"
-                    name="phone"
-                    autoComplete="off"
-                    id="phone"
-                    required
-                    value={billingData.phone}
-                    onChange={billingHandleInput}
-                    pattern="^(?:(?:\+|0{0,2})91(\s*|[\-])?|[0]?)?([6789]\d{2}([ -]?)\d{3}([ -]?)\d{4})$"
-                    onBlur={billingHandleFocus}
-                    focused={billingFocused.phone.toString()}
-                  />
-                </span>
-                <span>
-                  <label>E-Mail :-</label>
-                  <input
-                    type="email"
-                    placeholder="Email Address"
-                    name="email"
-                    autoComplete="off"
-                    id="email"
-                    required
-                    value={billingData.email}
-                    onChange={billingHandleInput}
-                    onBlur={billingHandleFocus}
-                    focused={billingFocused.email.toString()}
-                  />
-                </span>
-              </span>
-              <MainButton
-                style={{
-                  margin: 5,
-                  fontSize: 15,
-                  borderRadius: 10,
-                  padding: "0px  10px",
-                }}
-                type={"submit"}
-              >
-                Make Payment
-              </MainButton>
-            </form>
+            </div>
           </div>
-        </div>
+          <MainButton
+            style={{
+              marginTop: 20,
+              fontSize: 15,
+              borderRadius: 10,
+              padding: "0px  10px",
+            }}
+            type={"submit"}
+          >
+            Make Payment
+          </MainButton>
+        </form>
       </div>
     </div>
   );

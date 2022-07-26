@@ -4,6 +4,9 @@ import classes from "./Contact.module.scss";
 import { MainButton } from "../../UI/Button/Button";
 import Aos from "aos";
 import "aos/dist/aos.css";
+import copy from "copy-to-clipboard";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 import fonderimg from "../../assets/svgviewer-output (22).svg";
 import quats from "../../assets/svgviewer-output (27).svg";
@@ -12,12 +15,34 @@ import callImg from "../../assets/svgviewer-output (25).svg";
 import emailImg from "../../assets/svgviewer-output (24).svg";
 import copyImg from "../../assets/svgviewer-output (23).svg";
 
+// toast.configure()
 const Contact = () => {
   const location = useLocation();
   useEffect(() => {
     Aos.init({ duration: 1200 });
     window.scrollTo(0, 0);
   }, [location]);
+
+  const [copyText] = useState({
+    whatsUpNo: "+91 0011225544",
+    callingNo: "+91 0011225544",
+    email: "abcde@abchedf.com",
+  });
+
+  const handleCopyWNo = () => {
+    copy(copyText.whatsUpNo);
+    toast("Copied");
+  };
+
+  const handleCopyCNo = () => {
+    copy(copyText.callingNo);
+    toast("Copied");
+  };
+
+  const handleCopyMail = () => {
+    copy(copyText.email);
+    toast("Copied");
+  };
 
   const [message, setMessage] = useState({
     name: "",
@@ -57,6 +82,7 @@ const Contact = () => {
   return (
     <>
       <div className={classes.contactContainer}>
+      <ToastContainer position="top-right" autoClose={1500}/>
         <div data-aos="fade-down" className={classes.contactUsHeader}>
           <h1>Contact Us</h1>
           <h4>We always love to hear from you.</h4>
@@ -82,9 +108,9 @@ const Contact = () => {
                     width="30px"
                     height="30px"
                   />
-                  <p style={{ marginBottom: 0 }}>+91 0011225544</p>
+                  <p style={{ marginBottom: 0 }}>{copyText.whatsUpNo}</p>
                 </div>
-                <div>
+                <div onClick={handleCopyWNo} style={{ cursor: "pointer" }}>
                   <img src={copyImg} alt="copyImg" width="30px" height="30px" />
                 </div>
               </div>
@@ -97,9 +123,9 @@ const Contact = () => {
                     width="30px"
                     height="30px"
                   />
-                  <p style={{ marginBottom: 0 }}>+91 0011225544</p>
+                  <p style={{ marginBottom: 0 }}>{copyText.callingNo}</p>
                 </div>
-                <div>
+                <div onClick={handleCopyCNo} style={{ cursor: "pointer" }}>
                   <img src={copyImg} alt="copyImg" width="30px" height="30px" />
                 </div>
               </div>
@@ -112,9 +138,9 @@ const Contact = () => {
                     width="30px"
                     height="30px"
                   />
-                  <p style={{ marginBottom: 0 }}>abcde@abchedf.com</p>
+                  <p style={{ marginBottom: 0 }}>{copyText.email}</p>
                 </div>
-                <div>
+                <div onClick={handleCopyMail} style={{ cursor: "pointer" }}>
                   <img src={copyImg} alt="copyImg" width="30px" height="30px" />
                 </div>
               </div>

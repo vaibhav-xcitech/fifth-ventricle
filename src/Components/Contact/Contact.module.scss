@@ -1,5 +1,5 @@
 textarea:invalid[focused="true"] {
-    background-color: ivory;
+    background-color: #3B4144;
     border: none;
     outline: 2px solid red;
     border-radius: 5px;
@@ -85,7 +85,7 @@ textarea:invalid[focused="true"] {
                     border-radius: 15px;
                     border: 1px solid #e0e0e0;
                     padding: 10px;
-                    color: black;
+                    color: white;
                     margin-bottom: 20px;
                     box-shadow: -3px -3px 3px #ffffff14, 5px 5px 3px #0000003d;
                 }
@@ -95,7 +95,8 @@ textarea:invalid[focused="true"] {
                     border-radius: 15px;
                     border: 1px solid #e0e0e0;
                     padding: 10px;
-                    color: black;
+                    color: white;
+                    background-color: #2F3538;
                     margin-bottom: 20px;
                     box-shadow: -3px -3px 3px #ffffff14, 5px 5px 3px #0000003d;
                 }
