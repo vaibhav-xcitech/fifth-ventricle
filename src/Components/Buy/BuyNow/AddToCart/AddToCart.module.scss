@@ -14,6 +14,10 @@ label {
     margin-bottom: 0;
 }
 
+input[type=number]::-webkit-inner-spin-button {
+    opacity: 1
+}
+
 .checkbox {
     display: flex;
     align-items: start;
@@ -148,6 +152,7 @@ input:invalid[focused="true"] {
                             .label{
                                 font-weight: 700;
                                 margin-top: 5px;
+                                margin-left: 7px;
                             }
                         }
                     }

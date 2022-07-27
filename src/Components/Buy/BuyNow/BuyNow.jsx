@@ -197,28 +197,33 @@ const BuyNow = () => {
                   modules={[Navigation]}
                   grabCursor={true}
                   className={classes.myswiper}
+                  style={{
+                    "--swiper-navigation-color": "#4D4E51",
+                    "--swiper-navigation-size": "25px",
+                    "--swiper-pagination-color": "#5FDAD5",
+                  }}
                   // thumbs={{ swiper: thumbsSwiper }}
                 >
                   {!selectedOption ? (
-                    <SwiperSlide>
-                      <img
-                        src="https://www.fifthventricle.in/wp-content/uploads/2022/06/Chesto-Colors.png"
-                        alt="hello"
-                        width="400px"
-                        height="250px"
-                        style={{ marginTop: 20 }}
-                      />
-                    </SwiperSlide>
-                  ) : (
-                    <SwiperSlide>
-                      <img
-                        src={selectedOption.image}
-                        alt="chestoImage"
-                        width="500px"
-                        height="300px"
-                      />
-                    </SwiperSlide>
-                  )}
+                <SwiperSlide>
+                  <img
+                    src="https://www.fifthventricle.in/wp-content/uploads/2022/06/Chesto-Colors.png"
+                    alt="hello"
+                    width="400px"
+                    height="250px"
+                    style={{ marginTop: 20 }}
+                  />
+                </SwiperSlide>
+              ) : (
+                <SwiperSlide>
+                  <img
+                    src={selectedOption.image}
+                    alt="chestoImage"
+                    width="500px"
+                    height="300px"
+                  />
+                </SwiperSlide>
+              )}
                 </Swiper>
 
                 {/* <Swiper

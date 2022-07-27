@@ -307,45 +307,55 @@ const AddToCart = () => {
                 )}
               </div>
             ) : (
-              <div className={classes.responsiveTable}>
-                {cart.cart.map((item, index) => (
-                  <div className={classes.mainContainer} key={index}>
-                    <div className={classes.imgContainer}>
-                      <img
-                        src={item.selectedOption.image}
-                        alt="chesto"
-                        width="125px"
-                        height="80px"
-                      />
-                      <input
-                        className={classes.qunatity}
-                        type="number"
-                        value={item.counter}
-                        onChange={(e) => qunatityChange(e, index)}
-                      />
-                    </div>
-                    <div className={classes.contentContainer}>
-                      <h4>{item.selectedOption.slug}</h4>
-                      <h4 className={classes.label}>
-                        &#x20b9; {item.selectedOption.discountPrice}
-                      </h4>
-                      <div className={classes.label}>
-                        Total: &#x20b9;{" "}
-                        {item.selectedOption.discountPrice * item.counter}
+              <div>
+                {cart.cart.length > 0 ? (
+                  <div className={classes.responsiveTable}>
+                    {cart.cart.map((item, index) => (
+                      <div className={classes.mainContainer} key={index}>
+                        <div className={classes.imgContainer}>
+                          <img
+                            src={item.selectedOption.image}
+                            alt="chesto"
+                            width="125px"
+                            height="80px"
+                          />
+                          <input
+                            className={classes.qunatity}
+                            type="number"
+                            value={item.counter}
+                            onChange={(e) => qunatityChange(e, index)}
+                          />
+                        </div>
+                        <div className={classes.contentContainer}>
+                          <h4 style={{ paddingLeft: "7px" }}>
+                            {item.selectedOption.slug}
+                          </h4>
+                          <h4 className={classes.label}>
+                            &#x20b9; {item.selectedOption.discountPrice}
+                          </h4>
+                          <div className={classes.label}>
+                            Total: &#x20b9;{" "}
+                            {item.selectedOption.discountPrice * item.counter}
+                          </div>
+                          <AiTwotoneDelete
+                            style={{
+                              width: 25,
+                              height: 25,
+                              color: "red",
+                              cursor: "pointer",
+                              marginTop: 5,
+                            }}
+                            onClick={(e) => removeItem(e, index)}
+                          />
+                        </div>
                       </div>
-                      <AiTwotoneDelete
-                        style={{
-                          width: 25,
-                          height: 25,
-                          color: "red",
-                          cursor: "pointer",
-                          marginTop: 5,
-                        }}
-                        onClick={(e) => removeItem(e, index)}
-                      />
-                    </div>
+                    ))}
                   </div>
-                ))}
+                ) : (
+                  <h3 style={{ color: "#6EC1E4", padding: "15px" }}>
+                    Your Cart Is Empty Right Now Feel Free to continue Shopping
+                  </h3>
+                )}
               </div>
             )}
             <Divider />
