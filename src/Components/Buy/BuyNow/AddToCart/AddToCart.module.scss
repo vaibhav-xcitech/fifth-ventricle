@@ -10,33 +10,33 @@ input {
     box-sizing: border-box;
 }
 
-label{
+label {
     margin-bottom: 0;
 }
 
-.checkbox{
+.checkbox {
     display: flex;
     align-items: start;
     margin-bottom: 10px;
 
-    label{
+    label {
         margin-left: 5px;
     }
 }
 
-.errorLabelDiv{
+.errorLabelDiv {
     display: flex;
     width: 100%;
     justify-content: space-between;
 
-    p{
+    p {
         margin: 0;
         color: red;
         display: none;
     }
 }
 
-input:invalid label ~ p{
+input:invalid label~p {
     display: block;
 }
 
@@ -85,25 +85,25 @@ input:invalid[focused="true"] {
                         tbody {
 
                             tr {
-                                
+
                                 td {
                                     text-align: left;
                                 }
 
-                                .qunatity{
+                                .qunatity {
                                     width: 100%;
                                     display: flex;
                                     align-items: center;
                                     margin-top: 13px;
 
-                                    input{
+                                    input {
                                         width: 55px;
                                         height: 24px;
                                         margin: 0;
                                         text-align: left;
                                     }
 
-                                    button{
+                                    button {
                                         background-color: #2F3538;
                                         border: none;
                                         margin: 2px;
@@ -123,6 +123,38 @@ input:invalid[focused="true"] {
                     display: flex;
                     align-items: center;
                     justify-content: flex-end;
+                }
+
+                .responsiveTable{
+                    .mainContainer{
+                        width: 100%;
+                        display: flex;
+
+                        .imgContainer{
+                            flex: 40%;
+
+                            .qunatity{
+                                width: 80%;
+                                margin-top: 20px;
+                            }
+                        }
+
+                        .contentContainer{
+                            flex: 60%;
+                            display: flex;
+                            flex-direction: column;
+                            align-items: start;
+
+                            .label{
+                                font-weight: 700;
+                                margin-top: 5px;
+                            }
+                        }
+                    }
+                }
+
+                @media (max-width: 550px){
+                    width: 97%;
                 }
             }
 
@@ -160,6 +192,15 @@ input:invalid[focused="true"] {
                         }
                     }
                 }
+
+                @media (max-width: 550px){
+                    width: 97%;
+                    margin-top: 20px;
+                }
+            }
+
+            @media (max-width: 550px){
+                flex-direction: column;
             }
         }
 
@@ -207,8 +248,8 @@ input:invalid[focused="true"] {
                         }
                     }
 
-                    .stateContainer{
-                        div:nth-child(1){
+                    .stateContainer {
+                        div:nth-child(1) {
                             width: 100%;
                             text-align: left;
                         }
@@ -223,6 +264,10 @@ input:invalid[focused="true"] {
                             margin-top: 10px;
                         }
                     }
+                }
+
+                @media (max-width: 550px){
+                    width: 96%;
                 }
             }
 
@@ -266,8 +311,8 @@ input:invalid[focused="true"] {
                         }
                     }
 
-                    .stateContainer{
-                        div:nth-child(1){
+                    .stateContainer {
+                        div:nth-child(1) {
                             width: 100%;
                             text-align: left;
                         }
@@ -283,8 +328,25 @@ input:invalid[focused="true"] {
                         }
                     }
                 }
+
+                @media (max-width: 550px){
+                    width: 96%;
+                    margin-top: 20px;
+                }
+            }
+
+            @media (max-width: 550px) {
+                flex-direction: column;
             }
         }
+
+        .submitContainer{
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
     }
 
 

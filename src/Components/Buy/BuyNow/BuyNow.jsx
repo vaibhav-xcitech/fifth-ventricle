@@ -199,16 +199,26 @@ const BuyNow = () => {
                   className={classes.myswiper}
                   // thumbs={{ swiper: thumbsSwiper }}
                 >
-                  {menu.map((item, index) => (
-                    <SwiperSlide key={index}>
+                  {!selectedOption ? (
+                    <SwiperSlide>
                       <img
-                        src={item.image}
+                        src="https://www.fifthventricle.in/wp-content/uploads/2022/06/Chesto-Colors.png"
+                        alt="hello"
+                        width="400px"
+                        height="250px"
+                        style={{ marginTop: 20 }}
+                      />
+                    </SwiperSlide>
+                  ) : (
+                    <SwiperSlide>
+                      <img
+                        src={selectedOption.image}
                         alt="chestoImage"
-                        width="300px"
+                        width="500px"
                         height="300px"
                       />
                     </SwiperSlide>
-                  ))}
+                  )}
                 </Swiper>
 
                 {/* <Swiper

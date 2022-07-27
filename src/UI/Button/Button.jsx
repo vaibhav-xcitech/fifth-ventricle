@@ -11,18 +11,36 @@ const Button = ({ children, type, onClick }) => {
 }
 
 const MainButton = styled(MUIButton)({
+    // marginTop: '40px',
+    // padding: '7px 15px',
+    // borderRadius: '25px',
+    // backgroundColor: '#ffe500',
+    // color: 'black',
+    // border: '3px solid #2f3538',
+    // fontSize: '24px',
+    // textTransform: 'capitalize',
+    // boxShadow: '-3px -3px 3px rgb(255 255 255 / 8%), 5px 5px 3px rgb(0 0 0 / 24%)',
+    // '&:hover': {
+    //     backgroundColor: '#f8e42f',
+    // }
+
+    backgroundImage: "linear-gradient(to right, #4EBBCE 0%, #FFE500  51%, #4EBBCE  100%)",
     marginTop: '40px',
     padding: '7px 15px',
-    borderRadius: '25px',
-    backgroundColor: '#ffe500',
-    color: 'black',
-    border: '3px solid #2f3538',
-    fontSize: '24px',
-    textTransform: 'capitalize',
-    boxShadow: '-3px -3px 3px rgb(255 255 255 / 8%), 5px 5px 3px rgb(0 0 0 / 24%)',
+    textAlign: "center",
+    transition: "0.5s",
+    fontSize: '20px',
+    backgroundSize: "200% auto",
+    color: "black",
+    border: "black",
+    borderRadius: "25px",
+    display: "Block",
     '&:hover': {
-        backgroundColor: '#f8e42f',
+        backgroundPosition: "right center",
+        // color: "White",
+        textDecoration: "none"
     }
+
 });
 
 export { MainButton };

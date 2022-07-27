@@ -29,14 +29,14 @@ export const CenterDiv = styled.div`
 `;
 
 export const LeftContainer = styled.div`
-  flex: 40%;
+  flex: 35%;
   display: flex;
   justify-content: center;
-  padding-right: 50px;
+  padding-right: 40px;
 `;
 
 export const RightContainer = styled.div`
-  flex: 60%;
+  flex: 65%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -114,4 +114,25 @@ export const NavbarExtendedContainer = styled.div`
   @media (min-width: 700px) {
     display: none;
   }
+`;
+
+export const IconsButton = styled.button`
+  background-image: linear-gradient(to right, #283048 0%, #859398  51%, #283048  100%);
+   margin: 6px;
+   /* padding: 5px 13px; */
+   width: 45px;
+   height: 45px;
+   text-align: center;
+   text-transform: uppercase;
+   transition: 0.5s;
+   background-size: 200% auto;
+   color: white;
+   border-radius: 25px;
+   border: none;
+   display: block;
+   &:hover {
+   background-position: right center; /* change the direction of the change here */
+   color: #fff;
+   text-decoration: none;
+ }
 `;

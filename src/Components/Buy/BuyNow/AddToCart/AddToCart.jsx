@@ -4,6 +4,7 @@ import classes from "../AddToCart/AddToCart.module.scss";
 import { Divider } from "@mui/material";
 import Select from "react-select";
 import { AiTwotoneDelete } from "react-icons/ai";
+import useWindowDimensions from "../../../Home/WindowDimensions";
 
 import { BiErrorAlt } from "react-icons/bi";
 import { MainButton } from "../../../../UI/Button/Button";
@@ -11,6 +12,7 @@ import { Statelabel } from "../../../../assets/StateName";
 import CartContext from "../../../../ContextAPI/Context";
 
 const AddToCart = () => {
+  const { width } = useWindowDimensions();
   const location = useLocation();
   const cart = useContext(CartContext);
 
@@ -218,22 +220,21 @@ const AddToCart = () => {
   };
 
   const handleCheckBox = (e) => {
-    if(e.target.checked){
+    if (e.target.checked) {
       setBillingData({ ...shippingData });
-    }
-    else{
+    } else {
       setBillingData({
-            fname: "",
-            lname: "",
-            companyname: "",
-            address1: "",
-            address2: "",
-            pincode: "",
-            city: "",
-            state: {},
-            phone: "",
-            email: "",
-          });
+        fname: "",
+        lname: "",
+        companyname: "",
+        address1: "",
+        address2: "",
+        pincode: "",
+        city: "",
+        state: {},
+        phone: "",
+        email: "",
+      });
     }
     // setBillingData({ ...shippingData });
   };
@@ -245,93 +246,108 @@ const AddToCart = () => {
           <div className={classes.MyCartContainer}>
             <div className={classes.cartHeaderContainer}>
               <h4 style={{ margin: "15px", textAlign: "left" }}>My Cart</h4>
-              {/* <div className={classes.shoppingButton}>
-                <MainButton
-                  style={{
-                    margin: "10px",
-                    borderRadius: "15px",
-                    padding: "5px 10px",
-                    fontSize: "14px",
-                  }}
-                  onClick={handleRedirect}
-                >
-                  CONTINUE SHOPPING
-                </MainButton>
-              </div> */}
             </div>
             <Divider />
-            <div className={classes.shoppingTableContainer}>
-              {cart.cart.length > 0 ? (
-                <table className={classes.shoppingTabel}>
-                  <thead style={{ color: "#6EC1E4" }}>
-                    <tr>
-                      <th>image</th>
-                      <th>Product Name</th>
-                      <th>Discounted Price</th>
-                      <th>Quantity</th>
-                      <th>SubTotal</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {cart.cart.map((item, index) => (
-                      <tr key={index}>
-                        <td>
-                          <img
-                            src={item.selectedOption.image}
-                            alt=""
-                            width="70px"
-                            height="50px"
-                          />
-                        </td>
-                        <td>{item.selectedOption.slug}</td>
-                        <td>&#x20b9; {item.selectedOption.discountPrice}</td>
-                        <td className={classes.qunatity}>
-                          <input
-                            type="number"
-                            value={item.counter}
-                            onChange={(e) => qunatityChange(e, index)}
-                          />
-                        </td>
-                        <td>
-                          &#x20b9;
-                          {item.selectedOption.discountPrice * item.counter}
-                        </td>
-                        <td>
-                          <AiTwotoneDelete
-                            style={{
-                              width: 25,
-                              height: 25,
-                              color: "red",
-                              cursor: "pointer",
-                            }}
-                            onClick={(e) => removeItem(e, index)}
-                          />
-                        </td>
+            {width > 550 ? (
+              <div className={classes.shoppingTableContainer}>
+                {cart.cart.length > 0 ? (
+                  <table className={classes.shoppingTabel}>
+                    <thead style={{ color: "#6EC1E4" }}>
+                      <tr>
+                        <th>Image</th>
+                        <th>Name</th>
+                        <th>Discounts</th>
+                        <th>Quantity</th>
+                        <th>Total</th>
                       </tr>
-                    ))}
-                  </tbody>
-                </table>
-              ) : (
-                <h3 style={{ color: "#6EC1E4" }}>
-                  Your Cart Is Empty Right Now Feel Free to continue Shopping
-                </h3>
-              )}
-              {/* <div className={classes.updateCartButton}>
-                <MainButton
-                  style={{
-                    marginTop: "20px",
-                    borderRadius: "15px",
-                    padding: "5px 10px",
-                    fontSize: "15px",
-                    color: "black",
-                    backgroundColor: "#6EC1E4",
-                    border: "none",
-                  }}
-                >
-                  Update Cart
-                </MainButton>
-              </div> */}
-            </div>
+                    </thead>
+                    <tbody>
+                      {cart.cart.map((item, index) => (
+                        <tr key={index}>
+                          <td>
+                            <img
+                              src={item.selectedOption.image}
+                              alt=""
+                              width="70px"
+                              height="50px"
+                            />
+                          </td>
+                          <td>{item.selectedOption.slug}</td>
+                          <td>&#x20b9; {item.selectedOption.discountPrice}</td>
+                          <td className={classes.qunatity}>
+                            <input
+                              type="number"
+                              value={item.counter}
+                              onChange={(e) => qunatityChange(e, index)}
+                            />
+                          </td>
+                          <td>
+                            &#x20b9;
+                            {item.selectedOption.discountPrice * item.counter}
+                          </td>
+                          <td>
+                            <AiTwotoneDelete
+                              style={{
+                                width: 25,
+                                height: 25,
+                                color: "red",
+                                cursor: "pointer",
+                              }}
+                              onClick={(e) => removeItem(e, index)}
+                            />
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                ) : (
+                  <h3 style={{ color: "#6EC1E4" }}>
+                    Your Cart Is Empty Right Now Feel Free to continue Shopping
+                  </h3>
+                )}
+              </div>
+            ) : (
+              <div className={classes.responsiveTable}>
+                {cart.cart.map((item, index) => (
+                  <div className={classes.mainContainer} key={index}>
+                    <div className={classes.imgContainer}>
+                      <img
+                        src={item.selectedOption.image}
+                        alt="chesto"
+                        width="125px"
+                        height="80px"
+                      />
+                      <input
+                        className={classes.qunatity}
+                        type="number"
+                        value={item.counter}
+                        onChange={(e) => qunatityChange(e, index)}
+                      />
+                    </div>
+                    <div className={classes.contentContainer}>
+                      <h4>{item.selectedOption.slug}</h4>
+                      <h4 className={classes.label}>
+                        &#x20b9; {item.selectedOption.discountPrice}
+                      </h4>
+                      <div className={classes.label}>
+                        Total: &#x20b9;{" "}
+                        {item.selectedOption.discountPrice * item.counter}
+                      </div>
+                      <AiTwotoneDelete
+                        style={{
+                          width: 25,
+                          height: 25,
+                          color: "red",
+                          cursor: "pointer",
+                          marginTop: 5,
+                        }}
+                        onClick={(e) => removeItem(e, index)}
+                      />
+                    </div>
+                  </div>
+                ))}
+              </div>
+            )}
             <Divider />
             <div className={classes.checkOutContainer}>
               <MainButton
@@ -378,7 +394,7 @@ const AddToCart = () => {
               </div>
               <Divider />
               <div className={classes.Details}>
-                <div className={classes.totalLabel}>Total Amount</div>
+                <div className={classes.totalLabel}>Payable Amount</div>
                 <div>&#x20b9; {payableAmount}/-</div>
               </div>
             </div>
@@ -841,17 +857,19 @@ const AddToCart = () => {
               </div>
             </div>
           </div>
-          <MainButton
-            style={{
-              marginTop: 20,
-              fontSize: 15,
-              borderRadius: 10,
-              padding: "0px  10px",
-            }}
-            type={"submit"}
-          >
-            Make Payment
-          </MainButton>
+          <div className={classes.submitContainer}>
+            <MainButton
+              style={{
+                marginTop: 20,
+                fontSize: 15,
+                borderRadius: 10,
+                padding: "0px  10px",
+              }}
+              type={"submit"}
+            >
+              Make Payment
+            </MainButton>
+          </div>
         </form>
       </div>
     </div>

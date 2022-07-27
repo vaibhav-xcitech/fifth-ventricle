@@ -1,7 +1,6 @@
 import React from "react";
 import classes from "../Footer/Footer.module.scss";
 import { useNavigate } from "react-router-dom";
-import { Fab } from "ui-neumorphism";
 import {
   HiOfficeBuilding,
   HiPhone,
@@ -75,21 +74,21 @@ const Footer = () => {
         <div className={classes.RightDivThree}>
           <h4>SOCIAL</h4>
           <div className={classes.socialIcon}>
-            <Fab style={{ margin: 10 }} dark color="var(--primary)">
+            <button className={classes.btn}>
               <span style={{ color: "#fff" }}>
                 <FaFacebookF />
               </span>
-            </Fab>
-            <Fab style={{ margin: 10 }} dark color="var(--primary)">
+            </button>
+            <button className={classes.btn}>
               <span style={{ color: "#fff" }}>
                 <FaLinkedinIn />
               </span>
-            </Fab>
-            <Fab style={{ margin: 10 }} dark color="var(--primary)">
+            </button>
+            <button className={classes.btn}>
               <span style={{ color: "#fff" }}>
                 <FaInstagram />
               </span>
-            </Fab>
+            </button>
           </div>
         </div>
       </div>
