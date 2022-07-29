@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { useLocation } from "react-router-dom";
 import classes from "./Contact.module.scss";
 import { MainButton } from "../../UI/Button/Button";
 import Aos from "aos";
@@ -15,13 +14,10 @@ import callImg from "../../assets/svgviewer-output (25).svg";
 import emailImg from "../../assets/svgviewer-output (24).svg";
 import copyImg from "../../assets/svgviewer-output (23).svg";
 
-// toast.configure()
 const Contact = () => {
-  const location = useLocation();
   useEffect(() => {
     Aos.init({ duration: 1200 });
-    window.scrollTo(0, 0);
-  }, [location]);
+  }, []);
 
   const [copyText] = useState({
     whatsUpNo: "+91 0011225544",
@@ -82,7 +78,7 @@ const Contact = () => {
   return (
     <>
       <div className={classes.contactContainer}>
-      <ToastContainer position="top-right" autoClose={1500}/>
+        <ToastContainer position="top-right" autoClose={1500} />
         <div data-aos="fade-down" className={classes.contactUsHeader}>
           <h1>Contact Us</h1>
           <h4>We always love to hear from you.</h4>

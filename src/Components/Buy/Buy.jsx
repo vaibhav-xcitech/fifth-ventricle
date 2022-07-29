@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { useNavigate, useLocation } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import classes from "./Buy.module.scss";
 import { MainButton } from "../../UI/Button/Button";
 import useWindowDimensions from "../Home/WindowDimensions";
@@ -10,12 +10,9 @@ import heroImage from "../../assets/Chesto_Buy_2.png";
 import discriptionImg from "../../assets/Chesto_Buy_1.png";
 
 const Buy = () => {
-
-  const location = useLocation();
   useEffect(() => {
     Aos.init({ duration: 1500 });
-    window.scrollTo(0, 0);
-  }, [location]);
+  }, []);
 
   const { width } = useWindowDimensions();
   const navigate = useNavigate();

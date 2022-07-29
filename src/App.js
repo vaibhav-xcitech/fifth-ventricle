@@ -2,6 +2,7 @@ import "./App.css";
 import React, { useEffect, useState } from "react";
 import { Routes, Route } from "react-router-dom";
 import State from "./ContextAPI/State";
+import ScrollToTop from "./UI/ScrollToTop/ScrollToTop";
 
 import Navbar from "./UI/Navbar/Navbar";
 import Home from "./Components/Home/Home";
@@ -36,6 +37,7 @@ function App() {
   };
   return (
     <div className="App">
+      <ScrollToTop />
       <State>
         <Navbar />
         <Routes>
@@ -46,8 +48,8 @@ function App() {
           <Route path="/chestoBuy/buyNow" element={<BuyNow />} />
           <Route path="/chestoBuy/buyNow/addtocart" element={<AddToCart />} />
           <Route path="/inqurie" element={<Enqurie />} />
-          <Route path="/termcondition" element={<TermCondition />} />
-          <Route path="/privacypolicy" element={<PrivacyPolicy />} />
+          <Route path="/termcondition" exact element={<TermCondition />} />
+          <Route path="/privacypolicy" exact element={<PrivacyPolicy />} />
         </Routes>
         <Footer />
         {backToTop && (

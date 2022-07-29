@@ -137,18 +137,13 @@ input:invalid[focused="true"] {
                         .imgContainer {
                             flex: 40%;
 
-                            // input{
-                            //     width: 80%;
-                            //     margin-top: 20px;
-                            //     -webkit-inner-spin-button {
-                            //         opacity: 1
-                            //     }
-                            // }
-
-                            input[type=number]::-webkit-inner-spin-button {
-                                opacity: 1;
+                            input {
                                 width: 80%;
                                 margin-top: 20px;
+                            }
+
+                            input::-webkit-inner-spin-button {
+                                opacity: 1;
                             }
                         }
 

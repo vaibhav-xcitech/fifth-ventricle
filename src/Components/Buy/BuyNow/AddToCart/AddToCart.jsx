@@ -1,5 +1,5 @@
-import React, { useState, useEffect, useContext } from "react";
-import { useNavigate, useLocation } from "react-router-dom";
+import React, { useState, useContext } from "react";
+import { useNavigate } from "react-router-dom";
 import classes from "../AddToCart/AddToCart.module.scss";
 import { Divider } from "@mui/material";
 import Select from "react-select";
@@ -13,7 +13,6 @@ import CartContext from "../../../../ContextAPI/Context";
 
 const AddToCart = () => {
   const { width } = useWindowDimensions();
-  const location = useLocation();
   const cart = useContext(CartContext);
 
   console.log(">>>>>>>>>>>>>", cart);
@@ -42,10 +41,6 @@ const AddToCart = () => {
     Charges = 200;
   }
   let payableAmount = subTotal + Charges;
-
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [location]);
 
   const navigate = useNavigate();
 

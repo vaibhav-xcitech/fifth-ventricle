@@ -1,7 +1,7 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useContext } from "react";
 import classes from "../BuyNow/BuyNow.module.scss";
 import { MainButton } from "../../../UI/Button/Button";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import useWindowDimensions from "../../Home/WindowDimensions";
 import CartContext from "../../../ContextAPI/Context";
 
@@ -24,10 +24,6 @@ import chestoGrey from "../../../assets/Chesto_Gray.png";
 import chestoWhite from "../../../assets/Chesto_White.png";
 
 const BuyNow = () => {
-  const location = useLocation();
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [location]);
 
   const navigate = useNavigate();
   const { width } = useWindowDimensions();
