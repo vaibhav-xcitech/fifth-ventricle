@@ -27,6 +27,7 @@ const HeroContainer = () => {
           <div className={classes.homeTypewriterContainer}>
             India's first Truly&nbsp;
             <Typewriter
+              className={classes.typewriter}
               onInit={(typewriter) => {
                 typewriter
                   .typeString("TUBELESS")

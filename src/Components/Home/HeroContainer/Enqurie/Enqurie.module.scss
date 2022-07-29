@@ -16,6 +16,9 @@
             padding: 20px;
 
             .liveDemoForm {
+                p{
+                    display: none;
+                }
 
                 .nameContainer {
                     display: flex;
@@ -83,7 +86,9 @@
                         }
 
                         textarea {
+                            background-color: #313539;
                             color: black;
+                            border: 1px solid white;
                             padding: 8px;
                             border-radius: 5px;
                         }

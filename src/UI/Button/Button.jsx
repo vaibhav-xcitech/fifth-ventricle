@@ -37,7 +37,7 @@ const MainButton = styled(MUIButton)({
     display: "Block",
     '&:hover': {
         backgroundPosition: "right center",
-        // color: "White",
+        color: "White",
         textDecoration: "none"
     }
 

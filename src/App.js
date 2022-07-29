@@ -1,4 +1,5 @@
 import "./App.css";
+import React, { useEffect, useState } from "react";
 import { Routes, Route } from "react-router-dom";
 import State from "./ContextAPI/State";
 
@@ -11,8 +12,26 @@ import Footer from "./UI/Footer/Footer";
 import BuyNow from "./Components/Buy/BuyNow/BuyNow";
 import AddToCart from "./Components/Buy/BuyNow/AddToCart/AddToCart";
 import Enqurie from "./Components/Home/HeroContainer/Enqurie/Enqurie";
+import { BsFillArrowUpCircleFill } from "react-icons/bs";
 
 function App() {
+  const [backToTop, setBackToTop] = useState(false);
+  useEffect(() => {
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 300) {
+        setBackToTop(true);
+      } else {
+        setBackToTop(false);
+      }
+    });
+  }, []);
+
+  const scrollUp = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
   return (
     <div className="App">
       <State>
@@ -27,6 +46,19 @@ function App() {
           <Route path="/inqurie" element={<Enqurie />} />
         </Routes>
         <Footer />
+        {backToTop && (
+          <BsFillArrowUpCircleFill
+            style={{
+              position: "fixed",
+              bottom: "50px",
+              right: "50px",
+              height: "35px",
+              width: "35px",
+              fontSize: "50px",
+            }}
+            onClick={scrollUp}
+          />
+        )}
       </State>
     </div>
   );

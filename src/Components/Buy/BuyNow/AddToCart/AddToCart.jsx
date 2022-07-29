@@ -320,7 +320,6 @@ const AddToCart = () => {
                             height="80px"
                           />
                           <input
-                            className={classes.qunatity}
                             type="number"
                             value={item.counter}
                             onChange={(e) => qunatityChange(e, index)}
@@ -871,13 +870,13 @@ const AddToCart = () => {
             <MainButton
               style={{
                 marginTop: 20,
-                fontSize: 15,
-                borderRadius: 10,
-                padding: "0px  10px",
+                // fontSize: 15,
+                // borderRadius: 10,
+                // padding: "0px  10px",
               }}
               type={"submit"}
             >
-              Make Payment
+              <b>Make Payment</b>
             </MainButton>
           </div>
         </form>

@@ -13,9 +13,9 @@ import {
   CenterDiv,
   IconsButton,
 } from "./Navbar.style";
-import { FaFacebookF } from "react-icons/fa";
-import { FaLinkedinIn } from "react-icons/fa";
-import { FaInstagram } from "react-icons/fa";
+import { GrFacebookOption } from "react-icons/gr";
+import { GrLinkedinOption } from "react-icons/gr";
+import { GrInstagram } from "react-icons/gr";
 
 const Navbar = () => {
   const [extendNavbar, setExtendNavbar] = useState(false);
@@ -41,18 +41,18 @@ const Navbar = () => {
               <NavbarLink to="/contact"> Contact</NavbarLink>
               <NavbarLink to="/chestoBuy"> Buy</NavbarLink>
               <IconsButton>
-                <span style={{ color: "#fff" }}>
-                  <FaFacebookF />
+                <span>
+                  <GrFacebookOption />
                 </span>
               </IconsButton>
               <IconsButton>
-                <span style={{ color: "#fff" }}>
-                  <FaLinkedinIn />
+                <span>
+                  <GrLinkedinOption />
                 </span>
               </IconsButton>
               <IconsButton>
-                <span style={{ color: "#fff" }}>
-                  <FaInstagram />
+                <span>
+                  <GrInstagram />
                 </span>
               </IconsButton>
             </NavbarLinkContainer>
@@ -68,18 +68,18 @@ const Navbar = () => {
           <NavbarLinkExtended to="/chestoBuy"> Buy</NavbarLinkExtended>
           <div style={{ display: "flex" }}>
             <IconsButton>
-              <span style={{ color: "#fff" }}>
-                <FaFacebookF />
+              <span>
+                <GrFacebookOption />
               </span>
             </IconsButton>
             <IconsButton>
-              <span style={{ color: "#fff" }}>
-                <FaLinkedinIn />
+              <span>
+                <GrLinkedinOption />
               </span>
             </IconsButton>
             <IconsButton>
-              <span style={{ color: "#fff" }}>
-                <FaInstagram />
+              <span>
+                <GrInstagram />
               </span>
             </IconsButton>
           </div>

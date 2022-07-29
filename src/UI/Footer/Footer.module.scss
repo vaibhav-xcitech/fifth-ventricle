@@ -1,32 +1,36 @@
 .btn {
-   background-image: linear-gradient(to right, #283048 0%, #859398  51%, #283048  100%);
-   margin: 6px;
-   padding: 9px 13px;
-   text-align: center;
-   text-transform: uppercase;
-   transition: 0.5s;
-   background-size: 200% auto;
-   color: white;
-   border-radius: 25px;
-   border: none;
-   display: block;
- }
+  background-image: linear-gradient(to right, #4EBBCE 0%, #FFE500 51%, #4EBBCE 100%);
+  margin: 6px;
+  padding: 9px 13px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: black;
+  border-radius: 25px;
+  border: none;
+  //  font-weight: 300;
+  display: block;
+}
 
- .btn:hover {
-   background-position: right center; /* change the direction of the change here */
-   color: #fff;
-   text-decoration: none;
- }
+.btn:hover {
+  background-position: right center;
+  /* change the direction of the change here */
+  color: #fff;
+  text-decoration: none;
+}
 
 
 .NavbarInnerContainer {
   width: 100%;
-  display: flex;
   margin-top: 20px;
 
-    @media (max-width: 700px) {
-      flex-direction: column;
-    }
+  @media (max-width: 700px) {
+    flex-direction: column;
+  }
+
+  .mainContainer {
+    display: flex;
 
     .LeftContainer {
       flex: 40%;
@@ -64,29 +68,29 @@
         flex: 40%;
         justify-content: center;
 
-        @media(max-width: 700px){
+        @media(max-width: 700px) {
           margin-bottom: 20px;
         }
 
-        .ContactDetails{
+        .ContactDetails {
           display: flex;
           flex-direction: column;
           justify-content: center;
-          height: 83%;
+          height: 80%;
           padding: 0 20px;
 
-          @media (max-width: 700px){
+          @media (max-width: 700px) {
             padding: 0 50px;
           }
 
-          div{
+          div {
             display: flex;
             margin-top: 5px;
 
-            span{
+            span {
               text-align: left;
 
-              p{
+              p {
                 margin: 0;
               }
             }
@@ -99,12 +103,12 @@
         justify-content: center;
         margin-bottom: 20;
 
-        .companyDetails{
-          height: 83%;
+        .companyDetails {
+          height: 80%;
           display: flex;
           flex-direction: column;
 
-          div{
+          div {
             margin-top: 15px;
             cursor: pointer;
           }
@@ -121,12 +125,20 @@
           flex-direction: column;
           justify-content: center;
           align-items: center;
-          height: 83%;
+          height: 80%;
 
-          @media(max-width: 700px){
+          @media(max-width: 700px) {
             flex-direction: row;
           }
         }
       }
     }
+  }
+
+  .copyRightContainer{
+    padding-top: 5px;
+    padding-bottom: 10px;
+    width: 100%;
+    background-color: black;
+  }
 }
