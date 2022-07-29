@@ -67,8 +67,8 @@ const Footer = () => {
             <h4>FIFTH VENTRICAL</h4>
             <div className={classes.companyDetails}>
               <div onClick={() => navigate("/aboutus")}>About Us</div>
-              <div>Terms Of Services</div>
-              <div>Privacy Police</div>
+              <div onClick={() => navigate("/termcondition")}>Terms Of Services</div>
+              <div onClick={() => navigate("/privacypolicy")}>Privacy Police</div>
               <div onClick={() => navigate("/contact")}>Contact Us</div>
             </div>
           </div>
@@ -101,5 +101,6 @@ const Footer = () => {
     </div>
   );
 };
+
 
 export default Footer;

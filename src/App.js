@@ -9,6 +9,8 @@ import AboutUs from "./Components/AboutUs/AboutUs";
 import Contact from "./Components/Contact/Contact";
 import Buy from "./Components/Buy/Buy";
 import Footer from "./UI/Footer/Footer";
+import TermCondition from "./UI/Footer/Term&Condition/TermCondition";
+import PrivacyPolicy from "./UI/Footer/PrivacyPolicy/PrivacyPolicy";
 import BuyNow from "./Components/Buy/BuyNow/BuyNow";
 import AddToCart from "./Components/Buy/BuyNow/AddToCart/AddToCart";
 import Enqurie from "./Components/Home/HeroContainer/Enqurie/Enqurie";
@@ -44,6 +46,8 @@ function App() {
           <Route path="/chestoBuy/buyNow" element={<BuyNow />} />
           <Route path="/chestoBuy/buyNow/addtocart" element={<AddToCart />} />
           <Route path="/inqurie" element={<Enqurie />} />
+          <Route path="/termcondition" element={<TermCondition />} />
+          <Route path="/privacypolicy" element={<PrivacyPolicy />} />
         </Routes>
         <Footer />
         {backToTop && (
