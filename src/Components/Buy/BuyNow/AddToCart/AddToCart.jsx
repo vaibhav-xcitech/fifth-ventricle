@@ -122,34 +122,6 @@ const AddToCart = () => {
     setShippingData({ ...shippingData, [name]: value });
   };
 
-  // const shippingHandleSubmit = (e) => {
-  //   e.preventDefault();
-  //   console.log(shippingData);
-  //   setShippingData({
-  //     fname: "",
-  //     lname: "",
-  //     companyname: "",
-  //     address1: "",
-  //     address2: "",
-  //     pincode: "",
-  //     city: "",
-  //     state: {},
-  //     phone: "",
-  //     email: "",
-  //   });
-
-  //   setShippingFocused({
-  //     fname: false,
-  //     lname: false,
-  //     companyname: false,
-  //     address1: false,
-  //     pincode: false,
-  //     city: false,
-  //     phone: false,
-  //     email: false,
-  //   });
-  // };
-
   const [billingData, setBillingData] = useState({
     fname: "",
     lname: "",
@@ -186,38 +158,12 @@ const AddToCart = () => {
     setBillingData({ ...billingData, [name]: value });
   };
 
-  // const billingHandleSubmit = (e) => {
-  //   e.preventDefault();
-  //   console.log(billingData);
-  //   setBillingData({
-  //     fname: "",
-  //     lname: "",
-  //     companyname: "",
-  //     address1: "",
-  //     address2: "",
-  //     pincode: "",
-  //     city: "",
-  //     state: {},
-  //     phone: "",
-  //     email: "",
-  //   });
-
-  //   setBillingFocused({
-  //     fname: false,
-  //     lname: false,
-  //     companyname: false,
-  //     address1: false,
-  //     pincode: false,
-  //     city: false,
-  //     phone: false,
-  //     email: false,
-  //   });
-  // };
-
   const handleSubmitForm = (e) => {
     e.preventDefault();
+    let data = [{shippingData, billingData}]
     console.log(shippingData);
     console.log(billingData);
+    console.log(data);
   };
 
   const handleCheckBox = (e) => {
