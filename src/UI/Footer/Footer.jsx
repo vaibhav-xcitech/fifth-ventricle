@@ -77,16 +77,16 @@ const Footer = () => {
             <h4>SOCIAL</h4>
             <div className={classes.socialIcon}>
               <button className={classes.btn}>
-                <span>
+                <span onClick={() => window.open("https://www.facebook.com/fifthventricle.in/")}>
                   <GrFacebookOption />
                 </span>
               </button>
               <button className={classes.btn}>
-                <span>
+                <span onClick={() => window.open("https://www.linkedin.com/company/5th-ventricle/")}>
                   <GrLinkedinOption />
                 </span>
               </button>
-              <button className={classes.btn}>
+              <button className={classes.btn} onClick={() => window.open("https://www.instagram.com/5th_ventricle/?hl=en")}>
                 <span>
                   <GrInstagram />
                 </span>

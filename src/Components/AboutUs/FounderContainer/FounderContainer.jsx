@@ -70,7 +70,7 @@ const FounderContainer = () => {
         {width <= 700 ? (
           ""
         ) : (
-          <div  data-aos="fade-right" className={classes.homeRightContainer}>
+          <div className={classes.homeRightContainer}>
             <div className={classes.imgWrapper}>
               <img
                 src={FounderImage}

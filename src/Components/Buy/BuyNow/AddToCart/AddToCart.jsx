@@ -4,6 +4,8 @@ import classes from "../AddToCart/AddToCart.module.scss";
 import { Divider } from "@mui/material";
 import Select from "react-select";
 import { AiTwotoneDelete } from "react-icons/ai";
+import { BiUpArrow } from "react-icons/bi";
+import { BiDownArrow } from "react-icons/bi";
 import useWindowDimensions from "../../../Home/WindowDimensions";
 
 import { BiErrorAlt } from "react-icons/bi";
@@ -14,8 +16,6 @@ import CartContext from "../../../../ContextAPI/Context";
 const AddToCart = () => {
   const { width } = useWindowDimensions();
   const cart = useContext(CartContext);
-
-  console.log(">>>>>>>>>>>>>", cart);
 
   let total = 0;
   cart.cart.map((item) => {
@@ -52,6 +52,12 @@ const AddToCart = () => {
     control: (base, state) => ({
       ...base,
       background: "#2F3538",
+    }),
+
+    singleValue: (provided, { data }) => ({
+      ...provided,
+      color: "#fff"
+      // specify a fallback color here for those values not accounted for in the styleMap
     }),
 
     option: (styles, state) => {
@@ -234,6 +240,16 @@ const AddToCart = () => {
     // setBillingData({ ...shippingData });
   };
 
+  const QuantityIncrement = (index) => {
+    cart.cart[index].counter ++;
+    cart.updateCart(cart.cart[index]);
+  };
+
+  const QuantityDecrement = (index) => {
+    cart.cart[index].counter --;
+    cart.updateCart(cart.cart[index]);
+  }
+
   return (
     <div className={classes.AddToCartContainer}>
       <div className={classes.mainContainer}>
@@ -308,17 +324,32 @@ const AddToCart = () => {
                     {cart.cart.map((item, index) => (
                       <div className={classes.mainContainer} key={index}>
                         <div className={classes.imgContainer}>
-                          <img
-                            src={item.selectedOption.image}
-                            alt="chesto"
-                            width="125px"
-                            height="80px"
-                          />
-                          <input
+                          <div>
+                            <img
+                              src={item.selectedOption.image}
+                              alt="chesto"
+                              width="125px"
+                              height="80px"
+                            />
+                          </div>
+                          {/* <input
                             type="number"
                             value={item.counter}
                             onChange={(e) => qunatityChange(e, index)}
-                          />
+                          /> */}
+                          <span>
+                            <button onClick={() => QuantityIncrement(index,+1)}>
+                              <BiUpArrow />
+                            </button>
+                            <input
+                              type="number"
+                              value={item.counter}
+                              onChange={(e) => qunatityChange(e, index)}
+                            />
+                            <button onClick={() => QuantityDecrement(index,-1)}>
+                              <BiDownArrow />
+                            </button>
+                          </span>
                         </div>
                         <div className={classes.contentContainer}>
                           <h4 style={{ paddingLeft: "7px" }}>

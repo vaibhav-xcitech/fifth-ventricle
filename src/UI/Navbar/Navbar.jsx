@@ -41,17 +41,33 @@ const Navbar = () => {
               <NavbarLink to="/contact"> Contact</NavbarLink>
               <NavbarLink to="/chestoBuy"> Buy</NavbarLink>
               <IconsButton>
-                <span>
+                <span
+                  onClick={() =>
+                    window.open("https://www.facebook.com/fifthventricle.in/")
+                  }
+                >
                   <GrFacebookOption />
                 </span>
               </IconsButton>
               <IconsButton>
-                <span>
+                <span
+                  onClick={() =>
+                    window.open(
+                      "https://www.linkedin.com/company/5th-ventricle/"
+                    )
+                  }
+                >
                   <GrLinkedinOption />
                 </span>
               </IconsButton>
               <IconsButton>
-                <span>
+                <span
+                  onClick={() =>
+                    window.open(
+                      "https://www.instagram.com/5th_ventricle/?hl=en"
+                    )
+                  }
+                >
                   <GrInstagram />
                 </span>
               </IconsButton>
@@ -68,17 +84,29 @@ const Navbar = () => {
           <NavbarLinkExtended to="/chestoBuy"> Buy</NavbarLinkExtended>
           <div style={{ display: "flex" }}>
             <IconsButton>
-              <span>
+              <span
+                onClick={() =>
+                  window.open("https://www.facebook.com/fifthventricle.in/")
+                }
+              >
                 <GrFacebookOption />
               </span>
             </IconsButton>
             <IconsButton>
-              <span>
+              <span
+                onClick={() =>
+                  window.open("https://www.linkedin.com/company/5th-ventricle/")
+                }
+              >
                 <GrLinkedinOption />
               </span>
             </IconsButton>
             <IconsButton>
-              <span>
+              <span
+                onClick={() =>
+                  window.open("https://www.instagram.com/5th_ventricle/?hl=en")
+                }
+              >
                 <GrInstagram />
               </span>
             </IconsButton>
