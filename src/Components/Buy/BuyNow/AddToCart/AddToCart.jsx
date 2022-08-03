@@ -7,13 +7,16 @@ import { AiTwotoneDelete } from "react-icons/ai";
 import { BiUpArrow } from "react-icons/bi";
 import { BiDownArrow } from "react-icons/bi";
 import useWindowDimensions from "../../../Home/WindowDimensions";
+// import axios from "axios";
 
 import { BiErrorAlt } from "react-icons/bi";
 import { MainButton } from "../../../../UI/Button/Button";
 import { Statelabel } from "../../../../assets/StateName";
 import CartContext from "../../../../ContextAPI/Context";
+import EmptyCart from "../../../../assets/Empty cart.png";
 
 const AddToCart = () => {
+
   const { width } = useWindowDimensions();
   const cart = useContext(CartContext);
 
@@ -56,7 +59,7 @@ const AddToCart = () => {
 
     singleValue: (provided, { data }) => ({
       ...provided,
-      color: "#fff"
+      color: "#fff",
       // specify a fallback color here for those values not accounted for in the styleMap
     }),
 
@@ -158,12 +161,64 @@ const AddToCart = () => {
     setBillingData({ ...billingData, [name]: value });
   };
 
-  const handleSubmitForm = (e) => {
+  const handleSubmitForm = async (e) => {
     e.preventDefault();
-    let data = [{shippingData, billingData}]
+    let mainData = [{ shippingData, billingData }];
     console.log(shippingData);
     console.log(billingData);
-    console.log(data);
+    console.log(mainData);
+    console.log("i m clicked");
+    const TotalAmount = parseInt(payableAmount);
+
+    function loadScript(src) {
+      return new Promise((resolve) => {
+        const script = document.createElement("script");
+        script.src = src;
+        script.onload = () => {
+          resolve(true);
+        };
+        script.onerror = () => {
+          resolve(false);
+        };
+        document.body.appendChild(script);
+      });
+    }
+
+    const res = await loadScript(
+      "https://checkout.razorpay.com/v1/checkout.js"
+    );
+
+    if (!res) {
+      alert("Razorpay SDK failed to load. Are you online?");
+      return;
+    }
+    console.log(payableAmount);
+
+    const options = {
+      key: "rzp_test_Df7ItXAoPQXieT",
+      currency: "INR",
+      amount: TotalAmount * 100,
+      // order_id: Math.floor(Math.random() * (100 - 10 + 1)) + 10,
+      name: "Donation",
+      description: "Thank you for nothing. Please give us some money",
+      // image: "http://localhost:3000/logo.svg",
+      handler: function (response) {
+        console.log("------------------------", response);
+        try {
+          alert("Payment id", response.razorpay_payment_id);
+          alert("order id", response.razorpay_order_id);
+          alert("razorpay signature", response.razorpay_signature);
+        } catch (error) {
+          console.log(error);
+        }
+      },
+      prefill: {
+        email: "sdfdsjfh2@ndsfdf.com",
+        phone_number: "9899999999",
+      },
+    };
+    const paymentObject = new window.Razorpay(options);
+    paymentObject.open();
   };
 
   const handleCheckBox = (e) => {
@@ -187,14 +242,18 @@ const AddToCart = () => {
   };
 
   const QuantityIncrement = (index) => {
-    cart.cart[index].counter ++;
-    cart.updateCart(cart.cart[index]);
+    if (cart.cart[index].counter < 100) {
+      cart.cart[index].counter++;
+      cart.updateCart(cart.cart[index]);
+    }
   };
 
   const QuantityDecrement = (index) => {
-    cart.cart[index].counter --;
-    cart.updateCart(cart.cart[index]);
-  }
+    if (cart.cart[index].counter > 1) {
+      cart.cart[index].counter--;
+      cart.updateCart(cart.cart[index]);
+    }
+  };
 
   return (
     <div className={classes.AddToCartContainer}>
@@ -258,9 +317,18 @@ const AddToCart = () => {
                     </tbody>
                   </table>
                 ) : (
-                  <h3 style={{ color: "#6EC1E4" }}>
-                    Your Cart Is Empty Right Now Feel Free to continue Shopping
-                  </h3>
+                  <div>
+                    <img
+                      src={EmptyCart}
+                      alt="empty"
+                      width="200px"
+                      height="200px"
+                    />
+                    <h4 style={{ color: "#6EC1E4" }}>
+                      Your Cart Is Empty Right Now Feel Free to continue
+                      Shopping.
+                    </h4>
+                  </div>
                 )}
               </div>
             ) : (
@@ -284,7 +352,9 @@ const AddToCart = () => {
                             onChange={(e) => qunatityChange(e, index)}
                           /> */}
                           <span>
-                            <button onClick={() => QuantityIncrement(index,+1)}>
+                            <button
+                              onClick={() => QuantityIncrement(index, +1)}
+                            >
                               <BiUpArrow />
                             </button>
                             <input
@@ -292,7 +362,9 @@ const AddToCart = () => {
                               value={item.counter}
                               onChange={(e) => qunatityChange(e, index)}
                             />
-                            <button onClick={() => QuantityDecrement(index,-1)}>
+                            <button
+                              onClick={() => QuantityDecrement(index, -1)}
+                            >
                               <BiDownArrow />
                             </button>
                           </span>
@@ -323,9 +395,18 @@ const AddToCart = () => {
                     ))}
                   </div>
                 ) : (
-                  <h3 style={{ color: "#6EC1E4", padding: "15px" }}>
-                    Your Cart Is Empty Right Now Feel Free to continue Shopping
-                  </h3>
+                  <div>
+                    <img
+                      src={EmptyCart}
+                      alt="empty"
+                      width="200px"
+                      height="200px"
+                    />
+                    <h4 style={{ color: "#6EC1E4" }}>
+                      Your Cart Is Empty Right Now Feel Free to continue
+                      Shopping.
+                    </h4>
+                  </div>
                 )}
               </div>
             )}
@@ -359,10 +440,10 @@ const AddToCart = () => {
               </div>
               <div className={classes.Details}>
                 <div className={classes.label}>Quantity</div>
-                <div>{totalQuantity}</div>
+                <div>{totalQuantity} Pieces</div>
               </div>
               <div className={classes.Details}>
-                <div className={classes.label}>Discounts</div>
+                <div className={classes.label}>Discount</div>
                 <div>&#x20b9; -{discount}/-</div>
               </div>
               <div className={classes.Details}>
