@@ -7,7 +7,7 @@ import { AiTwotoneDelete } from "react-icons/ai";
 import { BiUpArrow } from "react-icons/bi";
 import { BiDownArrow } from "react-icons/bi";
 import useWindowDimensions from "../../../Home/WindowDimensions";
-// import axios from "axios";
+import axios from "axios";
 
 import { BiErrorAlt } from "react-icons/bi";
 import { MainButton } from "../../../../UI/Button/Button";
@@ -16,6 +16,17 @@ import CartContext from "../../../../ContextAPI/Context";
 import EmptyCart from "../../../../assets/Empty cart.png";
 
 const AddToCart = () => {
+  const characters =
+    "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+
+  function generateString(length) {
+    let result = " ";
+    const charactersLength = characters.length;
+    for (let i = 0; i < length; i++) {
+      result += characters.charAt(Math.floor(Math.random() * charactersLength));
+    }
+    return result;
+  }
 
   const { width } = useWindowDimensions();
   const cart = useContext(CartContext);
@@ -192,22 +203,23 @@ const AddToCart = () => {
       alert("Razorpay SDK failed to load. Are you online?");
       return;
     }
-    console.log(payableAmount);
 
     const options = {
       key: "rzp_test_Df7ItXAoPQXieT",
       currency: "INR",
       amount: TotalAmount * 100,
-      // order_id: Math.floor(Math.random() * (100 - 10 + 1)) + 10,
-      name: "Donation",
-      description: "Thank you for nothing. Please give us some money",
+      // order_id: generateString(7),
+      name: "Buying Chesto",
+      description: "Please complete the procedure to make Payment",
       // image: "http://localhost:3000/logo.svg",
       handler: function (response) {
-        console.log("------------------------", response);
+        axios.post("https://projects.xcitech.in:5008/payment/create", {
+          payment_id : response.razorpay_payment_id
+        })
+        .then(res => console.log(res))
+        console.log("------------------------", response.razorpay_payment_id);
         try {
           alert("Payment id", response.razorpay_payment_id);
-          alert("order id", response.razorpay_order_id);
-          alert("razorpay signature", response.razorpay_signature);
         } catch (error) {
           console.log(error);
         }
