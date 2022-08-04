@@ -39,7 +39,7 @@ const Footer = () => {
                 <HiOfficeBuilding
                   style={{ width: 15, height: 15, margin: 7 }}
                 />
-                Fifth Ventrical
+                <p style={{ marginTop: 4, marginBottom: 0 }}>Fifth Ventrical</p>
               </div>
               <div>
                 <span>
@@ -55,11 +55,15 @@ const Footer = () => {
               </div>
               <div>
                 <HiPhone style={{ width: 15, height: 15, margin: 7 }} />
-                +91 6355 392 577
+                <p style={{ marginTop: 4, marginBottom: 0 }}>
+                  +91 6355 392 577
+                </p>
               </div>
               <div>
                 <HiMailOpen style={{ width: 15, height: 15, margin: 7 }} />
-                hirak@fifthventricle.in
+                <p style={{ marginTop: 4, marginBottom: 0 }}>
+                  hirak@fifthventricle.in
+                </p>
               </div>
             </div>
           </div>
@@ -67,8 +71,12 @@ const Footer = () => {
             <h4>FIFTH VENTRICAL</h4>
             <div className={classes.companyDetails}>
               <div onClick={() => navigate("/aboutus")}>About Us</div>
-              <div onClick={() => navigate("/termcondition")}>Terms Of Services</div>
-              <div onClick={() => navigate("/privacypolicy")}>Privacy Police</div>
+              <div onClick={() => navigate("/termcondition")}>
+                Terms Of Services
+              </div>
+              <div onClick={() => navigate("/privacypolicy")}>
+                Privacy Police
+              </div>
               <div onClick={() => navigate("/contact")}>Contact Us</div>
             </div>
           </div>
@@ -77,16 +85,31 @@ const Footer = () => {
             <h4>SOCIAL</h4>
             <div className={classes.socialIcon}>
               <button className={classes.btn}>
-                <span onClick={() => window.open("https://www.facebook.com/fifthventricle.in/")}>
+                <span
+                  onClick={() =>
+                    window.open("https://www.facebook.com/fifthventricle.in/")
+                  }
+                >
                   <GrFacebookOption />
                 </span>
               </button>
               <button className={classes.btn}>
-                <span onClick={() => window.open("https://www.linkedin.com/company/5th-ventricle/")}>
+                <span
+                  onClick={() =>
+                    window.open(
+                      "https://www.linkedin.com/company/5th-ventricle/"
+                    )
+                  }
+                >
                   <GrLinkedinOption />
                 </span>
               </button>
-              <button className={classes.btn} onClick={() => window.open("https://www.instagram.com/5th_ventricle/?hl=en")}>
+              <button
+                className={classes.btn}
+                onClick={() =>
+                  window.open("https://www.instagram.com/5th_ventricle/?hl=en")
+                }
+              >
                 <span>
                   <GrInstagram />
                 </span>
@@ -101,6 +124,5 @@ const Footer = () => {
     </div>
   );
 };
-
 
 export default Footer;

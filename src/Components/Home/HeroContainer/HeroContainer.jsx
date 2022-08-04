@@ -41,7 +41,11 @@ const HeroContainer = () => {
           <h4 style={{ margin: 15 }}>
             Smart Digital Stethoscope Making Company
           </h4>
-          <MainButton type="button" onClick={() => navigate("/inqurie")}>
+          <MainButton
+            type="button"
+            onClick={() => navigate("/inqurie")}
+            style={{ marginBottom: "10px" }}
+          >
             <b>Enquire now</b>
           </MainButton>
         </div>

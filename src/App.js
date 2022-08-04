@@ -61,6 +61,7 @@ function App() {
               height: "35px",
               width: "35px",
               fontSize: "50px",
+              zIndex: 11
             }}
             onClick={scrollUp}
           />
