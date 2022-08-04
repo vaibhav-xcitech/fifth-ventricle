@@ -84,7 +84,7 @@ const Contact = () => {
           <h4>We always love to hear from you.</h4>
         </div>
         <div className={classes.contactBodyContainer}>
-          <div data-aos="flip-right" className={classes.contactUsContainer}>
+          <div data-aos="fade-up" className={classes.contactUsContainer}>
             <div>
               <img src={fonderimg} alt="fonder" width="60px" height="60px" />
             </div>
@@ -142,7 +142,7 @@ const Contact = () => {
               </div>
             </div>
           </div>
-          <div data-aos="flip-left" className={classes.msgtUsContainer}>
+          <div data-aos="fade-up" className={classes.msgtUsContainer}>
             <div className={classes.msgtUsHeader}>
               <h1>Send Us a Message!</h1>
             </div>

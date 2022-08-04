@@ -40,34 +40,30 @@ const Navbar = () => {
               <NavbarLink to="/aboutus"> About Us</NavbarLink>
               <NavbarLink to="/contact"> Contact</NavbarLink>
               <NavbarLink to="/chestoBuy"> Buy</NavbarLink>
-              <IconsButton>
-                <span
-                  onClick={() =>
-                    window.open("https://www.facebook.com/fifthventricle.in/")
-                  }
-                >
+              <IconsButton
+                onClick={() =>
+                  window.open("https://www.facebook.com/fifthventricle.in/")
+                }
+              >
+                <span>
                   <GrFacebookOption />
                 </span>
               </IconsButton>
-              <IconsButton>
-                <span
-                  onClick={() =>
-                    window.open(
-                      "https://www.linkedin.com/company/5th-ventricle/"
-                    )
-                  }
-                >
+              <IconsButton
+                onClick={() =>
+                  window.open("https://www.linkedin.com/company/5th-ventricle/")
+                }
+              >
+                <span>
                   <GrLinkedinOption />
                 </span>
               </IconsButton>
-              <IconsButton>
-                <span
-                  onClick={() =>
-                    window.open(
-                      "https://www.instagram.com/5th_ventricle/?hl=en"
-                    )
-                  }
-                >
+              <IconsButton
+                onClick={() =>
+                  window.open("https://www.instagram.com/5th_ventricle/?hl=en")
+                }
+              >
+                <span>
                   <GrInstagram />
                 </span>
               </IconsButton>
@@ -83,30 +79,30 @@ const Navbar = () => {
           <NavbarLinkExtended to="/contact"> Contact</NavbarLinkExtended>
           <NavbarLinkExtended to="/chestoBuy"> Buy</NavbarLinkExtended>
           <div style={{ display: "flex" }}>
-            <IconsButton>
-              <span
-                onClick={() =>
-                  window.open("https://www.facebook.com/fifthventricle.in/")
-                }
-              >
+            <IconsButton
+              onClick={() =>
+                window.open("https://www.facebook.com/fifthventricle.in/")
+              }
+            >
+              <span>
                 <GrFacebookOption />
               </span>
             </IconsButton>
-            <IconsButton>
-              <span
-                onClick={() =>
-                  window.open("https://www.linkedin.com/company/5th-ventricle/")
-                }
-              >
+            <IconsButton
+              onClick={() =>
+                window.open("https://www.linkedin.com/company/5th-ventricle/")
+              }
+            >
+              <span>
                 <GrLinkedinOption />
               </span>
             </IconsButton>
-            <IconsButton>
-              <span
-                onClick={() =>
-                  window.open("https://www.instagram.com/5th_ventricle/?hl=en")
-                }
-              >
+            <IconsButton
+              onClick={() =>
+                window.open("https://www.instagram.com/5th_ventricle/?hl=en")
+              }
+            >
+              <span>
                 <GrInstagram />
               </span>
             </IconsButton>

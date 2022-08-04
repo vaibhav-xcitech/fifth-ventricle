@@ -84,23 +84,23 @@ const Footer = () => {
           <div className={classes.RightDivThree}>
             <h4>SOCIAL</h4>
             <div className={classes.socialIcon}>
-              <button className={classes.btn}>
-                <span
-                  onClick={() =>
-                    window.open("https://www.facebook.com/fifthventricle.in/")
-                  }
-                >
+              <button
+                className={classes.btn}
+                onClick={() =>
+                  window.open("https://www.facebook.com/fifthventricle.in/")
+                }
+              >
+                <span>
                   <GrFacebookOption />
                 </span>
               </button>
-              <button className={classes.btn}>
-                <span
-                  onClick={() =>
-                    window.open(
-                      "https://www.linkedin.com/company/5th-ventricle/"
-                    )
-                  }
-                >
+              <button
+                className={classes.btn}
+                onClick={() =>
+                  window.open("https://www.linkedin.com/company/5th-ventricle/")
+                }
+              >
+                <span>
                   <GrLinkedinOption />
                 </span>
               </button>
