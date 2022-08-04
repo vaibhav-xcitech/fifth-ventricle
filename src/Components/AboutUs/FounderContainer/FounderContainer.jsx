@@ -1,18 +1,11 @@
-import React, { useEffect } from "react";
+import React from "react";
 import classes from "../FounderContainer/FounderContainer.module.scss";
 import useWindowDimensions from "../../Home/WindowDimensions";
-import Aos from "aos";
-import "aos/dist/aos.css";
-// import { MainButton } from "../../../UI/Button/Button";
 
 import FounderImage from "../../../assets/Hirak Bhai.png";
 
 const FounderContainer = () => {
   const { width } = useWindowDimensions();
-
-  useEffect(() => {
-    Aos.init({ duration: 1200 });
-  }, []);
   return (
     <div className={classes.homeThirdContainer}>
       <div className={classes.MidleContainer}>

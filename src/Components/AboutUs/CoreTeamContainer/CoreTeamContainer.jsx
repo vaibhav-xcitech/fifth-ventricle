@@ -1,9 +1,7 @@
-import React, { useEffect } from "react";
+import React from "react";
 import classes from "../CoreTeamContainer/CoreTeamContainer.module.scss";
 import useWindowDimensions from "../../Home/WindowDimensions";
 import Card from "../../../UI/Card/Card";
-import Aos from "aos";
-import "aos/dist/aos.css";
 
 import DesignerImage from "../../../assets/svgviewer-output (11).svg";
 import MLEngineerImg from "../../../assets/svgviewer-output (10).svg";
@@ -12,9 +10,6 @@ import EmbaddedSystem from "../../../assets/svgviewer-output (14).svg";
 import SalesManager from "../../../assets/svgviewer-output (13).svg";
 
 const CoreTeamContainer = () => {
-  useEffect(() => {
-    Aos.init({ duration: 2000 });
-  }, []);
 
   const { width } = useWindowDimensions();
 

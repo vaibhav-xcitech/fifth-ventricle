@@ -204,26 +204,27 @@ const AddToCart = () => {
       return;
     }
 
+    axios
+      .post("https://projects.xcitech.in:5008/payment/create", {
+        amount: 100
+      })
+      .then((res) => console.log(res));
+    // console.log("------------------------", response.razorpay_payment_id);
+    // try {
+    //   alert("Payment id", response.razorpay_payment_id);
+    // } catch (error) {
+    //   console.log(error);
+    // }
+
     const options = {
-      key: "rzp_test_Df7ItXAoPQXieT",
+      key: "rzp_test_9hWgC7xFFSJOrV",
       currency: "INR",
       amount: TotalAmount * 100,
       // order_id: generateString(7),
       name: "Buying Chesto",
       description: "Please complete the procedure to make Payment",
       // image: "http://localhost:3000/logo.svg",
-      handler: function (response) {
-        axios.post("https://projects.xcitech.in:5008/payment/create", {
-          payment_id : response.razorpay_payment_id
-        })
-        .then(res => console.log(res))
-        console.log("------------------------", response.razorpay_payment_id);
-        try {
-          alert("Payment id", response.razorpay_payment_id);
-        } catch (error) {
-          console.log(error);
-        }
-      },
+      handler: function (response) {},
       prefill: {
         email: "sdfdsjfh2@ndsfdf.com",
         phone_number: "9899999999",

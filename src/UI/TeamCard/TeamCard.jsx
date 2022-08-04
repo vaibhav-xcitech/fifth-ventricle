@@ -10,7 +10,12 @@ const TeamCard = (props) => {
 
   const { image, alter, description } = props;
   return (
-    <div data-aos="flip-up" data-aos-offset="300" className={Classes.Card}>
+    <div
+      data-aos="flip-up"
+      // data-aos-offset="300"
+      data-aos-easing="ease-in-sine"
+      className={Classes.Card}
+    >
       <div className={Classes.header}>
         <div className={Classes.circle}>
           <div className={Classes.img}>
