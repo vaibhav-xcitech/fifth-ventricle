@@ -205,8 +205,9 @@ const AddToCart = () => {
     }
 
     axios
-      .post("https://projects.xcitech.in:5008/payment/create", {
-        amount: 100
+      .post("http://192.168.1.15:5959/payment/order/create", {
+        amount: 100,
+        data: mainData,
       })
       .then((res) => console.log(res));
     // console.log("------------------------", response.razorpay_payment_id);

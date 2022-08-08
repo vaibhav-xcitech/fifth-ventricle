@@ -117,7 +117,7 @@ export const NavbarExtendedContainer = styled.div`
 `;
 
 export const IconsButton = styled.button`
-  background-image: linear-gradient(to right, #4EBBCE 0%, #FFE500  51%, #4EBBCE  100%);
+  background-image: linear-gradient(to right, #4EBBCE 0%, #B1DFB5  51%, #4EBBCE  100%);
   margin-top: 10px;
   margin-right: 6px;
   margin-left: 6px;

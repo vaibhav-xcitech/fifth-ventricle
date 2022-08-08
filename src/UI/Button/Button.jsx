@@ -24,7 +24,7 @@ const MainButton = styled(MUIButton)({
     //     backgroundColor: '#f8e42f',
     // }
 
-    backgroundImage: "linear-gradient(to right, #4EBBCE 0%, #FFE500  51%, #4EBBCE  100%)",
+    backgroundImage: "linear-gradient(to right, #4EBBCE 0%, #B1DFB5  51%, #4EBBCE  100%)",
     marginTop: '35px',
     padding: '7px 15px',
     textAlign: "center",

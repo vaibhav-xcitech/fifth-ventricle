@@ -1,29 +1,37 @@
-import React, { useEffect, useRef } from "react";
+import React from "react";
 import classes from "../HeroContainer/HeroContainer.module.scss";
 import { MainButton } from "../../../UI/Button/Button";
 import { useNavigate } from "react-router-dom";
+import Lottie from "react-lottie";
 
 import Typewriter from "typewriter-effect";
-import heroImage from "../../../assets/Comp 1.mp4";
+import heroImage from "../../../assets/Chesto Animation.json";
 import StartUpIndia from "../../../assets/Startupindia.png";
 import MakeInIndia from "../../../assets/Make In India.png";
 import IsoAssured from "../../../assets/ISO13485.png";
 
 const HeroContainer = () => {
-  const vidref = useRef();
+  // const vidref = useRef();
   const navigate = useNavigate();
 
-  useEffect(() => {
-    vidref.current.play(console.log("hello"));
-  }, []);
+  // useEffect(() => {
+  //   vidref.current.play(console.log("hello"));
+  // }, []);
+
+  const defaultOptions = {
+    loop: true,
+      autoplay: true,
+      animationData: heroImage,
+      rendererSettings: {
+        preserveAspectRatio: "xMidYMid slice"
+      }
+  }
 
   return (
     <>
       <div className={classes.homeHeroContainer}>
         <div className={classes.heroTextImgContainer}>
-          <video width={"100%"} ref={vidref} muted autoPlay loop>
-            <source src={heroImage} type="video/mp4" />
-          </video>
+          <Lottie options={defaultOptions} width="100%" />
           <div className={classes.homeTypewriterContainer}>
             India's first Truly&nbsp;
             <Typewriter

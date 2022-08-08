@@ -26,7 +26,7 @@ const Navbar = () => {
         <CenterDiv>
           <OpenLinksButton
             onClick={() => {
-              setExtendNavbar((curr) => !curr, console.log("hello"));
+              setExtendNavbar((curr) => !curr, console.log(extendNavbar));
             }}
           >
             {extendNavbar ? <>&#10005;</> : <>&#8801;</>}
@@ -36,10 +36,22 @@ const Navbar = () => {
           </LeftContainer>
           <RightContainer>
             <NavbarLinkContainer>
-              <NavbarLink to="/"> Home</NavbarLink>
-              <NavbarLink to="/aboutus"> About Us</NavbarLink>
-              <NavbarLink to="/contact"> Contact</NavbarLink>
-              <NavbarLink to="/chestoBuy"> Buy</NavbarLink>
+              <NavbarLink to="/" onClick={() => setExtendNavbar(true)}>
+                {" "}
+                Home
+              </NavbarLink>
+              <NavbarLink to="/aboutus" onClick={() => setExtendNavbar(true)}>
+                {" "}
+                About Us
+              </NavbarLink>
+              <NavbarLink to="/contact" onClick={() => setExtendNavbar(true)}>
+                {" "}
+                Contact
+              </NavbarLink>
+              <NavbarLink to="/chestoBuy" onClick={() => setExtendNavbar(true)}>
+                {" "}
+                Buy
+              </NavbarLink>
               <IconsButton
                 onClick={() =>
                   window.open("https://www.facebook.com/fifthventricle.in/")
