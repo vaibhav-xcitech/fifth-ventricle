@@ -8,6 +8,8 @@ import { BiUpArrow } from "react-icons/bi";
 import { BiDownArrow } from "react-icons/bi";
 import useWindowDimensions from "../../../Home/WindowDimensions";
 import axios from "axios";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 import { BiErrorAlt } from "react-icons/bi";
 import { MainButton } from "../../../../UI/Button/Button";
@@ -16,17 +18,17 @@ import CartContext from "../../../../ContextAPI/Context";
 import EmptyCart from "../../../../assets/Empty cart.png";
 
 const AddToCart = () => {
-  const characters =
-    "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+  // const characters =
+  //   "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
 
-  function generateString(length) {
-    let result = " ";
-    const charactersLength = characters.length;
-    for (let i = 0; i < length; i++) {
-      result += characters.charAt(Math.floor(Math.random() * charactersLength));
-    }
-    return result;
-  }
+  // function generateString(length) {
+  //   let result = " ";
+  //   const charactersLength = characters.length;
+  //   for (let i = 0; i < length; i++) {
+  //     result += characters.charAt(Math.floor(Math.random() * charactersLength));
+  //   }
+  //   return result;
+  // }
 
   const { width } = useWindowDimensions();
   const cart = useContext(CartContext);
@@ -45,6 +47,11 @@ const AddToCart = () => {
   cart.cart.map((item) => {
     totalQuantity = totalQuantity + item.counter;
   });
+
+  let chestoColor = []; 
+  cart.cart.map((item) => {
+    chestoColor = item.selectedOption.slug;
+  })
 
   let discount = 0;
   let actualAmount = totalQuantity * 14999;
@@ -171,14 +178,12 @@ const AddToCart = () => {
 
     setBillingData({ ...billingData, [name]: value });
   };
+  
 
   const handleSubmitForm = async (e) => {
     e.preventDefault();
     let mainData = [{ shippingData, billingData }];
-    console.log(shippingData);
-    console.log(billingData);
     console.log(mainData);
-    console.log("i m clicked");
     const TotalAmount = parseInt(payableAmount);
 
     function loadScript(src) {
@@ -204,27 +209,22 @@ const AddToCart = () => {
       return;
     }
 
-    axios
-      .post("http://192.168.1.15:5959/payment/order/create", {
-        amount: 100,
-        data: mainData,
-      })
-      .then((res) => console.log(res));
-    // console.log("------------------------", response.razorpay_payment_id);
-    // try {
-    //   alert("Payment id", response.razorpay_payment_id);
-    // } catch (error) {
-    //   console.log(error);
-    // }
+    axios.post("http://localhost:5959/web/order/create", {
+      payableAmount: payableAmount,
+      quantity: totalQuantity,
+      chestoColor: chestoColor,
+      data: mainData
+    })
+    .then((res) => console.log(res))
+    .catch((error) => {console.log(error)}) 
 
     const options = {
-      key: "rzp_test_9hWgC7xFFSJOrV",
+      key: "rzp_live_w1Rh1PNE13C0vz",
       currency: "INR",
       amount: TotalAmount * 100,
       // order_id: generateString(7),
       name: "Buying Chesto",
       description: "Please complete the procedure to make Payment",
-      // image: "http://localhost:3000/logo.svg",
       handler: function (response) {},
       prefill: {
         email: "sdfdsjfh2@ndsfdf.com",
@@ -233,6 +233,7 @@ const AddToCart = () => {
     };
     const paymentObject = new window.Razorpay(options);
     paymentObject.open();
+    toast("Your order has been placed successfully");
   };
 
   const handleCheckBox = (e) => {
@@ -271,6 +272,7 @@ const AddToCart = () => {
 
   return (
     <div className={classes.AddToCartContainer}>
+      <ToastContainer position="top-right" autoClose={1500} />
       <div className={classes.mainContainer}>
         <div className={classes.cartFirstRow}>
           <div className={classes.MyCartContainer}>
@@ -567,7 +569,7 @@ const AddToCart = () => {
                     id="companyname"
                     value={shippingData.companyname}
                     onChange={shippingHandleInput}
-                    pattern="^[A-Za-z0-9}_ ]{3,26}$"
+                    pattern="^[A-Za-z0-9}_ ]{3,46}$"
                     onBlur={shippingHandleFocus}
                     focused={shippingFocused.companyname.toString()}
                     required
@@ -811,7 +813,7 @@ const AddToCart = () => {
                     value={billingData.companyname}
                     required
                     onChange={billingHandleInput}
-                    pattern="^[A-Za-z0-9]{3,26}$"
+                    pattern="^[A-Za-z0-9}_ ]{3,46}$"
                     onBlur={billingHandleFocus}
                     focused={billingFocused.companyname.toString()}
                   />
