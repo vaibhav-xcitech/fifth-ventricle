@@ -1,7 +1,7 @@
 .homeQuestionContainer {
     // min-height: 1000px;
-    margin-top: 20px;
-    margin-bottom: 20px;
+    padding-top: 60px;
+    padding-bottom: 60px;
 
     .QuestionTextImgContainer {
         display: flex;
@@ -22,6 +22,7 @@
     }
 
     .infoCards {
+        margin-top: 40px;
         width: 100%;
         display: flex;
         justify-content: center;

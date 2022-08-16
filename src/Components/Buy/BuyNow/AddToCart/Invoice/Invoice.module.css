@@ -1,0 +1,137 @@
+.invoiceContainer {
+  padding-bottom: 20px;
+}
+
+.printContainer {
+  display: flex;
+  justify-content: right;
+}
+
+/* button {
+  width: 80px;
+  height: 40px;
+  margin: 15px 20px;
+  border-radius: 10px;
+  border: none;
+  background-color: #839c83;
+} */
+
+.headerContainer {
+  display: flex;
+  justify-content: space-between;
+  padding: 0px 25px;
+}
+
+.NameContainer {
+  text-align: right;
+}
+
+.Divider {
+  margin: 15px 0px;
+  padding: 0;
+  border-top: 3px solid #00b5f0 !important;
+  border-radius: 50px;
+}
+
+.invoiceDetail {
+  display: flex;
+  justify-content: space-between;
+  padding: 0px 25px;
+}
+
+.details {
+  text-align: right;
+}
+
+.invoiceTable {
+  padding: 0px 25px;
+  border-radius: 10px;
+}
+
+.shoppingTabel {
+  width: 100%;
+}
+
+/* thead {
+  background-color: #00b5f0;
+} */
+
+.th {
+  text-align: center;
+  color: white !important;
+  background-color: #00B5F0 !important;
+  padding: 10px 0px;
+}
+
+/* tbody {
+  background-color: white;
+} */
+
+/* td {
+  color: black;
+  text-align: center;
+  padding: 10px 0px;
+} */
+
+.belowContainer {
+  display: flex;
+  justify-content: space-between;
+  padding: 0px 25px;
+}
+
+.tndContainer {
+  text-align: left;
+}
+
+.h3 {
+  font-size: 21px;
+  padding: 5px 10px;
+  font-weight: 700;
+  color: white !important;
+  background-color: #00b5f0 !important;
+}
+
+/* h4 {
+  font-size: 20px;
+  background-color: #00b5f0;
+  padding: 4px 10px;
+} */
+
+/* h5 {
+  padding: 0px 10px;
+} */
+
+.amountContainer {
+  width: 40%;
+  margin-top: 10px;
+  background-color: white;
+  border-radius: 10px;
+  max-height: 280px;
+}
+
+.amountHeader {
+  text-align: left;
+  background-color: #00b5f0 !important;
+  padding: 10px 15px;
+  font-weight: 700;
+  color: white !important;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.Details {
+  color: black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 14px;
+}
+
+.label {
+  font-weight: 700;
+}
+
+.totalLabel {
+  font-size: larger;
+  font-weight: 800;
+}

@@ -100,7 +100,7 @@ const QuestionContainer = () => {
       <div className={classes.homeQuestionContainer}>
         <div className={classes.QuestionTextImgContainer}>
           <h4 style={{ marginBottom: 0 }}>THE QUESTION</h4>
-          <h1 style={{ color: "#5fdad5", marginTop: 0 }}>WHY FIFTHVENTRICLE</h1>
+          <h1 style={{ marginTop: 0 }}>WHY FIFTHVENTRICLE</h1>
         </div>
 
         <div className={classes.bulbImgContainer}>
@@ -141,9 +141,7 @@ const QuestionContainer = () => {
                     <h3>Artificial interlligence</h3>
                     <br />
                     <p style={{ fontSize: 16 }}>
-                      Introducing long due upgrades in healthcare with our
-                      artificial intelligence capabilities. We are continuously
-                      improving and enhancing our AI algorithms.
+                    Introducing long due upgrades in healthcare with our artificial intelligence capabilities. We are continuously improving and enhancing our AI algorithms.
                     </p>
                   </>
                 }

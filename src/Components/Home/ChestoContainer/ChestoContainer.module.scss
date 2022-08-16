@@ -2,8 +2,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 20px;
-    margin-bottom: 20px;
+    padding-top: 60px;
+    padding-bottom: 60px;
     width: 100%;
 
     .chestoDesc {
@@ -33,6 +33,10 @@
     .chestobottom {
         width: 370px;
 
+        h4{
+            font-size: 18px;
+        }
+
         .chestoCountTop {
             display: flex;
             justify-content: space-between;
@@ -42,6 +46,7 @@
                 width: 160px;
                 margin: 10px 0;
                 padding: 0 15px;
+                background-color: #282A37;
                 border: 3px solid #2f3538;
                 border-radius: 25px;
                 box-shadow: -3px -3px 3px #ffffff14, 5px 5px 3px #0000003d;
@@ -57,6 +62,7 @@
                 width: 160px;
                 margin: 10px 0;
                 padding: 0 15px;
+                background-color: #282A37;
                 border: 3px solid #2f3538;
                 border-radius: 25px;
                 box-shadow: -3px -3px 3px #ffffff14, 5px 5px 3px #0000003d;

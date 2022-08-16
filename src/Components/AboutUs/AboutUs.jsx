@@ -1,4 +1,5 @@
 import React from "react";
+import Page from "../../Layout/Page";
 
 import HeroContainer from "./HeroContainer/HeroContainer";
 import OurStoryContainer from "./OurStoryContainer/OurStoryContainer";
@@ -8,13 +9,15 @@ import AdvisoryTeamContainer from "./AdvisoryTeamContainer/AdvisoryTeamContainer
 
 const AboutUs = () => {
   return (
-    <div>
-      <HeroContainer />
-      <OurStoryContainer />
-      <FounderContainer />
-      <CoreTeamContainer />
-      <AdvisoryTeamContainer />
-    </div>
+    <Page>
+      <div>
+        <HeroContainer />
+        <OurStoryContainer />
+        <FounderContainer />
+        <CoreTeamContainer />
+        <AdvisoryTeamContainer />
+      </div>
+    </Page>
   );
 };
 

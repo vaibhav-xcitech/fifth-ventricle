@@ -23,9 +23,9 @@ const FuturePlanContainer = () => {
         <div className={classes.futurePlanContainer}>
           <div className={classes.futurePlanHeader}>
             <h4 style={{ marginBottom: 0, marginTop: 20 }}>THE FUTURE</h4>
-            <h2 style={{ color: "#5fdad5", marginTop: 0 }}>
+            <h1 style={{ marginTop: 0 }}>
               UPCOMMING PRODUCTS
-            </h2>
+            </h1>
           </div>
 
           <div className={classes.futureProducts}>

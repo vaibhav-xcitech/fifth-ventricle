@@ -4,6 +4,7 @@ import { MainButton } from "../../UI/Button/Button";
 import Aos from "aos";
 import "aos/dist/aos.css";
 import copy from "copy-to-clipboard";
+import Page from "../../Layout/Page";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
@@ -76,7 +77,7 @@ const Contact = () => {
   };
 
   return (
-    <>
+    <Page>
       <div className={classes.contactContainer}>
         <ToastContainer position="top-right" autoClose={1500} />
         <div data-aos="fade-down" className={classes.contactUsHeader}>
@@ -207,7 +208,7 @@ const Contact = () => {
           ></iframe>
         </div>
       </div>
-    </>
+    </Page>
   );
 };
 

@@ -15,6 +15,7 @@ import PrivacyPolicy from "./UI/Footer/PrivacyPolicy/PrivacyPolicy";
 import BuyNow from "./Components/Buy/BuyNow/BuyNow";
 import AddToCart from "./Components/Buy/BuyNow/AddToCart/AddToCart";
 import Enqurie from "./Components/Home/HeroContainer/Enqurie/Enqurie";
+import Invoice from "./Components/Buy/BuyNow/AddToCart/Invoice/Invoice";
 import { BsFillArrowUpCircleFill } from "react-icons/bs";
 
 function App() {
@@ -39,7 +40,7 @@ function App() {
     <div className="App">
       <ScrollToTop />
       <State>
-        <Navbar />
+        {/* <Navbar /> */}
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/aboutus" element={<AboutUs />} />
@@ -50,8 +51,9 @@ function App() {
           <Route path="/inqurie" element={<Enqurie />} />
           <Route path="/termcondition" exact element={<TermCondition />} />
           <Route path="/privacypolicy" exact element={<PrivacyPolicy />} />
+          <Route path="/invoice" exact element={<Invoice />} />
         </Routes>
-        <Footer />
+        {/* <Footer /> */}
         {backToTop && (
           <BsFillArrowUpCircleFill
             style={{

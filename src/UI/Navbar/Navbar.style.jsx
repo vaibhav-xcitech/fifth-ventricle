@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 export const NavbarContainer = styled.nav`
   width: 100%;
   height: ${(props) => (props.extendNavbar ? "100vh" : "65px")};
-  background-color: #2f3538;
+  background-color: #1A1E23;
   display: flex;
   flex-direction: column;
   position: fixed;
@@ -59,10 +59,10 @@ export const NavbarLinkContainer = styled.div`
 export const NavbarLink = styled(NavLink)`
   color: white;
   font-size: large;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "work Sans";
   text-decoration: none;
   margin: 10px;
-  padding-top: 10px;
+  padding-top: 7px;
 
   &:hover {
     color: #fae403;
@@ -77,7 +77,7 @@ export const NavbarLink = styled(NavLink)`
 export const NavbarLinkExtended = styled(NavLink)`
   color: white;
   font-size: x-large;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "work Sans";
   text-decoration: none;
   margin: 10px;
 

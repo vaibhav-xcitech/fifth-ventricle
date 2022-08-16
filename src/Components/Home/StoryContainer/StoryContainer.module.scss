@@ -1,7 +1,8 @@
 .homeStoryContainer {
-    margin-top: 20px;
-    margin-bottom: 20px;
+    padding-top: 60px;
+    padding-bottom: 60px;
     width: 100%;
+    // height: 100vh;
 
     .storyMainContainer {
         display: flex;
@@ -17,7 +18,7 @@
                     width: 100%;
                     height: 100%;
                     object-fit: contain;
-                    max-height: 800px;
+                    max-height: 1200px;
                 }
 
                 @media (max-width: 700px) {
@@ -56,16 +57,24 @@
         justify-content: center;
 
         .storyCards {
+
+            h4{
+                font-size: 22px;
+                color: #5fdad5;
+                font-weight: 600;
+            }
+
             display: flex;
             flex-direction: column;
             align-items: center;
             margin: 20px;
-            padding: 10px;
-            height: 230px;
-            width: 230px;
-            border: 3px solid #2f3538;
+            padding: 16px;
+            // height: 230px;
+            background-color: #282A37;
+            width: 270px;
+            // border: 3px solid #2f3538;
             border-radius: 25px;
-            box-shadow: -3px -3px 3px #ffffff14, 5px 5px 3px #0000003d;
+            box-shadow: -3px -3px 8px #22495c, 5px 5px 3px rgb(0 0 0 / 68%);
         }
     }
 
@@ -74,17 +83,24 @@
         margin-left: 9%;
         justify-content: center;
 
+        h4{
+            font-size: 22px;
+            color: #5fdad5;
+            font-weight: 600;
+        }
+
         .storyCards {
             display: flex;
             flex-direction: column;
             align-items: center;
             margin: 20px;
-            padding: 10px;
-            height: 230px;
-            width: 230px;
-            border: 3px solid #2f3538;
+            padding: 16px;
+            // height: 230px;
+            width: 270px;
+            background-color: #282A37;
+            // border: 3px solid #2f3538;
             border-radius: 25px;
-            box-shadow: -3px -3px 3px #ffffff14, 5px 5px 3px #0000003d;
+            box-shadow: -3px -3px 8px #22495c, 5px 5px 3px rgb(0 0 0 / 68%);
         }
     }
 }

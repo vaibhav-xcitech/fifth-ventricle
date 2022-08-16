@@ -29,7 +29,7 @@ const ChestoContainer = () => {
         <div className={classes.chestoDesc}>
           <div className={classes.descHeader}>
             <h4 style={{ marginBottom: 0 }}>THE RESULT</h4>
-            <h2 style={{ color: "#5fdad5", marginTop: 0 }}>OUR PRODUCT LINE</h2>
+            <h1 style={{ marginTop: 0 }}>OUR PRODUCT LINE</h1>
           </div>
           {width > 800 ? (
             ""
@@ -64,8 +64,8 @@ const ChestoContainer = () => {
                 <h2 style={{ color: "#fae92a", textAlign: "left" }}>
                   <CountUp end={14} suffix="+" enableScrollSpy="true" />
                 </h2>
-                <h4>MONTHS INTO</h4>
-                <h4>DEVELOPMENT</h4>
+                <h4>Months Into</h4>
+                <h4>Development</h4>
               </div>
             </div>
 
@@ -74,15 +74,15 @@ const ChestoContainer = () => {
                 <h2 style={{ color: "#fae92a", textAlign: "left" }}>
                   <CountUp end={200} suffix="+" enableScrollSpy="true" />
                 </h2>
-                <h4>SAMPLES</h4>
-                <h4>COLLECTED</h4>
+                <h4>Samples</h4>
+                <h4>Collected</h4>
               </div>
               <div className={classes.chestoBox}>
                 <h2 style={{ color: "#fae92a", textAlign: "left" }}>
                   <CountUp end={30} suffix="+" enableScrollSpy="true" />
                 </h2>
-                <h4>YEARS OF</h4>
-                <h4>INDUSTRY EXPERIENCE</h4>
+                <h4>Years of</h4>
+                <h4>Industry Experience</h4>
               </div>
             </div>
           </div>

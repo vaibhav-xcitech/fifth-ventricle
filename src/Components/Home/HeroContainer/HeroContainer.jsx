@@ -33,12 +33,12 @@ const HeroContainer = () => {
         <div className={classes.heroTextImgContainer}>
           <Lottie options={defaultOptions} width="100%" />
           <div className={classes.homeTypewriterContainer}>
-            India's first Truly&nbsp;
+            INDIA'S FIRST&nbsp;
             <Typewriter
               className={classes.typewriter}
               onInit={(typewriter) => {
                 typewriter
-                  .typeString("TUBELESS")
+                  .typeString("TRULY TUBELESS")
                   .pauseFor(2000)
                   .deleteAll(50)
                   .start();
@@ -46,16 +46,16 @@ const HeroContainer = () => {
               options={{ loop: true }}
             />
           </div>
-          <h4 style={{ margin: 15 }}>
-            Smart Digital Stethoscope Making Company
-          </h4>
-          <MainButton
+          <h1 style={{ color: "#fff" ,margin: 15, fontWeight: 700, fontSize: "40px" }}>
+          DIGITAL SMART STEHOSCOPE
+          </h1>
+          {/* <MainButton
             type="button"
             onClick={() => navigate("/inqurie")}
             style={{ marginBottom: "10px" }}
           >
             <b>Enquire now</b>
-          </MainButton>
+          </MainButton> */}
         </div>
       </div>
 
