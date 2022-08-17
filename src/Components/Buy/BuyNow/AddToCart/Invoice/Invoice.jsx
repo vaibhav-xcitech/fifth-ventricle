@@ -3,13 +3,18 @@ import classes from "../Invoice/Invoice.module.css";
 import { Divider, Typography } from "@mui/material";
 import CartContext from "../../../../../ContextAPI/Context";
 import ReactToPrint from "react-to-print";
-// import { AiTwotoneDelete } from "react-icons/ai";
+import { MdArrowBack } from "react-icons/md";
+import { useNavigate } from "react-router-dom";
 
 const Invoice = () => {
   const cart = useContext(CartContext);
-  console.log(cart.cart);
-
+  const navigate = useNavigate();
   const printItem = useRef();
+
+  const goBackToHome = () => {
+    navigate("/");
+    cart.cart.length = 0;
+  };
 
   let total = 0;
   cart.cart.map((item) => {
@@ -29,13 +34,18 @@ const Invoice = () => {
   let actualAmount = totalQuantity * 14999;
   let discount = actualAmount - subTotal;
   let Charges = 200;
-  let payableAmount = subTotal + Charges;
+  let gst = (subTotal * 12) / 100;
+  let payableAmount = subTotal + Charges + gst;
 
   return (
     <div className={classes.invoiceContainer}>
       <div className={classes.printContainer}>
+        <div>
+          <button className={classes.backButton} onClick={goBackToHome}>
+            <MdArrowBack />
+          </button>
+        </div>
         <div className={classes.printButton}>
-          {/* <button onClick={() => printItem.current}>PRINT</button> */}
           <ReactToPrint
             trigger={() => (
               <button
@@ -196,19 +206,13 @@ const Invoice = () => {
         </div>
         <div className={classes.belowContainer}>
           <div className={classes.tndContainer}>
-            <h3 className={classes.h3}>
-              Invoice Amount In Words:
-            </h3>
+            <h3 className={classes.h3}>Invoice Amount In Words:</h3>
             <h5 style={{ padding: "0px 10px" }}>Seven Thousand Rupees only</h5>
-            <h3 className={classes.h3}>
-              Terms and conditions:
-            </h3>
+            <h3 className={classes.h3}>Terms and conditions:</h3>
             <h5 style={{ padding: "0px 10px" }}>
               Thanks for doing business with us!
             </h5>
-            <h3 className={classes.h3}>
-              Bank details:
-            </h3>
+            <h3 className={classes.h3}>Bank details:</h3>
             <h5 style={{ padding: "0px 10px" }}>
               Bank Name: HDFC BANK, GOTRI II
             </h5>
@@ -239,13 +243,17 @@ const Invoice = () => {
               <div>&#x20b9; {subTotal}/-</div>
             </div>
             <div className={classes.Details}>
+              <div className={classes.label}>GST Amount</div>
+              <div>&#x20b9; {gst}(12%)</div>
+            </div>
+            <div className={classes.Details}>
               <div className={classes.label}>Delivery Charges</div>
               <div>&#x20b9; {Charges}/-</div>
             </div>
             <Divider />
             <div className={classes.Details}>
               <div className={classes.totalLabel}>Payable Amount</div>
-              <div>&#x20b9; {payableAmount}/-</div>
+              <div>&#x20b9; {Math.round(payableAmount)}/-</div>
             </div>
           </div>
         </div>

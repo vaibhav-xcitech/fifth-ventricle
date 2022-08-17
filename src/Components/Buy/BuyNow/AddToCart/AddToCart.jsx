@@ -57,17 +57,19 @@ const AddToCart = () => {
 
     setChestoColor([...chestoColor]);
   }, [cart]);
-  console.log(chestoColor);
 
   let discount = 0;
   let actualAmount = totalQuantity * 14999;
   discount = actualAmount - subTotal;
 
+  let gst = 0;
+  
   let Charges = 0;
   if (cart.cart.length > 0) {
     Charges = 200;
+    gst = subTotal * 12 / 100
   }
-  let payableAmount = subTotal + Charges;
+  let payableAmount = subTotal + Charges + gst;
 
   const navigate = useNavigate();
 
@@ -191,6 +193,7 @@ const AddToCart = () => {
     console.log(mainData);
     const TotalAmount = parseInt(payableAmount);
 
+
     function loadScript(src) {
       return new Promise((resolve) => {
         const script = document.createElement("script");
@@ -215,29 +218,16 @@ const AddToCart = () => {
     }
 
     // axios
-    //   .post("http://192.168.1.15:5959/payment/order/create", {
-    //     amount: 100
+    //   .post("https://projects.xcitech.in:5008/web/order/create", {
+    //     payableAmount: payableAmount,
+    //     quantity: totalQuantity,
+    //     chestoColor: chestoColor,
+    //     data: mainData,
     //   })
-    //   .then((res) => console.log(res));
-
-    // console.log("------------------------", response.razorpay_payment_id);
-    // try {
-    //   alert("Payment id", response.razorpay_payment_id);
-    // } catch (error) {
-    //   console.log(error);
-    // }
-
-    axios
-      .post("http://localhost:5959/web/order/create", {
-        payableAmount: payableAmount,
-        quantity: totalQuantity,
-        // chestoColor: chestoColor,
-        data: mainData,
-      })
-      .then((res) => console.log(res))
-      .catch((error) => {
-        console.log(error);
-      });
+    //   .then((res) => console.log(res))
+    //   .catch((error) => {
+    //     console.log(error);
+    //   });
 
     const options = {
       key: "rzp_test_pNFO8JDVnrbpRj",
@@ -250,11 +240,19 @@ const AddToCart = () => {
         console.log(response);
         navigate("/invoice");
         toast("Your order has been done successfully");
-      },
-      prefill: {
-        email: "sdfdsjfh2@ndsfdf.com",
-        phone_number: "9899999999",
-      },
+        axios
+          .post("http://localhost:5959/web/order/create", {
+            payableAmount: payableAmount,
+            quantity: totalQuantity,
+            chestoColor: chestoColor,
+            data: mainData,
+            paymentId: response.razorpay_payment_id
+          })
+          .then((res) => console.log(res))
+          .catch((error) => {
+            console.log(error);
+          });
+      }
     };
     const paymentObject = new window.Razorpay(options);
     paymentObject.open();
@@ -494,13 +492,17 @@ const AddToCart = () => {
                   <div>&#x20b9; {subTotal}/-</div>
                 </div>
                 <div className={classes.Details}>
+                  <div className={classes.label}>GST Amount</div>
+                  <div>&#x20b9; {gst}(12%)</div>
+                </div>
+                <div className={classes.Details}>
                   <div className={classes.label}>Delivery Charges</div>
                   <div>&#x20b9; {Charges}/-</div>
                 </div>
                 <Divider />
                 <div className={classes.Details}>
                   <div className={classes.totalLabel}>Payable Amount</div>
-                  <div>&#x20b9; {payableAmount}/-</div>
+                  <div>&#x20b9; {Math.round(payableAmount)}/-</div>
                 </div>
               </div>
             </div>

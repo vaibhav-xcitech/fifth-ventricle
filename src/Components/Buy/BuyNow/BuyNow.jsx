@@ -300,13 +300,18 @@ const BuyNow = () => {
                 )}
 
                 {selectedOption && (
-                  <h4 style={{ margin: "25px 0px" }}>
-                    Discount Price:- &nbsp;
-                    <del style={{ marginRight: "10px", opacity: 0.5 }}>
-                      &#x20b9; 14,999
-                    </del>
-                    &#x20b9; {selectedOption.discountPrice}
-                  </h4>
+                  <>
+                    <h4 style={{ marginTop: "25px" }}>
+                      Discount Price:- &nbsp;
+                      <del style={{ marginRight: "10px", opacity: 0.5 }}>
+                        &#x20b9; 14,999
+                      </del>
+                      &#x20b9; {selectedOption.discountPrice}
+                    </h4>
+                    <span style={{ opacity: 0.5 }}>
+                      GST excluded
+                    </span>
+                  </>
                 )}
                 <MainButton
                   style={{

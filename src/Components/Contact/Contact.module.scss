@@ -9,6 +9,7 @@ textarea:invalid[focused="true"] {
 .contactContainer {
     width: 100%;
     margin-top: 65px;
+    padding-top: 5px;
 
     .contactUsHeader {
         justify-content: center;
@@ -17,7 +18,7 @@ textarea:invalid[focused="true"] {
     }
 
     .contactBodyContainer {
-        margin-top: 25px;
+        margin-top: 40px;
         margin-bottom: 20px;
         display: flex;
         justify-content: space-between;
@@ -28,8 +29,8 @@ textarea:invalid[focused="true"] {
             height: 500px;
             border-bottom-right-radius: 40px;
             border-top-right-radius: 40px;
-            box-shadow: 5px 5px 8px #191c1e,
-                -5px -5px 8px #454e52;
+            box-shadow: 5px -5px 8px #22495c,
+                -5px -5px 8px #22495c;
 
             .contactUsHeader {
                 padding-right: 45px;
@@ -71,7 +72,7 @@ textarea:invalid[focused="true"] {
             border-bottom-left-radius: 40px;
             border-top-left-radius: 40px;
             box-shadow: 5px 5px 8px #191c1e,
-                -5px -5px 8px #454e52;
+                -5px -5px 8px #22495c;
 
             .msgUsContent {
                 display: flex;

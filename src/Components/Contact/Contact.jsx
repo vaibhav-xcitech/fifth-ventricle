@@ -184,7 +184,7 @@ const Contact = () => {
                 required
               ></textarea>
               <MainButton
-                style={{ marginTop: 0, padding: "4px 35px" }}
+                style={{ marginTop: 0, padding: "3px 30px" }}
                 type={"submit"}
               >
                 Send
@@ -197,7 +197,7 @@ const Contact = () => {
       <div className={classes.locateUsContainer}>
         <div className={classes.locateUsHeader}>
           <h1>Locate Us</h1>
-          <h4>Coz Why Not !.</h4>
+          {/* <h4>Coz Why Not !.</h4> */}
         </div>
         <div className={classes.locateUsContant}>
           <iframe

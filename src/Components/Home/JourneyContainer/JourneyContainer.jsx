@@ -1,10 +1,10 @@
 import React from "react";
 import classes from "../JourneyContainer/JourneyContainer.module.scss";
 import useWindowDimensions from "../WindowDimensions";
-import YouTube from "react-youtube";
-// import { MainButton } from "../../../UI/Button/Button";
+// import YouTube from "react-youtube";
+// import { MainButton } from "../../../UI/Button/Chesto_Project Research";
 
-import OfficeImage2 from "../../../assets/Chesto_Project Research.png";
+import OfficeImage2 from "../../../assets/project_research.png";
 
 const JourneyContainer = () => {
   const { width } = useWindowDimensions();

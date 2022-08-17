@@ -4,7 +4,18 @@
 
 .printContainer {
   display: flex;
-  justify-content: right;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.backButton{
+  width: 60px;
+  color: black;
+  height: 40px;
+  margin: 15px 20px;
+  border-radius: 10px;
+  border: none;
+  background-color: #839c83;
 }
 
 /* button {

@@ -4,12 +4,12 @@ import { Routes, Route } from "react-router-dom";
 import State from "./ContextAPI/State";
 import ScrollToTop from "./UI/ScrollToTop/ScrollToTop";
 
-import Navbar from "./UI/Navbar/Navbar";
+// import Navbar from "./UI/Navbar/Navbar";
 import Home from "./Components/Home/Home";
 import AboutUs from "./Components/AboutUs/AboutUs";
 import Contact from "./Components/Contact/Contact";
 import Buy from "./Components/Buy/Buy";
-import Footer from "./UI/Footer/Footer";
+// import Footer from "./UI/Footer/Footer";
 import TermCondition from "./UI/Footer/Term&Condition/TermCondition";
 import PrivacyPolicy from "./UI/Footer/PrivacyPolicy/PrivacyPolicy";
 import BuyNow from "./Components/Buy/BuyNow/BuyNow";
@@ -59,7 +59,7 @@ function App() {
             style={{
               position: "fixed",
               bottom: "50px",
-              right: "50px",
+              left: "50px",
               height: "35px",
               width: "35px",
               fontSize: "50px",
