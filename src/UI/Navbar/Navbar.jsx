@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   NavbarContainer,
   LeftContainer,
@@ -16,8 +16,13 @@ import {
 import { GrFacebookOption } from "react-icons/gr";
 import { GrLinkedinOption } from "react-icons/gr";
 import { GrInstagram } from "react-icons/gr";
+import Aos from "aos";
+import "aos/dist/aos.css";
 
 const Navbar = () => {
+  useEffect(() => {
+    Aos.init({ duration: 1500 });
+  }, []);
   const [extendNavbar, setExtendNavbar] = useState(false);
 
   return (

@@ -23,12 +23,24 @@ const Footer = () => {
             alt="logo"
           />
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Est exercitationem delectus accusantium itaque vitae rem cumque consequatur laboriosam officia animi! Quaerat aliquid tempora eaque, facere dolore ad sed tempore nisi molestiae adipisci maxime itaque laborum?
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Est
+            exercitationem delectus accusantium itaque vitae rem cumque
+            consequatur laboriosam officia animi! Quaerat aliquid tempora eaque,
+            facere dolore ad sed tempore nisi molestiae adipisci maxime itaque
+            laborum?
           </p>
         </div>
         <div className={classes.RightContainer}>
           <div className={classes.RightDivOne}>
-            <h4 style={{ fontSize: "18px", textAlign: "left", marginLeft: "26px" }}>CONTACT</h4>
+            <h4
+              style={{
+                fontSize: "18px",
+                textAlign: "left",
+                marginLeft: "26px",
+              }}
+            >
+              CONTACT
+            </h4>
             <div className={classes.ContactDetails}>
               <div>
                 <HiOfficeBuilding
@@ -63,7 +75,9 @@ const Footer = () => {
             </div>
           </div>
           <div className={classes.RightDivTwo}>
-            <h4 style={{ fontSize: "18px", marginLeft: "8px" }}>FIFTH VENTRICAL</h4>
+            <h4 style={{ fontSize: "18px", marginLeft: "8px" }}>
+              FIFTH VENTRICAL
+            </h4>
             <div className={classes.companyDetails}>
               <div onClick={() => navigate("/aboutus")}>About Us</div>
               <div onClick={() => navigate("/termcondition")}>

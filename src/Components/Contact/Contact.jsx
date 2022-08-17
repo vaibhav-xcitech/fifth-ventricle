@@ -87,7 +87,7 @@ const Contact = () => {
         <div className={classes.contactBodyContainer}>
           <div data-aos="fade-up" className={classes.contactUsContainer}>
             <div>
-              <img src={fonderimg} alt="fonder" width="60px" height="60px" />
+              {/* <img src={fonderimg} alt="fonder" width="60px" height="60px" /> */}
             </div>
             <div className={classes.contactUsHeader}>
               <img src={quats} alt="fonder" width="30px" height="30px" />
